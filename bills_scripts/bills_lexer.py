@@ -20,12 +20,15 @@ tokens = (
 )
 
 t_STRING    = r'\w\w+'
-t_NEWLINE   = r'\n|\r|\r\n|\n\r'
 t_COLON     = r':'
 t_ASTERISK  = r'\*'
 t_EQUALS    = r'='
 t_X         = r'X'
 
+def t_NEWLINE(t):
+    r'(\n|\r|\r\n|\n\r)+'
+    t.lexer.lineno += len(t.value)
+    return t
 
 def t_AMOUNT(t):
     r'\$\d+(\.\d\d)?'
@@ -50,15 +53,15 @@ def main():
     lexer = lex.lex(debug=1)
     
     input = '''
-    Comcast: $50 due on 01/1
-    * Alex = $50
-    * Dylan = $20
-    X Mark = $30
-    
-    Utilities: $250 due on 02/21
-    
-    
-    '''
+Comcast: $50 due on 01/3
+* Alex = $50
+* Dylan = $20
+X Mark = $30
+
+Utilities: $250 due on 01/8
+X Mike
+* Mark
+'''
     
     lexer.input(input)
     
