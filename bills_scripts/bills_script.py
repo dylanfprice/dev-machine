@@ -65,6 +65,8 @@ def send_email(conn, sender, receiver, subject, msg):
 
 def main():
     try:
+        if len(sys.argv) < 2:
+            raise Exception("Did not receive a file argument.")
         billsfile = open(sys.argv[1], 'r')
         parse = bills_yacc.parse(billsfile.read())
         emails = extract_owestrings(parse)
