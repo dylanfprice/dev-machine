@@ -33,6 +33,9 @@ Error:
 # Set to true to print smtp debug info
 DEBUG_LEVEL = False
 
+# Location of log file
+LOGFILE = 
+
 # Uncomment when debugging to prevent sending out emails to people
 #EMAILS = {
 #}
