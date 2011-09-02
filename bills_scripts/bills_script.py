@@ -73,6 +73,8 @@ def backup(billsfile):
 
 def main():
     logmessage = None
+    parse = None
+    emails = None
     try:
         if len(sys.argv) < 2:
             logmessage = "Did not receive a file argument."
@@ -84,11 +86,15 @@ def main():
         send_emails(emails)
         logmessage = "[%s] Success!" % date.today()
     except Exception as exc:
-        with SmtpLoggedInConnection(config.SMTP_SERVER, config.SMTP_USERNAME, \
-                                    b64decode(config.SMTP_PASSWORD), config.DEBUG_LEVEL) as conn:
-            send_email(conn, config.EMAILS['Dylan'], config.EMAILS['Dylan'], \
-                       config.ERRMSG_SUBJECT, config.ERRMSG % exc)
-            logmessage = "[%s] Failure. %s \n %s" % (date.today(), parse, emails)
+        logmessage = "[%s] Failure. %s \n %s" % (date.today(), parse, emails)
+        # try to send failure email
+        try:
+            with SmtpLoggedInConnection(config.SMTP_SERVER, config.SMTP_USERNAME, \
+                                        b64decode(config.SMTP_PASSWORD), config.DEBUG_LEVEL) as conn:
+                send_email(conn, config.EMAILS['Dylan'], config.EMAILS['Dylan'], \
+                           config.ERRMSG_SUBJECT, config.ERRMSG % exc)
+        except:
+            pass
 
     if logmessage:
         log(config.LOGFILE, logmessage)
