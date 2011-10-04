@@ -25,13 +25,22 @@ def p_bills(p):
         p[0] = p[2]
 
 def p_bill(p):
-    'bill : STRING COLON AMOUNT STRING STRING DATE NEWLINE names'
-    p[0] = {
-        'bill'      : p[1],
-        'amount'    : p[3],
-        'due_date'  : p[6],
-        'names'     : p[8]
-    }
+    '''bill : STRING COLON AMOUNT STRING STRING DATE NEWLINE names
+            | STRING STRING COLON AMOUNT STRING STRING DATE NEWLINE names'''
+    if len(p) == 9:
+        p[0] = {
+            'bill'      : p[1],
+            'amount'    : p[3],
+            'due_date'  : p[6],
+            'names'     : p[8]
+        }
+    else:
+        p[0] = {
+            'bill'      : p[1] + ' ' + p[2],
+            'amount'    : p[4],
+            'due_date'  : p[7],
+            'names'     : p[9]
+        }
 
 def p_names(p):
     '''names : names name_asterisk
@@ -82,6 +91,11 @@ X Mark = $30
 
 Utilities: $250 due on 01/8
 X Mike
+* Mark
+
+Extra Deposit: $100 due on 10/31
+* Alex
+* Dylan
 * Mark
 '''
 
