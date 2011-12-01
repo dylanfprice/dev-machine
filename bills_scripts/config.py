@@ -8,8 +8,8 @@ EMAILS = {
 # SMTP server config
 # SMTP_PASSWORD is base64 encoded
 SMTP_SERVER = 'smtp.gmail.com'
-SMTP_USERNAME = 
-SMTP_PASSWORD = 
+SMTP_USERNAME = None
+SMTP_PASSWORD = None
 
 SUBJECT = 'Bills'
 # Parameters are (name, formatted_owestring)
@@ -34,7 +34,7 @@ Error:
 DEBUG_LEVEL = False
 
 # Location of log file
-LOGFILE = 
+LOGFILE = None
 
 # Uncomment when debugging to prevent sending out emails to people
 #EMAILS = {

@@ -79,7 +79,7 @@ def main():
         except:
             pass
 
-    if logmessage:
+    if logmessage and config.LOGFILE:
         log(config.LOGFILE, logmessage)
 
 if __name__ == "__main__":

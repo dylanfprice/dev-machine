@@ -3,6 +3,16 @@ from datetime import date
 
 def extract_owestrings(parse):
     emails = {}
+    owe = extract_owe(parse)
+    for name in owe.keys():
+        emails[name] = ""
+        for bill in owe[name]:
+            emails[name] += config.OWESTRING % \
+                (bill['amount'], bill['bill'], bill['due_date'].strftime("%A, %B %d"))
+    return emails
+
+def extract_owe(parse):
+    owe = {}
     for bill in parse:
         timediff = bill['due_date'] - date.today()
         if timediff.days <= config.REMIND_INTERVAL:
@@ -13,10 +23,9 @@ def extract_owestrings(parse):
                     amount = bill['amount'] / num_names
                 paid = bill['names'][name][1]
                 if not paid:
-                    if not name in emails:
-                        emails[name] = ""
-                    emails[name] += config.OWESTRING % \
-                        (amount, bill['bill'], bill['due_date'].strftime("%A, %B %d"))
-    return emails
+                    if not name in owe:
+                        owe[name] = []
+                    owe[name].append({'amount' : amount, 'bill' : bill['bill'], 'due_date' : bill['due_date']})
+    return owe
 
 
