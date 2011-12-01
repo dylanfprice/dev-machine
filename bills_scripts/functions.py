@@ -1,6 +1,5 @@
 import config
 from datetime import date
-from math import ceil
 
 def extract_owestrings(parse):
     emails = {}
@@ -34,7 +33,7 @@ def extract_owe(parse):
         total = 0
         for bill in owe[name]['bills']:
             total = total + bill['amount']
-        owe[name]['total'] = ceil(total)
+        owe[name]['total'] = round(total, 2)
                     
     return owe
 
