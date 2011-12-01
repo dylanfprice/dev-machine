@@ -1,5 +1,6 @@
 import config
 from datetime import date
+from decimal import Decimal
 
 def extract_owestrings(parse):
     emails = {}
@@ -20,9 +21,10 @@ def extract_owe(parse):
         if timediff.days <= config.REMIND_INTERVAL:
             num_names = len(bill['names'])
             for name in bill['names'].keys():
-                amount = bill['names'][name][0]
+                amount = Decimal(bill['names'][name][0])
                 if amount == -1:
-                    amount = bill['amount'] / num_names
+                    amount = Decimal(bill['amount']) / num_names
+                amount = round(amount, 2)
                 paid = bill['names'][name][1]
                 if not paid:
                     if not name in owe:
@@ -33,7 +35,7 @@ def extract_owe(parse):
         total = 0
         for bill in owe[name]['bills']:
             total = total + bill['amount']
-        owe[name]['total'] = round(total, 2)
+        owe[name]['total'] = total
                     
     return owe
 
