@@ -1,18 +1,17 @@
 import config
 from datetime import date
+from math import ceil
 
 def extract_owestrings(parse):
     emails = {}
     owe = extract_owe(parse)
     for name in owe.keys():
         emails[name] = {}
+        emails[name]['total'] = owe[name]['total']
         emails[name]['owestring'] = ""
-        total = 0
-        for bill in owe[name]:
-            total = total + bill['amount']
+        for bill in owe[name]['bills']:
             emails[name]['owestring'] += config.OWESTRING % \
                 (bill['amount'], bill['bill'], bill['due_date'].strftime("%A, %B %d"))
-        emails[name]['total'] = total
     return emails
 
 def extract_owe(parse):
@@ -28,8 +27,15 @@ def extract_owe(parse):
                 paid = bill['names'][name][1]
                 if not paid:
                     if not name in owe:
-                        owe[name] = []
-                    owe[name].append({'amount' : amount, 'bill' : bill['bill'], 'due_date' : bill['due_date']})
+                        owe[name] = {}
+                        owe[name]['bills'] = []
+                    owe[name]['bills'].append({'amount' : amount, 'bill' : bill['bill'], 'due_date' : bill['due_date']})
+    for name in owe.keys():
+        total = 0
+        for bill in owe[name]['bills']:
+            total = total + bill['amount']
+        owe[name]['total'] = ceil(total)
+                    
     return owe
 
 

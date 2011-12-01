@@ -39,7 +39,7 @@ def send_emails(emails):
                                 b64decode(config.SMTP_PASSWORD), config.DEBUG_LEVEL) as conn:
         for name in emails.keys():
             send_email(conn, config.EMAILS['Dylan'], config.EMAILS[name], \
-                       config.SUBJECT, config.MSG % (name, emails[name]['owestring'], emails[name]['total']))
+                      config.SUBJECT, config.MSG % (name, emails[name]['owestring'], emails[name]['total']))
 
 def send_email(conn, sender, receiver, subject, msg):
     msg = MIMEText(msg, 'plain')
@@ -66,7 +66,9 @@ def main():
         backup(sys.argv[1])
         parse = bills_yacc.parse(billsfile.read())
         emails = extract_owestrings(parse)
-        send_emails(emails)
+        for name in emails.keys():
+            print(config.MSG % (name, emails[name]['owestring'], emails[name]['total']))
+        #send_emails(emails)
         logmessage = "[%s] Success!" % date.today()
     except Exception as exc:
         logmessage = "[%s] Failure. %s \n %s" % (date.today(), parse, emails)

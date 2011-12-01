@@ -18,14 +18,12 @@ Hey %s,
 
 You owe:
 %s
-
-Total:
-%s
+Total: $%.2f
 
 Thanks,
 '''
 # Parameters are (amount, billname, due_date_string)
-OWESTRING = "    $%.2f for %s which is due on %s \n"
+OWESTRING = "       $%.2f for %s which is due on %s \n"
 
 ERRMSG_SUBJECT = 'Error in bills script!'
 # Parameters are (error)
