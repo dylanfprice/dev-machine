@@ -66,9 +66,9 @@ def main():
         backup(sys.argv[1])
         parse = bills_yacc.parse(billsfile.read())
         emails = extract_owestrings(parse)
-        for name in emails.keys():
-            print(config.MSG % (name, emails[name]['owestring'], emails[name]['total']))
-        #send_emails(emails)
+        #for name in emails.keys():
+        #    print(config.MSG % (name, emails[name]['owestring'], emails[name]['total']))
+        send_emails(emails)
         logmessage = "[%s] Success!" % date.today()
     except Exception as exc:
         logmessage = "[%s] Failure. %s \n %s" % (date.today(), parse, emails)
