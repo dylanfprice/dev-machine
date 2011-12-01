@@ -8,7 +8,7 @@
 import bills_yacc
 import sys
 import shutil
-import functions
+from functions import extract_owestrings
 import config
 from datetime import date
 from smtplib import SMTP
