@@ -39,7 +39,7 @@ def send_emails(emails):
                                 b64decode(config.SMTP_PASSWORD), config.DEBUG_LEVEL) as conn:
         for name in emails.keys():
             send_email(conn, config.EMAILS['Dylan'], config.EMAILS[name], \
-                       config.SUBJECT, config.MSG % (name, emails[name]))
+                       config.SUBJECT, config.MSG % (name, emails[name]['owestring'], emails[name]['total']))
 
 def send_email(conn, sender, receiver, subject, msg):
     msg = MIMEText(msg, 'plain')

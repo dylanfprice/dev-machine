@@ -5,10 +5,14 @@ def extract_owestrings(parse):
     emails = {}
     owe = extract_owe(parse)
     for name in owe.keys():
-        emails[name] = ""
+        emails[name] = {}
+        emails[name]['owestring'] = ""
+        total = 0
         for bill in owe[name]:
-            emails[name] += config.OWESTRING % \
+            total = total + bill['amount']
+            emails[name]['owestring'] += config.OWESTRING % \
                 (bill['amount'], bill['bill'], bill['due_date'].strftime("%A, %B %d"))
+        emails[name]['total'] = total
     return emails
 
 def extract_owe(parse):

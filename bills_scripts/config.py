@@ -12,12 +12,16 @@ SMTP_USERNAME = None
 SMTP_PASSWORD = None
 
 SUBJECT = 'Bills'
-# Parameters are (name, formatted_owestring)
+# Parameters are (name, formatted_owestring, total)
 MSG = '''\
 Hey %s,
 
 You owe:
 %s
+
+Total:
+%s
+
 Thanks,
 '''
 # Parameters are (amount, billname, due_date_string)
