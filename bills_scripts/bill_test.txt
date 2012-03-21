@@ -1,0 +1,64 @@
+Utilities: $226.20 due on 11/08
+X Alex
+X Dylan
+X Janelle
+X Kate
+X Mark
+X Mike
+
+Comcast: $50.70 due on 11/18
+X Alex
+X Dylan
+* Janelle
+X Kate
+X Mark
+X Mike
+
+Rent: $2500 due on 11/30
+X Alex = $515
+X Dylan = $455
+X Janelle = $240
+X Kate = $490
+X Mark = $285
+X Mike = $515
+
+Rent: $2500 due on 12/31
+X Alex = $515
+* Dylan = $455
+* Janelle = $240
+* Kate = $490
+X Mark = $285
+* Mike = $515
+
+Electric: $142.11 due on 12/09
+X Alex
+* Dylan
+X Janelle
+X Kate
+X Mark
+* Mike
+
+CSA: $39.50 due on 12/07
+X Alex
+X Dylan
+* Janelle
+X Mark
+
+CSA: $39.50 due on 01/07
+X Alex
+X Dylan
+* Janelle
+X Mark
+
+Janelle Chicken: $62.79 due on 12/7
+* Alex
+* Dylan
+X Janelle
+* Mark
+
+Mark Chicken: $30.55 due on 12/7
+* Alex
+* Dylan
+* Janelle
+X Mark
+

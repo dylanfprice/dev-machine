@@ -8,20 +8,22 @@ EMAILS = {
 # SMTP server config
 # SMTP_PASSWORD is base64 encoded
 SMTP_SERVER = 'smtp.gmail.com'
-SMTP_USERNAME = 
-SMTP_PASSWORD = 
+SMTP_USERNAME = None
+SMTP_PASSWORD = None
 
 SUBJECT = 'Bills'
-# Parameters are (name, formatted_owestring)
+# Parameters are (name, formatted_owestring, total)
 MSG = '''\
 Hey %s,
 
 You owe:
 %s
+Total: $%.2f
+
 Thanks,
 '''
 # Parameters are (amount, billname, due_date_string)
-OWESTRING = "    $%.2f for %s which is due on %s \n"
+OWESTRING = "       $%.2f for %s which is due on %s \n"
 
 ERRMSG_SUBJECT = 'Error in bills script!'
 # Parameters are (error)
@@ -34,7 +36,7 @@ Error:
 DEBUG_LEVEL = False
 
 # Location of log file
-LOGFILE = 
+LOGFILE = None
 
 # Uncomment when debugging to prevent sending out emails to people
 #EMAILS = {
