@@ -1,4 +1,4 @@
-import parser.bills_yacc as bills_yacc
+from bills_parser import bills_yacc
 import config
 
 from datetime import date

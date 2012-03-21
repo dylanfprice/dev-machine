@@ -1,3 +1,4 @@
+import logging
 import cgi
 import config
 import datetime
@@ -6,7 +7,7 @@ import os
 import urllib
 import webapp2
 
-from model import *
+from model import Bills
 
 from google.appengine.api import mail
 from google.appengine.api import users
