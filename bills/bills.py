@@ -67,11 +67,12 @@ class SendEmail(webapp2.RequestHandler):
 
         emails = config.EMAILS
         for name in emails:
-            template_values['name'] = name
-            mail.send_mail(sender=config.SENDER,
-                          to="%s <%s>" % (name.capitalize(), emails[name]),
-                          subject=config.SUBJECT,
-                          body=template.render(template_values))
+            if bills.total(name) > 0:
+                template_values['name'] = name
+                mail.send_mail(sender=config.SENDER,
+                              to="%s <%s>" % (name.capitalize(), emails[name]),
+                              subject=config.SUBJECT,
+                              body=template.render(template_values))
         
 app = webapp2.WSGIApplication([('/', SeeBills),
                                ('/edit', EditBills),
