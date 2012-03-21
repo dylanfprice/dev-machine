@@ -30,6 +30,7 @@ tr.paid,
 tr.paid td,
 tr.paid td a {
     color: #C0C0C0;
+    text-decoration: line-through;
 }
 
 .indent {
