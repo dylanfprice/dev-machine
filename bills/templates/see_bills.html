@@ -3,20 +3,23 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body class="bills">
-      <table>
-          {% for bill in bills.parse() %}
-              <tr class="bill"><td colspan="2">{{ bill.bill }}: ${{ bill.amount }} due {{ bill.due_date.strftime("%A, %B %d") }}</td></tr>
-              {% for name in bill.names|sort %}
-                  {% if bill.names[name].paid %}
-                      <tr class="paid">
-                  {% else %}
-                      <tr>
-                  {% endif %}
-                  <td><a href="/total/{{ name }}">{{ name.capitalize() }}</a> </td><td> ${{ bill.names[name].amount }}</td>
-                  </tr>
+          {% set parse = bills.parse() %}
+          {% if parse %}
+              <table>
+              {% for bill in bills.parse() %}
+                  <tr class="bill"><td colspan="2">{{ bill.bill }}: ${{ bill.amount }} due {{ bill.due_date.strftime("%A, %B %d") }}</td></tr>
+                  {% for name in bill.names|sort %}
+                      {% if bill.names[name].paid %}
+                          <tr class="paid">
+                      {% else %}
+                          <tr>
+                      {% endif %}
+                      <td><a href="/total/{{ name }}">{{ name.capitalize() }}</a> </td><td> ${{ bill.names[name].amount }}</td>
+                      </tr>
+                  {% endfor %}
+                  <tr><td></td></tr>
               {% endfor %}
-              <tr><td></td></tr>
-          {% endfor %}
-      </table>
+              </table>
+          {% endif %}
   </body>
 </html>

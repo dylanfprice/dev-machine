@@ -75,18 +75,23 @@ def p_empty(p):
 def p_error(p):
     print "Syntax error in input: %s!" % p
 
-parser = yacc.yacc(debug=0)
+lexer = lex.lex(debug=0, optimize=1, lextab=None, module=bills_lexer)
+parser = yacc.yacc(start='start', debug=0, optimize=1, write_tables=0)
 def parse(input):
-    parse = parser.parse(input, lexer=lex.lex(module=bills_lexer))
+    try:
+        parse = parser.parse(input, lexer=lexer)
+    except:
+        parse = None
 
     # set -1s to correct amount
-    for bill in parse:
-        num_names = len(bill['names'])
-        for name in bill['names'].keys():
-            amount = bill['names'][name]['amount']
-            paid = bill['names'][name]['paid']
-            if amount == -1:
-                bill['names'][name]['amount'] = bill['amount'] / num_names
+    if parse:
+        for bill in parse:
+            num_names = len(bill['names'])
+            for name in bill['names'].keys():
+                amount = bill['names'][name]['amount']
+                paid = bill['names'][name]['paid']
+                if amount == -1:
+                    bill['names'][name]['amount'] = bill['amount'] / num_names
 
     return parse
 
