@@ -3,6 +3,7 @@ REMIND_INTERVAL = 21
 
 # A dictionary from names to email addresses
 EMAILS = {
+    'dylan': 'the.dylan.price@gmail.com',
 }
 
 # SMTP server config
@@ -12,3 +13,5 @@ EMAILS = {
 #SMTP_PASSWORD = 
 
 SUBJECT = 'Bills'
+GREETING = 'Hey'
+SENDER = 'Dylan Price <the.dylan.price@gmail.com>'
