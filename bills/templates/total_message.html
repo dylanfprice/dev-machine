@@ -1,0 +1,16 @@
+<p>{{ greeting }} {{ name.capitalize() }},</p>
+{% set total = bills.total(name) %}
+{% if total > 0 %}
+    For bills due in the next {{ remind_interval }} days, you owe:<br/>
+    {% for bill in bills.parse() %}
+      {% if name in bill.names and not bill.names[name].paid %}
+          <div class="indent">{{ '$%.2f for %s which is due on %s' % (bill.names[name].amount, bill['bill'], bill['due_date'].strftime("%A, %B %d")) }}</div>
+      {% endif %}
+    {% endfor %}
+    <br/>
+    Total:<br/>
+    <div class="indent">${{ '%.2f' % total }}</div>
+{% else %}
+    You owe nothing for bills due in the next {{ remind_interval }} days!<br/>
+{% endif %}
+

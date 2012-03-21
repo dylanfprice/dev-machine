@@ -1,0 +1,37 @@
+.bills {
+    font-family: monospace;
+    font-size: 1.1em;
+}
+
+.bills th, td {
+    font-size: 1.1em;
+}
+
+tr td a {
+ color:#000000;
+}
+
+table {
+    empty-cells: show;
+}
+
+th, td {
+    width: 13em;
+    height: 1em;
+    line-height: 1em;
+}
+
+tr.bill,
+tr.bill td {
+    font-weight: normal;
+}
+
+tr.paid,
+tr.paid td,
+tr.paid td a {
+    color: #C0C0C0;
+}
+
+.indent {
+    text-indent: 2em;
+}
