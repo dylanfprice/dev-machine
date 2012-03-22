@@ -1,4 +1,4 @@
 cron:
 - description: send out bill emails
   url: /tasks/email
-  schedule: 1,8,15,22 of month 04:00
+  schedule: 1,8,15,22,25 of month 04:00
