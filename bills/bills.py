@@ -64,7 +64,8 @@ class SendEmail(webapp2.RequestHandler):
             'host_url' : self.request.host_url,
             'bills': bills
         }
-        template = jinja_env.get_template('templates/total_email.html')
+        html_template = jinja_env.get_template('templates/total_email.html')
+        text_template = jinja_env.get_template('templates/total_email.txt')
 
         emails = config.EMAILS
         for name in emails:
@@ -73,7 +74,8 @@ class SendEmail(webapp2.RequestHandler):
                 mail.send_mail(sender=config.SENDER,
                               to="%s <%s>" % (name.capitalize(), emails[name]),
                               subject=config.SUBJECT,
-                              body=template.render(template_values))
+                              body=text_template.render(template_values),
+                              html=html_template.render(template_values))
         
 app = webapp2.WSGIApplication([('/', SeeBills),
                                ('/edit', EditBills),
