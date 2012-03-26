@@ -3,7 +3,7 @@
 {% if total > 0 %}
     For bills due in the next {{ remind_interval }} days, you owe:<br/>
     {% for bill in bills.parse() %}
-      {% if name in bill.names and not bill.names[name].paid %}
+      {% if name in bill.names and not bill.names[name].paid and bills.is_due(bill) %}
           <div class="indent">{{ '$%.2f for %s which is due on %s' % (bill.names[name].amount, bill['bill'], bill['due_date'].strftime("%A, %B %d")) }}</div>
       {% endif %}
     {% endfor %}

@@ -1,7 +1,7 @@
 {{ greeting }} {{ name.capitalize() }},
 {% set total = bills.total(name) %}
 For bills due in the next {{ remind_interval }} days, you owe:
-{% for bill in bills.parse() %}{% if name in bill.names and not bill.names[name].paid %}{{ '    $%.2f for %s which is due on %s' % (bill.names[name].amount, bill['bill'], bill['due_date'].strftime("%A, %B %d")) }}{% endif %}{% endfor %}
+{% for bill in bills.parse() %}{% if name in bill.names and not bill.names[name].paid and bills.is_due(bill) %}{{ '    $%.2f for %s which is due on %s' % (bill.names[name].amount, bill['bill'], bill['due_date'].strftime("%A, %B %d")) }}{% endif %}{% endfor %}
 
 Total:
     ${{ '%.2f' % total }}
