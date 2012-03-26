@@ -92,6 +92,8 @@ def parse(input):
                 paid = bill['names'][name]['paid']
                 if amount == -1:
                     bill['names'][name]['amount'] = bill['amount'] / num_names
+    # sort
+    parse = sorted(parse, key=lambda bill: bill['due_date'])
 
     return parse
 
