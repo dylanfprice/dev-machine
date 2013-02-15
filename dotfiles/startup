@@ -1,11 +1,9 @@
 #! /bin/bash
-# Set this script to run as an autostart application
-
 wmctrl -n3
 
 firefox &
 #wait
-terminal --fullscreen --command="screen -S dylan" &
+terminal --fullscreen --working-directory="/home/dylan/Workspace/hutmap" --command="screen -S dylan" &
 #wait
 
 wmctrl -r firefox -t 0
