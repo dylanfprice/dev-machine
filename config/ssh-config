@@ -1,3 +1,5 @@
+# Put this file in ~/.ssh/config
+
 ConnectTimeout 10
 
 Host hutmap
