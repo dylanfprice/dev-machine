@@ -1,0 +1,5 @@
+[user]
+	name = Dylan Price
+	email = the.dylan.price@gmail.com
+[core]
+	excludesfile = ~/.cvsignore
