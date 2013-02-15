@@ -1,0 +1,25 @@
+[ui]
+username = Dylan Price <the.dylan.price@gmail.com>
+merge = vimdiff
+
+[extensions]
+fetch = 
+hgext.bookmarks =
+
+[auth]
+googlecode.prefix = code.google.com
+googlecode.username = the.dylan.price
+googlecode.password =
+googlecode.schemes = https
+
+bitbucket.prefix = bitbucket.org
+bitbucket.username = dylanfprice
+bitbucket.password =
+bitbucket.schemes = https
+
+[hostfingerprints]
+bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close

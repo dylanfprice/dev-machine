@@ -1,0 +1,6 @@
+ConnectTimeout 10
+
+Host hutmap
+HostName www.hutmap.com
+User hutmap
+
