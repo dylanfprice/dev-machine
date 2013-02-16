@@ -6,4 +6,4 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-#alias ls="ls --color=auto"
+alias ls="ls --color=auto --ignore='*.pyc'"
