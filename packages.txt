@@ -1,0 +1,21 @@
+# These are Slackware packages I have installed. Mostly from slackbuilds.org
+ctorrent
+ffmpeg
+flash-player-plugin
+gdal
+geos
+gnupod
+ipython
+lame
+libyaml
+mirage-0.9.5.2
+perl-Audio-FLAC-Header
+perl-MP3-Info
+perl-TimeDate
+perl-Unicode-String
+perl-digest-sha1
+proj
+pysetuptools
+sshfs-fuse
+unrar
+wmctrl
