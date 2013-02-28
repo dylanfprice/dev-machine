@@ -1,8 +1,7 @@
-# Put this file in ~/.config/Terminal/terminalrc
 [Configuration]
 ColorCursor=#9393a1a1a1a1
 ColorForeground=#00002B2B3636
-ColorBackground=#fdfdf6f6e3e3
+ColorBackground=#eeeee8e8d5d5
 ColorPalette1=#070736364242
 ColorPalette2=#dcdc32322f2f
 ColorPalette3=#858599990000
