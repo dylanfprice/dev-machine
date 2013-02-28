@@ -1,3 +1,4 @@
+# Copy to ~/.config/Terminal/terminalrc
 [Configuration]
 ColorCursor=#0f0f49499999
 ColorForeground=#838394949696
