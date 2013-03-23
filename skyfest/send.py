@@ -30,8 +30,8 @@ def send_message(smtp_conn, fromEmail, company, email):
 
 
 if __name__ == "__main__":
-  fromAddr = "deanej@uw.edu"
-  fromEmail = "Janelle Deane <deanej@uw.edu>"
+  fromAddr = "someone@somewhere.com"
+  fromEmail = "Someone <someone@somewhere.com>"
 
   s = smtplib.SMTP('smtp.washington.edu', 587)
   s.starttls()
