@@ -1,5 +1,8 @@
 [user]
 	name = Dylan Price
 	email = the.dylan.price@gmail.com
-[core]
-	excludesfile = ~/.cvsignore
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
