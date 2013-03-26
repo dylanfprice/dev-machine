@@ -6,4 +6,11 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
+
 alias ls="ls --color=auto --ignore='*.pyc'"
+
+eval `dircolors $HOME/.dir_colors`
+
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+source ~/.git-completion.bash
