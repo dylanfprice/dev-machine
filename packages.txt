@@ -19,3 +19,17 @@ pysetuptools
 sshfs-fuse
 unrar
 wmctrl
+
+libevent
+tmux
+
+wxPython
+libpano13
+exiftool
+libxmi
+tclap
+lcms2
+vigra
+gsl
+enblend-enfuse
+hugin
