@@ -3,7 +3,7 @@ wmctrl -n3
 
 firefox &
 #wait
-terminal --fullscreen --working-directory="/home/dylan/Workspace/hutmap" --command="screen -S dylan" &
+terminal --fullscreen --working-directory="/home/dylan/Workspace/hutmap" --command="tmux" &
 #wait
 
 wmctrl -r firefox -t 0
