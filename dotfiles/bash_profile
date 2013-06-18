@@ -1,0 +1,17 @@
+# Aliases
+alias ls="ls --color=auto --ignore='*.pyc'"
+
+# Set up dircolors to use solarized colors
+eval `dircolors $HOME/.dir_colors`
+
+# Set editors
+export VISUAL=vim
+export EDITOR=vim
+
+# NVM, Pythonbrew, etc.
+[[ -s /home/dylan/.nvm/nvm.sh ]] && . /home/dylan/.nvm/nvm.sh # This loads NVM
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+# Bash completion scripts
+source ~/.git-completion.bash
+
