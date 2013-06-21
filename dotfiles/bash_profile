@@ -1,4 +1,32 @@
+# Aliases
+alias ls="ls --color=auto --ignore='*.pyc'"
+# Set correct term for tmux so solarized theme works in vim
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Set up dircolors to use solarized colors
+eval `dircolors $HOME/.dir_colors`
+
+# NVM, Pythonbrew, etc.
+[[ -s /home/dylan/.nvm/nvm.sh ]] && . /home/dylan/.nvm/nvm.sh # This loads NVM
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+# Bash completion scripts
+source ~/.git-completion.bash
+
 # Set editors
 export VISUAL=vim
 export EDITOR=vim
+
+# hutmap settings
+export HUTMAP_VERSION='dev'
+export HUTMAP_DB_NAME='hutmap' 
+export HUTMAP_DB_USER='hutmap'
+export HUTMAP_DB_PASSWORD='hutmap'
+export HUTMAP_DB_HOST=''
+export HUTMAP_DB_PORT=''
+export HUTMAP_SECRET_KEY='516713f0-518b-11e2-bcfd-0800200c9a66'
+export HUTMAP_DEBUG='true'
+export HUTMAP_GOOGLE_API_KEY='AIzaSyDKzNYkeusCcplMH7XWA9l0QLZ8Cwn01_M'
+export HUTMAP_EMAIL_HOST_USER=''
+export HUTMAP_EMAIL_HOST_PASSWORD=''
 

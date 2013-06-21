@@ -5,21 +5,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# User specific aliases and functions
-
-# Aliases
-alias ls="ls --color=auto --ignore='*.pyc'"
-# Set correct term for tmux so solarized theme works in vim
-alias tmux="TERM=screen-256color-bce tmux"
-
-# Set up dircolors to use solarized colors
-eval `dircolors $HOME/.dir_colors`
-
-# NVM, Pythonbrew, etc.
-[[ -s /home/dylan/.nvm/nvm.sh ]] && . /home/dylan/.nvm/nvm.sh # This loads NVM
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-
-# Bash completion scripts
-source ~/.git-completion.bash
-
+# Hack. It's wrong, but it doesn't matter.
+source ~/.bash_profile
 
