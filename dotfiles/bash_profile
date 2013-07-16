@@ -1,5 +1,6 @@
 # Aliases
 alias ls="ls --color=auto --ignore='*.pyc'"
+alias ack="ack-grep"
 # Set correct term for tmux so solarized theme works in vim
 alias tmux="TERM=screen-256color-bce tmux"
 
