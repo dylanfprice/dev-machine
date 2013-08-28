@@ -7,9 +7,12 @@ alias tmux="TERM=screen-256color-bce tmux"
 # Set up dircolors to use solarized colors
 eval `dircolors $HOME/.dir_colors`
 
-# NVM, Pythonbrew, etc.
+# NVM
 [[ -s /home/dylan/.nvm/nvm.sh ]] && . /home/dylan/.nvm/nvm.sh # This loads NVM
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Bash completion scripts
 source ~/.git-completion.bash
