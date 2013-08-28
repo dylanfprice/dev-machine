@@ -3,6 +3,6 @@
 ConnectTimeout 10
 
 Host hutmap
-HostName www.hutmap.com
+HostName ssh.hutmap.com
 User hutmap
 
