@@ -1,0 +1,18 @@
+#! /bin/bash
+wmctrl -n3
+
+firefox &
+#wait
+terminal --fullscreen --working-directory="/home/dylan/Workspace/hutmap" --command="tmux" &
+#wait
+
+wmctrl -r firefox -t 0
+wmctrl -r terminal -t 1
+
+
+
+firefox &
+gnome-terminal --working-directory="/home/dylan/workspace/" --maximize --tab --tab --tab --tab --window &
+
+/home/dylan/bin/generate_tags.sh &
+/home/dylan/bin/update_repos.sh &

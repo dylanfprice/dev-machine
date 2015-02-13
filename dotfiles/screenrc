@@ -1,7 +1,0 @@
-defscrollback 5000
-#hardstatus alwayslastline "Host: %H  Load: %l  Date: %D %M %d %Y %c"
-screen -t 0 0
-screen -t 1 1
-screen -t 2 2
-select 0
-vbell off

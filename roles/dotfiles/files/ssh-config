@@ -1,0 +1,27 @@
+# Put this file in ~/.ssh/config
+
+ConnectTimeout 10
+
+Host *
+    ForwardAgent yes
+    StrictHostKeyChecking no
+
+Host vagrant
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /home/dylan/.vagrant.d/insecure_private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+  ForwardX11 yes
+
+Host hutmap
+  HostName hutmap.com
+  User ansible
+
+Host slesse
+  HostName 104.236.174.214
+  User ansible

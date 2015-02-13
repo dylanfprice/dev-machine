@@ -1,0 +1,19 @@
+# Aliases
+alias ls="ls --color=auto --ignore='*.pyc'"
+#
+# Set correct term for tmux so solarized theme works in vim
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Set up dircolors to use solarized colors
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# Set editors
+export VISUAL=vim
+export EDITOR=vim
+
+# vi mode
+set -o vi
+
+
