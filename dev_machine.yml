@@ -2,3 +2,4 @@
   roles:
     - { role: packages, sudo: yes }
     - { role: dotfiles }
+    - { role: solarized-terminal }
