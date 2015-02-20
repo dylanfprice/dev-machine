@@ -1,0 +1,19 @@
+- name: ensures directories exist
+  file: path={{ ansible_env.HOME }}/{{ item }} state=directory
+  with_items:
+    - .ssh/
+    - .config/Terminal/
+
+- name: copy files
+  copy: 
+    src: '{{ item.src }}' 
+    dest: '{{ ansible_env.HOME }}/{{ item.dest }}' 
+    owner: '{{ ansible_env.USER }}'
+  with_items:
+    - { src: 'bash_profile', dest: '.bash_profile'}
+    - { src: 'bashrc', dest: '.bashrc'}
+    - { src: 'dircolors-dark', dest: '.dircolors'}
+    - { src: 'gitconfig', dest: '.gitconfig'}
+    - { src: 'hgrc', dest: '.hgrc'}
+    - { src: 'ssh-config', dest: '.ssh/config'}
+    - { src: 'terminalrc-dark', dest: '.config/Terminal/terminalrc'}

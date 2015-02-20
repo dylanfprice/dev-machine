@@ -1,6 +1,8 @@
-# Copy this file to ~/.dir_colors
+# Copy this file to ~/.dircolors
 # Add this command to ~/.profile:
-#   eval `dircolors /path/to/dircolorsdb`
+#   if [ -x /usr/bin/dircolors ]; then
+#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#   fi
 
 # Exact Solarized Dark color theme for the color GNU ls utility.
 # Designed for dircolors (GNU coreutils) 5.97
