@@ -3,3 +3,4 @@
     - { role: packages, sudo: yes }
     - { role: dotfiles }
     - { role: solarized-terminal }
+    - { role: vim }
