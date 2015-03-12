@@ -14,3 +14,4 @@
     - { src: 'gitconfig', dest: '.gitconfig'}
     - { src: 'hgrc', dest: '.hgrc'}
     - { src: 'ssh-config', dest: '.ssh/config'}
+    - { src: 'pentadactylrc', dest: '.pentadactylrc'}
