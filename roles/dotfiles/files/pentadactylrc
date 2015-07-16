@@ -1,4 +1,5 @@
 "1.1
+" vim: set ft=pentadactyl:
 
 loadplugins '\.(js|penta)$'
 group user
@@ -8,11 +9,10 @@ command! -nargs=+ -description='Open Private Tab' private-tab -javascript       
        \        dactyl.execute(":open " + args);
        \        privateTab.stopToOpenTabs();
 set hlfind
-
 set passkeys+=mail.google.com:jkxonpreul/?<s-i><s-u>,gi,*r,*u,*n,*:<c-v><c-c>
 set passkeys+=jira.evoworx.org:<Tab>iaejkmnp.
 set passkeys+=127.0.0.1:<Tab><Enter><c-/>
-
+set scrolltime=0
 set strictfocus=google.com:laissez-faire,'chrome:*':laissez-faire,*:laissez-faire
 
 " disable smooth scrolling
@@ -24,4 +24,3 @@ qmark a javascript:(function(){Optix.application.autofill.autoCompleteCurrentPag
 qmark f javascript:$.fn._rs = function() {return this.length? $(this[Math.floor(this.length * Math.random())]) : this;};(function() {$("#home_type_group_0").click();$('#id_floors option').attr('selected', false)._rs().attr('selected', true);$('#id_occupants option').attr('selected', false)._rs().attr('selected', true);$('#id_year').attr('value', 1800 + Math.floor(212 * Math.random()));$('#id_square_feet').attr('value', 400 + Math.floor(Math.random() * 4000));var zip_codes = [ 11776, 36610, 98363, 98107, 98225 ];$('#id_zip_code').attr('value', zip_codes[Math.floor(Math.random() * zip_codes.length)])})();
 qmark s javascript:(function() {$.fn._rs = function() {return this.length? $(this[Math.floor(this.length * Math.random())]) : this;};$.fx.off = true;$("#id_north_exposed").click();$(".esm-survey-question").each(function() {$(this).find(".esm-button:visible")._rs().click();$(this).find(".esm-button:visible")._rs().click();$(this).find(".esm-button:visible")._rs().click();$(this).find(".esm-button:visible")._rs().click();});$.fx.off = false;$('input.esm-submit').click();})();
 
-" vim: set ft=pentadactyl:

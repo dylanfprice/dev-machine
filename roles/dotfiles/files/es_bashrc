@@ -1,16 +1,35 @@
+alias ls="ls --color=auto --ignore='*.pyc'"
+
+# Set correct term for tmux so solarized theme works in vim
+alias tmux="TERM=screen-256color-bce tmux"
+
+alias cd..='cd ..'
+
+alias vim-tox='VIRTUAL_ENV=.tox/py27/ vim'
+
+# Set up dircolors to use solarized colors
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# Set editors
+export VISUAL=vim
+export EDITOR=vim
+
+# vi mode
+set -o vi
+
 ### EnergySavvy specific ###
 
 export ENERGYSAVVY_DIR="$HOME/energysavvy/"
 export ENERGYSAVVY_VENV="$ENERGYSAVVY_DIR/energysavvy_venv"
-export PATH=$ENERGYSAVVY_VENV/bin/:$PATH:/home/dylan/other/hgesvhooks/bin/
+export PATH=$PATH:/home/dylan/other/hgesvhooks/bin/
 
 export CR_TEMPLATE='{rev}:{node} {desc}\n'
 
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-alias es="cd $ENERGYSAVVY_DIR"
-alias mainrepo="cd $ENERGYSAVVY_DIR/mainrepo"
-alias rmorig="find $ENERGYSAVVY_DIR -name '*.orig' -delete" 
-alias rmpycs="find $ENERGYSAVVY_DIR -name '*.pyc' -delete"
+alias rmorig="find . -name '*.orig' -delete" 
+alias rmpycs="find . -name '*.pyc' -delete"
 
 restoreorig() {
     pattern=$1
@@ -19,22 +38,22 @@ restoreorig() {
     done
 }
 # run commands on the guest vm from a host shell
-devserver () {
-    ssh -t -i ~/.vagrant.d/insecure_private_key -p 2222 vagrant@localhost $@
+devstack () {
+    ssh -t -i ~/energysavvy/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@localhost $@
 }
 
-djangoserver() {
-    devserver sudo su - django
+djangostack() {
+    ssh -p 2222 django@localhost
 }
 
-alias ddjango="devserver sudo -u django" 
-alias dpostgres="devserver sudo -u postgres"
-alias droot="devserver sudo -u root" 
+alias ddjango="devstack sudo -u django" 
+alias dpostgres="devstack sudo -u postgres"
+alias droot="devstack sudo -u root" 
 
 # e.g. "dtail leap" to tail all leap_dev logs
 dtail() {
     site=$1
-    devserver tail -f /home/django/sites/${site}_dev/log/*.log
+    devstack tail -f /home/django/sites/${site}_dev/log/*.log
 }
 
 # e.g. "manage leap pydev_ignored_schemamigration optix" from your host
@@ -74,40 +93,8 @@ dtest() {
     fi
 }
 
-# for running fabric commands from the host
-# 'fab <site> <stage> <command>'
-# e.g. 'fab njng beta deploy'
-dfab() {
-    site=$1
-    stage=$2
-    shift
-    shift
-    ssh -t -i ~/.vagrant.d/insecure_private_key -p 2222 vagrant@localhost <<-EOF
-    sudo su - django
-    workon ${site}_dev
-    fab $stage $@
-EOF
-}
-
-# 'loadbeta njng' 
-loadbeta() {
-    site=$1
-    dfab $site beta dump_db:download_dump=True
-    dfab $site dev restore_db_to_dev
-}
-
 hg_incoming_migrations() {
     hg incoming --stat | grep "migrations"
-}
-
-toggl_projectless() {
-    google-chrome 'https://www.toggl.com/report/show?billable=both&grouping=projects&subgrouping=tasks&distinct_rates=off&filter_workspace_id=168336&workspace_id=168336&wsid=168336&page=1&order_field=project&order_desc=0&rounding=off&display_hours=minutes&user_ids=578753&client_ids=&project_ids=0'
-}
-
-dlint() {
-    path=$1
-    echo "$ENERGYSAVVY_VENV/bin/flake8 --exclude=migrations --exclude=.ropproject --config=$ENERGYSAVVY_DIR/mainrepo/infra/flake8-config/flake8 $ENERGYSAVVY_DIR/mainrepo/$path"
-    $ENERGYSAVVY_VENV/bin/flake8 --exclude=migrations --config=$ENERGYSAVVY_DIR/mainrepo/infra/flake8-config/flake8 $ENERGYSAVVY_DIR/mainrepo/$path; alert
 }
 
 workon_energysavvy() {
