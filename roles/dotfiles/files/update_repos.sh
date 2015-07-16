@@ -8,3 +8,6 @@ hg fetch
 cd $ENERGYSAVVY_DIR/provisioning
 hg fetch
 
+cd $ENERGYSAVVY_DIR/ansible
+hg fetch
+
