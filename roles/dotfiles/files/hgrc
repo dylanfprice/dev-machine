@@ -8,12 +8,16 @@ vimdiff.executable = vim
 vimdiff.args = -d $base $local $output $other +close +close
 
 [extensions]
-graphlog =
-record =
-pager = 
 color = 
-hgext.eol =
+graphlog =
+hgext.eol = 
+hgext.extdiff =
 hgext.fetch = 
+mercurial_keyring =
+pager = 
+progress =
+purge =
+record =
 shelve =
 
 [pager]
@@ -27,3 +31,9 @@ bitbucket.schemes = ssh
 
 [hostfingerprints]
 bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+
+[diff]
+git=True
+
+[extdiff]
+cmd.meld =
