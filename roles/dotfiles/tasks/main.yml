@@ -3,6 +3,7 @@
   with_items:
     - .ssh/
     - bin/
+    - .config/autostart/
 
 - name: copy files
   copy: src={{ item.src }}
@@ -26,7 +27,6 @@
     - { src: 'es_bashrc', dest: '.es_bashrc'}
     - { src: 'generate_tags.sh', dest: 'bin/generate_tags.sh'}
     - { src: 'update_repos.sh', dest: 'bin/update_repos.sh'}
-    - { src: 'startup', dest: 'bin/startup'}
   tags:
     - energysavvy
 
@@ -35,7 +35,13 @@
   tags:
     - energysavvy
 
-- name: set startup script to run
-  lineinfile: dest={{ ansible_env.HOME }}/.bash_profile line='~/bin/startup &'
+- name: copy more energysavvy files
+  template: src={{ item.src }}
+            dest={{ ansible_env.HOME }}/{{ item.dest }}
+            owner={{ ansible_env.USER }}
+            mode=0755
+  with_items:
+    - { src: 'startup.j2', dest: 'bin/startup'}
+    - { src: 'startup.desktop.j2', dest: '.config/autostart/startup.desktop'}
   tags:
     - energysavvy

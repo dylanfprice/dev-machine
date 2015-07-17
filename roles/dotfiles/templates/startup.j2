@@ -1,0 +1,11 @@
+#! /bin/bash
+setxkbmap -option ctrl:swapcaps
+
+{{ ansible_env.HOME }}/bin/generate_tags.sh &
+{{ ansible_env.HOME }}/bin/update_repos.sh &
+
+firefox &
+hipchat &
+gnome-terminal --maximize --working-directory='{{ ansible_env.HOME }}/energysavvy/' --tab --tab --tab --tab &
+gnome-terminal --maximize --working-directory='{{ ansible_env.HOME }}/energysavvy/' &
+/opt/toggldesktop/TogglDesktop &
