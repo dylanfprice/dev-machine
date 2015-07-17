@@ -1,25 +1,6 @@
-alias ls="ls --color=auto --ignore='*.pyc'"
-
-# Set correct term for tmux so solarized theme works in vim
-alias tmux="TERM=screen-256color-bce tmux"
-
-alias cd..='cd ..'
+### EnergySavvy specific ###
 
 alias vim-tox='VIRTUAL_ENV=.tox/py27/ vim'
-
-# Set up dircolors to use solarized colors
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
-# Set editors
-export VISUAL=vim
-export EDITOR=vim
-
-# vi mode
-set -o vi
-
-### EnergySavvy specific ###
 
 export ENERGYSAVVY_DIR="$HOME/energysavvy/"
 export ENERGYSAVVY_VENV="$ENERGYSAVVY_DIR/energysavvy_venv"

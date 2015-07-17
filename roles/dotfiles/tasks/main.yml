@@ -31,14 +31,11 @@
     - energysavvy
 
 - name: set up es_bashrc
-  lineinfile: dest={{ ansible_env.HOME }}/.bash_profile line='source ~/.es_bashrc'
+  lineinfile: dest={{ ansible_env.HOME }}/.bashrc line='source ~/.es_bashrc'
   tags:
     - energysavvy
 
-- name: set startup script to run on boot
-  cron: name='set startup script to run'
-        special_time=reboot 
-        user={{ ansible_env.USER }} 
-        job='{{ ansible_env.HOME }}/bin/startup'
+- name: set startup script to run
+  lineinfile: dest={{ ansible_env.HOME }}/.bash_profile line='~/bin/startup &'
   tags:
     - energysavvy
