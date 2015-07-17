@@ -1,5 +1,5 @@
 - name: clone vim repo
-  git: repo=git@github.com:dylanfprice/vim.git
+  git: repo=https://github.com/dylanfprice/vim.git
        dest={{ ansible_env.HOME }}/.vim
 
 - name: copy vimrc
