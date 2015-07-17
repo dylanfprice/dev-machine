@@ -2,6 +2,7 @@
   file: path={{ ansible_env.HOME }}/{{ item }} state=directory
   with_items:
     - .ssh/
+    - bin/
 
 - name: copy files
   copy: src={{ item.src }}
@@ -15,3 +16,29 @@
     - { src: 'hgrc', dest: '.hgrc'}
     - { src: 'ssh-config', dest: '.ssh/config'}
     - { src: 'pentadactylrc', dest: '.pentadactylrc'}
+
+- name: copy energysavvy files
+  copy: src={{ item.src }}
+        dest={{ ansible_env.HOME }}/{{ item.dest }}
+        owner={{ ansible_env.USER }}
+        mode=0755
+  with_items:
+    - { src: 'es_bashrc', dest: '.es_bashrc'}
+    - { src: 'generate_tags.sh', dest: 'bin/generate_tags.sh'}
+    - { src: 'update_repos.sh', dest: 'bin/update_repos.sh'}
+    - { src: 'startup', dest: 'bin/startup'}
+  tags:
+    - energysavvy
+
+- name: set up es_bashrc
+  lineinfile: dest={{ ansible_env.HOME }}/.bash_profile line='source ~/.es_bashrc'
+  tags:
+    - energysavvy
+
+- name: set startup script to run on boot
+  cron: name='set startup script to run'
+        special_time=reboot 
+        user={{ ansible_env.USER }} 
+        job='{{ ansible_env.HOME }}/bin/startup'
+  tags:
+    - energysavvy

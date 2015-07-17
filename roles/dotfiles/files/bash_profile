@@ -16,7 +16,6 @@ export EDITOR=vim
 # vi mode
 set -o vi
 
-
 # if the machine doesn't have a graphical keychain tool then uncomment this
 # to automatically set up ssh-agent and add the user's key
 #SSH_ENV="$HOME/.ssh/environment"
