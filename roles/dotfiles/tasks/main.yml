@@ -28,6 +28,7 @@
     - { src: 'es_hgrc', dest: '.hgrc'}
     - { src: 'generate_tags.sh', dest: 'bin/generate_tags.sh'}
     - { src: 'update_repos.sh', dest: 'bin/update_repos.sh'}
+    - { src: 'set_brightness.py', dest: 'bin/set_brightness.py'}
   tags:
     - energysavvy
 

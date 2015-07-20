@@ -1,4 +1,6 @@
 #! /bin/bash
+{{ ansible_env.HOME }}/bin/set_brightness.py 60
+
 setxkbmap -option ctrl:swapcaps
 
 {{ ansible_env.HOME }}/bin/generate_tags.sh &
