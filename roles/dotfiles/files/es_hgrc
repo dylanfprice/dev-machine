@@ -38,8 +38,5 @@ evoworx.schemes = http https
 evoworx.prefix = repo.evoworx.org
 evoworx.username = dylan
 
-[diff]
-git=True
-
 [extdiff]
 cmd.meld =
