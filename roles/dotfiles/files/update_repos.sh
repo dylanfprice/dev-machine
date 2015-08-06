@@ -3,11 +3,14 @@
 . $HOME/.es_bashrc
 
 cd $ENERGYSAVVY_DIR/deployment
-hg fetch
+hg pull -u
 
-cd $ENERGYSAVVY_DIR/provisioning
-hg fetch
+cd $ENERGYSAVVY_DIR/release
+hg pull -u
 
 cd $ENERGYSAVVY_DIR/ansible
-hg fetch
+hg pull -u
+
+cd $ENERGYSAVVY_DIR/mainrepo
+hg pull -u
 
