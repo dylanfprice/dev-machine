@@ -4,7 +4,7 @@ alias vim-tox='VIRTUAL_ENV=.tox/py27/ vim'
 
 export ENERGYSAVVY_DIR="$HOME/energysavvy/"
 export ENERGYSAVVY_VENV="$HOME/energysavvy_venv"
-export PATH=$PATH:/home/dylan/other/hgesvhooks/bin/
+export PATH=$PATH:$ENERGYSAVVY_DIR/hgesvhooks/bin/
 
 export CR_TEMPLATE='{rev}:{node} {desc}\n'
 
