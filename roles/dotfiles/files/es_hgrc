@@ -10,6 +10,7 @@ color =
 graphlog =
 hgcharguard = ~/energysavvy/hgcharguard/hgcharguard.py
 hgcodesmell = ~/energysavvy/hgcodesmell/hgcodesmell.py
+hgcontains = ~/bin/contains.py
 hgext.eol = 
 hgext.extdiff =
 hgext.fetch =

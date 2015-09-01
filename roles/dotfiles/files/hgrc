@@ -10,6 +10,7 @@ vimdiff.args = -d $base $local $output $other +close +close
 [extensions]
 color = 
 graphlog =
+hgcontains = ~/bin/contains.py
 hgext.eol = 
 hgext.extdiff =
 hgext.fetch = 
