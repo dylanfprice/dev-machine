@@ -1,3 +1,6 @@
+Host repo.evoworx.org
+    User www-data
+
 Host cronus
     HostName cronus.evoworx.org
     User dylan
