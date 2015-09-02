@@ -9,3 +9,4 @@
     - python-pip
     - silversearcher-ag
     - vim-gtk
+    - tmux

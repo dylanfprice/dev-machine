@@ -18,6 +18,7 @@
     - { src: 'ssh-config', dest: '.ssh/config'}
     - { src: 'pentadactylrc', dest: '.pentadactylrc'}
     - { src: 'contains.py', dest: 'bin/contains.py'}
+    - { src: 'tmux.conf', dest: '.tmux.conf'}
 
 - name: copy energysavvy files
   copy: src={{ item.src }}
