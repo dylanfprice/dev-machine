@@ -25,4 +25,6 @@
 #     start_agent;
 #fi
 
+setxkbmap -option ctrl:swapcaps
+
 source ~/.bashrc
