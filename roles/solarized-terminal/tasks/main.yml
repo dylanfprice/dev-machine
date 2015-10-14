@@ -2,5 +2,8 @@
   git: repo=https://github.com/Anthony25/gnome-terminal-colors-solarized.git
        dest=/tmp/gnome-terminal-colors-solarized/
 
-- name: run set dark script
-  command: /tmp/gnome-terminal-colors-solarized/set_dark.sh
+# - name: run set dark script
+#   command: /tmp/gnome-terminal-colors-solarized/set_dark.sh
+
+- name: run set light script
+  command: /tmp/gnome-terminal-colors-solarized/set_light.sh
