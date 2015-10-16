@@ -10,3 +10,6 @@
     - silversearcher-ag
     - vim-gtk
     - tmux
+
+- name: install isort
+  pip: name=isort
