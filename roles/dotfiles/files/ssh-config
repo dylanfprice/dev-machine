@@ -24,3 +24,14 @@ Host devstack
 Host hutmap
   HostName hutmap.com
   User ansible
+
+Host 192.168.33.10
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /home/dylan/workspace/hutmap-provisioning/.vagrant/machines/default/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
