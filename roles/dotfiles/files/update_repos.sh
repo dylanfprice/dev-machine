@@ -2,15 +2,10 @@
 
 . $HOME/.es_bashrc
 
-cd $ENERGYSAVVY_DIR/deployment
-hg pull -u
+cd $ENERGYSAVVY_DIR
+repos=$(ag --hidden -g '.hg/hgrc')
 
-cd $ENERGYSAVVY_DIR/release
-hg pull -u
-
-cd $ENERGYSAVVY_DIR/ansible
-hg pull -u
-
-cd $ENERGYSAVVY_DIR/mainrepo
-hg pull -u
-
+for repo in $repos; do
+  cd ${repo%.hg/hgrc} && hg pull -u
+  cd $ENERGYSAVVY_DIR
+done
