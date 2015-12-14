@@ -15,4 +15,3 @@
   pip: name={{ item }}
   with_items:
     - isort
-    - sh
