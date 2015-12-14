@@ -12,4 +12,7 @@
     - tmux
 
 - name: install isort
-  pip: name=isort
+  pip: name={{ item }}
+  with_items:
+    - isort
+    - sh
