@@ -6,8 +6,6 @@ export ENERGYSAVVY_DIR="$HOME/energysavvy/"
 export ENERGYSAVVY_VENV="$HOME/energysavvy_venv"
 export PATH=$PATH:$ENERGYSAVVY_DIR/hgesvhooks/bin/
 
-export CR_TEMPLATE='{rev}:{node} {desc}\n'
-
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias rmorig="find . -name '*.orig' -delete" 
 alias rmpycs="find . -name '*.pyc' -delete"
