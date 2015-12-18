@@ -1,11 +1,11 @@
 ### EnergySavvy specific ###
 
-alias vim-tox='VIRTUAL_ENV=.tox/py27/ vim'
-
 export ENERGYSAVVY_DIR="$HOME/energysavvy/"
 export ENERGYSAVVY_VENV="$HOME/energysavvy_venv"
 export PATH=$PATH:$ENERGYSAVVY_DIR/hgesvhooks/bin/
 
+alias vim-tox='VIRTUAL_ENV=.tox/py27/ vim'
+alias es-tox='tox -i $(cat $ENERGYSAVVY_DIR/config_files/pip.conf | grep -o "https:.*")'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias rmorig="find . -name '*.orig' -delete" 
 alias rmpycs="find . -name '*.pyc' -delete"
