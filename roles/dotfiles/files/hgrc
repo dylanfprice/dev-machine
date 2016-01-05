@@ -38,3 +38,6 @@ git=True
 
 [extdiff]
 cmd.meld =
+
+[defaults]
+addremove = --similarity 100

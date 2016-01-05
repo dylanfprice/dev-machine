@@ -41,3 +41,6 @@ evoworx.username = dylan
 
 [extdiff]
 cmd.meld =
+
+[defaults]
+addremove = --similarity 100
