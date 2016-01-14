@@ -1,6 +1,6 @@
 - hosts: all
   roles:
-    - { role: packages, sudo: yes }
+    - { role: packages, become: yes }
     - { role: dotfiles }
     - { role: solarized-terminal }
     - { role: vim }
