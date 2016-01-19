@@ -13,7 +13,7 @@
     - tree
 
 - name: install pip packages
-  pip: name={{ item }}
+  pip: name={{ item }} state=latest
   with_items:
     - isort
     - tox
