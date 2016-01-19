@@ -8,9 +8,9 @@
     - mercurial-keyring
     - python-pip
     - silversearcher-ag
-    - vim-gtk
     - tmux
     - tree
+    - vim-gtk
 
 - name: install pip packages
   pip: name={{ item }} state=latest
