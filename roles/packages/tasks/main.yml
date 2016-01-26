@@ -1,3 +1,18 @@
+- name: import the NodeSource GPG key into apt
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: add NodeSource deb repository
+  apt_repository:
+    repo: 'deb https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state: present
+
+- name: add NodeSource deb-src repository
+  apt_repository:
+    repo: 'deb-src https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state: present
+
 - name: install packages
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
@@ -6,6 +21,7 @@
     - meld
     - mercurial
     - mercurial-keyring
+    - nodejs
     - python-pip
     - silversearcher-ag
     - tmux
