@@ -1,6 +1,7 @@
 [ui]
 username = Dylan Price <the.dylan.price@gmail.com>
 merge = meld
+ignore = ~/.hgignore
 
 [merge-tools]
 meld.executable = meld

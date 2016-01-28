@@ -15,6 +15,7 @@
     - { src: 'dircolors-dark', dest: '.dircolors'}
     - { src: 'gitconfig', dest: '.gitconfig'}
     - { src: 'hgrc', dest: '.hgrc'}
+    - { src: 'hgignore', dest: '.hgignore'}
     - { src: 'ssh-config', dest: '.ssh/config'}
     - { src: 'vimperatorrc', dest: '.vimperatorrc'}
     - { src: 'contains.py', dest: 'bin/contains.py'}

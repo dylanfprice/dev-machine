@@ -1,6 +1,7 @@
 [ui]
 username = Dylan Price <dylan@energysavvy.com>
 merge = meld
+ignore = ~/.hgignore
 
 [merge-tools]
 meld.executable = meld
