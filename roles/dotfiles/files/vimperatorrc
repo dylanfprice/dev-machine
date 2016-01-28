@@ -1,0 +1,12 @@
+"3.11 (created: 2016/01/26 23:28:44)
+source! /home/dylan/.vimperatorrc.local
+" vim: set ft=vimperator:
+
+" ignore keys
+ignorekeys add -except=:,t,T,b mail.google.com
+ignorekeys add -except=:,b,f,g,t,T,o,O,h,j,k,l,<C-o>,<C-i> jira.evoworx.org
+
+" quick marks
+qmark a javascript:(function(){Optix.application.autofill.autoCompleteCurrentPage()})();
+qmark f javascript:$.fn._rs = function() {return this.length? $(this[Math.floor(this.length * Math.random())]) : this;};(function() {$("#home_type_group_0").click();$('#id_floors option').attr('selected', false)._rs().attr('selected', true);$('#id_occupants option').attr('selected', false)._rs().attr('selected', true);$('#id_year').attr('value', 1800 + Math.floor(212 * Math.random()));$('#id_square_feet').attr('value', 400 + Math.floor(Math.random() * 4000));var zip_codes = [ 11776, 36610, 98363, 98107, 98225 ];$('#id_zip_code').attr('value', zip_codes[Math.floor(Math.random() * zip_codes.length)])})();
+qmark e javascript:(function() {$.fn._rs = function() {return this.length? $(this[Math.floor(this.length * Math.random())]) : this;};$.fx.off = true;$("#id_north_exposed").click();$(".esm-survey-question").each(function() {$(this).find(".esm-button:visible")._rs().click();$(this).find(".esm-button:visible")._rs().click();$(this).find(".esm-button:visible")._rs().click();$(this).find(".esm-button:visible")._rs().click();});$.fx.off = false;$('input.esm-submit').click();})();
