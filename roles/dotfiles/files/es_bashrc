@@ -29,10 +29,9 @@ alias ddjango="devstack sudo -u django"
 alias dpostgres="devstack sudo -u postgres"
 alias droot="devstack sudo -u root" 
 
-# e.g. "dtail leap" to tail all leap_dev logs
+# e.g. "dtail" to tail all site logs
 dtail() {
-    site=$1
-    devstack tail -f /home/django/sites/${site}_dev/log/*.log
+    devstack tail -f /home/django/sites/*/log/*.log
 }
 
 # e.g. "manage leap pydev_ignored_schemamigration optix" from your host
