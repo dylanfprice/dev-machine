@@ -4,7 +4,7 @@ source! /home/dylan/.vimperatorrc.local
 
 " ignore keys
 ignorekeys add -except=:,t,T,b mail.google.com
-ignorekeys add -except=:,b,d,f,F,g,t,T,o,O,h,j,k,l,<C-o>,<C-i> jira.evoworx.org
+ignorekeys add -except=:,b,d,f,F,g,t,T,o,O,h,j,k,l,y,<C-o>,<C-i> jira.evoworx.org
 
 " quick marks
 qmark a javascript:(function(){Optix.application.autofill.autoCompleteCurrentPage()})();
