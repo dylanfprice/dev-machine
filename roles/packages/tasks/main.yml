@@ -22,6 +22,7 @@
     - mercurial
     - mercurial-keyring
     - nodejs
+    - python3-pip
     - python-pip
     - silversearcher-ag
     - tmux
