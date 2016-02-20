@@ -33,4 +33,4 @@
   pip: name={{ item }} state=latest
   with_items:
     - isort
-    - tox
+    - flake8
