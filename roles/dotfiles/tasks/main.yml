@@ -10,16 +10,17 @@
         dest={{ ansible_env.HOME }}/{{ item.dest }}
         owner={{ ansible_env.USER }}
   with_items:
-    - { src: 'bash_profile', dest: '.bash_profile'}
-    - { src: 'bashrc', dest: '.bashrc'}
-    - { src: 'dircolors-dark', dest: '.dircolors'}
-    - { src: 'gitconfig', dest: '.gitconfig'}
-    - { src: 'hgrc', dest: '.hgrc'}
-    - { src: 'hgignore', dest: '.hgignore'}
-    - { src: 'ssh-config', dest: '.ssh/config'}
-    - { src: 'vimperatorrc', dest: '.vimperatorrc'}
-    - { src: 'contains.py', dest: 'bin/contains.py'}
-    - { src: 'tmux.conf', dest: '.tmux.conf'}
+    - {src: 'bash_profile', dest: '.bash_profile'}
+    - {src: 'bashrc', dest: '.bashrc'}
+    - {src: 'dircolors-dark', dest: '.dircolors'}
+    - {src: 'gitconfig', dest: '.gitconfig'}
+    - {src: 'hgrc', dest: '.hgrc'}
+    - {src: 'hgignore', dest: '.hgignore'}
+    - {src: 'ssh-config', dest: '.ssh/config'}
+    - {src: 'vimperatorrc', dest: '.vimperatorrc'}
+    - {src: 'contains.py', dest: 'bin/contains.py'}
+    - {src: 'tmux.conf', dest: '.tmux.conf'}
+    - {src: 'local-eslint', dest: 'bin/local-eslint'}
 
 - name: copy energysavvy files
   copy: src={{ item.src }}
@@ -27,12 +28,12 @@
         owner={{ ansible_env.USER }}
         mode=0755
   with_items:
-    - { src: 'es_bashrc', dest: '.es_bashrc'}
-    - { src: 'es_hgrc', dest: '.hgrc'}
-    - { src: 'copy_files.sh', dest: 'bin/copy_files.sh'}
-    - { src: 'update_repos.sh', dest: 'bin/update_repos.sh'}
-    - { src: 'set_brightness.py', dest: 'bin/set_brightness.py'}
-    - { src: 'generate_isort_cfg.py', dest: 'bin/generate_isort_cfg.py'}
+    - {src: 'es_bashrc', dest: '.es_bashrc'}
+    - {src: 'es_hgrc', dest: '.hgrc'}
+    - {src: 'copy_files.sh', dest: 'bin/copy_files.sh'}
+    - {src: 'update_repos.sh', dest: 'bin/update_repos.sh'}
+    - {src: 'set_brightness.py', dest: 'bin/set_brightness.py'}
+    - {src: 'generate_isort_cfg.py', dest: 'bin/generate_isort_cfg.py'}
   tags:
     - energysavvy
 
@@ -47,7 +48,7 @@
             owner={{ ansible_env.USER }}
             mode=0755
   with_items:
-    - { src: 'startup.j2', dest: 'bin/startup'}
-    - { src: 'startup.desktop.j2', dest: '.config/autostart/startup.desktop'}
+    - {src: 'startup.j2', dest: 'bin/startup'}
+    - {src: 'startup.desktop.j2', dest: '.config/autostart/startup.desktop'}
   tags:
     - energysavvy
