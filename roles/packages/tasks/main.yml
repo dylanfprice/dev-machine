@@ -34,3 +34,8 @@
   with_items:
     - isort
     - flake8
+
+- name: install npm packages
+  npm: name={{ item }} state=latest global=yes
+  with_items:
+    - eslint
