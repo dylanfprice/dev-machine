@@ -9,6 +9,7 @@
   copy: src={{ item.src }}
         dest={{ ansible_env.HOME }}/{{ item.dest }}
         owner={{ ansible_env.USER }}
+        mode={{ item.mode | default('0644') }}
   with_items:
     - {src: 'bash_profile', dest: '.bash_profile'}
     - {src: 'bashrc', dest: '.bashrc'}
@@ -20,7 +21,7 @@
     - {src: 'vimperatorrc', dest: '.vimperatorrc'}
     - {src: 'contains.py', dest: 'bin/contains.py'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
-    - {src: 'local-eslint', dest: 'bin/local-eslint'}
+    - {src: 'local-eslint', dest: 'bin/local-eslint', mode: '0744'}
 
 - name: copy energysavvy files
   copy: src={{ item.src }}
