@@ -1,7 +1,9 @@
 # bashrc runs for non-login shells, e.g. when you launch gnome-terminal from a desktop
 
 # Aliases
-alias ls="ls --color=auto --ignore='*.pyc'"
+alias ls="/bin/ls --color=auto --ignore='*.pyc'"
+alias ll="/bin/ls --color=auto --ignore='*.pyc' -l"
+alias la="/bin/ls --color=auto --almost-all"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 # Set correct term for tmux so solarized theme works in vim
 alias tmux="TERM=screen-256color-bce tmux"
