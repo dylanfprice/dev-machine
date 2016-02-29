@@ -1,4 +1,5 @@
 syntax:glob
+*.swo
 *.swp
 *.ropeproject
 *.tox
