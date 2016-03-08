@@ -2,5 +2,6 @@
   roles:
     - { role: packages, become: yes }
     - { role: dotfiles, become: no }
+    - { role: es_dotfiles, become: no }
     - { role: solarized-terminal, become: no }
     - { role: vim, become: no }
