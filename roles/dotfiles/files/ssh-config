@@ -10,10 +10,6 @@ Host cronus
     HostName cronus.evoworx.org
     User dylan
 
-Host ponos
-    HostName ponos.evoworx.org
-    User dylan
-
 Host devstack
   HostName 127.0.0.1
   User vagrant
