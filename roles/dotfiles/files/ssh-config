@@ -1,3 +1,8 @@
+ConnectionAttempts 10
+ServerAliveInterval 10
+ServerAliveCountMax 10
+TCPKeepAlive no
+
 Host repo.evoworx.org
     User www-data
 
