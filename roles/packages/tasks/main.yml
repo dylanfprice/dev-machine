@@ -21,6 +21,7 @@
     - meld
     - mercurial
     - mercurial-keyring
+    - mosh
     - nodejs
     - python3-pip
     - python-pip
