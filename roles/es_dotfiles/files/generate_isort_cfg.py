@@ -13,6 +13,7 @@ multi_line_output=2
 default_section=THIRDPARTY
 known_first_party={known_first_party}
 not_skip=__init__.py
+lines_after_imports=2
 '''
 
 
