@@ -19,3 +19,5 @@ export EDITOR=vim
 
 # vi mode
 set -o vi
+
+function mosht () {/usr/bin/mosh -t "$@" tmux new -A session;}
