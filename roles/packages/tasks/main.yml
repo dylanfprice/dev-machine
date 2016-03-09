@@ -29,6 +29,7 @@
     - tmux
     - tree
     - vim-gtk
+    - xclip
 
 - name: install pip packages
   pip: name={{ item }} state=latest
