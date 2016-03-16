@@ -6,7 +6,6 @@
   with_items:
     - {src: 'es_bashrc', dest: '.es_bashrc'}
     - {src: 'es_hgrc', dest: '.hgrc'}
-    - {src: 'copy_files.sh', dest: 'bin/copy_files.sh'}
     - {src: 'update_repos.sh', dest: 'bin/update_repos.sh'}
     - {src: 'set_brightness.py', dest: 'bin/set_brightness.py'}
     - {src: 'generate_isort_cfg.py', dest: 'bin/generate_isort_cfg.py'}
