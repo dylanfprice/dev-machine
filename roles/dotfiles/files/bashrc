@@ -9,7 +9,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias tmux="TERM=screen-256color-bce tmux"
 
 function mosht () {
-    LC_TMUX_SESSION_NAME=remote /usr/bin/mosh --ssh='ssh -t' -- "$@"
+    LC_TMUX_SESSION_NAME=remote /usr/bin/mosh -- "$@"
     printf '\033]2;%s\033\\' $(hostname) # re-set tmux pane to correct title
 }
 
