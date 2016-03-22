@@ -3,7 +3,7 @@
   with_items:
     - .ssh/
     - bin/
-    - .config/autostart/
+    - .config/
 
 - name: copy files
   copy: src={{ item.src }}
@@ -22,3 +22,4 @@
     - {src: 'contains.py', dest: 'bin/contains.py'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
     - {src: 'local-eslint', dest: 'bin/local-eslint', mode: '0744'}
+    - {src: 'flake8', dest: '.config/flake8'}

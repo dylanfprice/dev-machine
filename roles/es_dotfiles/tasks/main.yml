@@ -1,3 +1,9 @@
+- name: ensures directories exist
+  file: path={{ ansible_env.HOME }}/{{ item }} state=directory
+  with_items:
+    - bin/
+    - .config/autostart/
+
 - name: copy energysavvy files
   copy: src={{ item.src }}
         dest={{ ansible_env.HOME }}/{{ item.dest }}
