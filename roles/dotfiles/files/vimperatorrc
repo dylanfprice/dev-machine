@@ -3,8 +3,8 @@ source! /home/dylan/.vimperatorrc.local
 " vim: set ft=vimperator:
 
 " ignore keys
-ignorekeys add -except=:,t,T,f,F,b mail.google.com
-ignorekeys add -except=:,b,d,f,F,g,t,T,o,O,h,j,k,l,y,<C-o>,<C-i> jira.evoworx.org
+ignorekeys add -except=:,t,T,f,F,b,<C-6> mail.google.com
+ignorekeys add -except=:,b,d,f,F,g,t,T,o,O,h,j,k,l,y,<C-o>,<C-i>,<C-6> jira.evoworx.org
 
 " quick marks
 qmark a javascript:(function(){Optix.application.autofill.autoCompleteCurrentPage()})();
