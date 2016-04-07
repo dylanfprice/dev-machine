@@ -1,39 +1,19 @@
 Host *.evoworx.org
-    ConnectionAttempts 10
-    ServerAliveInterval 10
-    ServerAliveCountMax 10
-    TCPKeepAlive no
+  ConnectionAttempts 10
+  ServerAliveInterval 10
+  ServerAliveCountMax 10
+  TCPKeepAlive no
 
 Host repo.evoworx.org
-    User www-data
+  User www-data
 
 Host cronus
-    HostName cronus.evoworx.org
-    User dylan
+  HostName cronus.evoworx.org
 
-Host devstack
+Host dev
   HostName 127.0.0.1
-  User vagrant
   Port 2222
-  UserKnownHostsFile /dev/null
-  StrictHostKeyChecking no
-  PasswordAuthentication no
-  IdentityFile /home/dylan/energysavvy/.vagrant/machines/default/virtualbox/private_key
-  IdentitiesOnly yes
-  LogLevel FATAL
-  ForwardX11 yes
 
 Host hutmap
   HostName hutmap.com
   User ansible
-
-Host 192.168.33.10
-  HostName 127.0.0.1
-  User vagrant
-  Port 2222
-  UserKnownHostsFile /dev/null
-  StrictHostKeyChecking no
-  PasswordAuthentication no
-  IdentityFile /home/dylan/workspace/hutmap-provisioning/.vagrant/machines/default/virtualbox/private_key
-  IdentitiesOnly yes
-  LogLevel FATAL
