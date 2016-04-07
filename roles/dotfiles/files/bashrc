@@ -13,10 +13,10 @@ function mosht () {
     printf '\033]2;%s\033\\' $(hostname) # re-set tmux pane to correct title
 }
 
-# Set up dircolors to use solarized colors
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
+function dev () {
+    LC_TMUX_SESSION_NAME=remote TERM= /usr/bin/ssh dev
+    printf '\033]2;%s\033\\' $(hostname) # re-set tmux pane to correct title
+}
 
 # Set editors
 export VISUAL=vim
@@ -32,7 +32,14 @@ if [ -n "$LC_TMUX_SESSION_NAME" -a $TERM != "screen" ]; then
     tmux has-session -t $session_name && tmux attach-session -t $session_name || tmux new-session -s $session_name
 fi
 
+# Set up dircolors to use solarized colors
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
 # fzf
 export FZF_DEFAULT_COMMAND='ag -p ../.hgignore -g ""'
-source ~/.fzf/shell/completion.bash
-source ~/.fzf/shell/key-bindings.bash
+if [ -x ~/.fzf ]; then
+    source ~/.fzf/shell/completion.bash
+    source ~/.fzf/shell/key-bindings.bash
+fi
