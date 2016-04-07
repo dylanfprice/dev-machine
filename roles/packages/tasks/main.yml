@@ -31,6 +31,22 @@
     - vim-gtk
     - xclip
 
+- name: install firefox add-ons
+  firefox_addon:
+    url: '{{ item }}'
+    state: present
+  environment:
+    display: '{{ ansible_env.DISPLAY }}'
+  with_items:
+    - https://addons.mozilla.org/en-US/firefox/addon/vimperator/
+    - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+    - https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/
+    - https://addons.mozilla.org/en-US/firefox/addon/session-manager/
+    - https://addons.mozilla.org/en-US/firefox/addon/privacy-badger-firefox/
+    - https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/
+    # doesn't work with the firefox_addon role :(
+    #- https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
+
 - name: install pip packages
   pip: name={{ item }} state=latest
   with_items:

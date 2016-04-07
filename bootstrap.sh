@@ -5,5 +5,6 @@ sudo apt-get install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install ansible
+sudo ansible-galaxy install alzadude.firefox-addon
 
 echo '\nmake sure you have an ssh key, and pushed it to github and bitbucket'
