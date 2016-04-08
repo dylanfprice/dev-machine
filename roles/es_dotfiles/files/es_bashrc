@@ -4,7 +4,6 @@ export ENERGYSAVVY_DIR="$HOME/energysavvy/"
 export ENERGYSAVVY_VENV="$HOME/energysavvy_venv"
 export PATH=$PATH:$ENERGYSAVVY_DIR/hgesvhooks/bin/
 
-alias vim-tox='VIRTUAL_ENV=.tox/py27/ vim'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias rmorig="find . -name '*.orig' -delete" 
 alias rmpycs="find . -name '*.pyc' -delete"
@@ -12,66 +11,12 @@ alias rmpycs="find . -name '*.pyc' -delete"
 restoreorig() {
     pattern=$1
     for orig_file in $(find . -name "$pattern*.orig"); do 
-        mv $orig_file ${orig_file%.orig} 
+       mv $orig_file ${orig_file%.orig} 
     done
 }
-# run commands on the guest vm from a host shell
-devstack () {
-    ssh -t -i ~/energysavvy/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@localhost $@
-}
 
-djangostack() {
-    ssh -p 2222 django@localhost
-}
-
-alias ddjango="devstack sudo -u django" 
-alias dpostgres="devstack sudo -u postgres"
-alias droot="devstack sudo -u root" 
-
-# e.g. "dtail" to tail all site logs
 dtail() {
-    devstack tail -f /home/django/sites/*/log/*.log
-}
-
-# e.g. "manage leap pydev_ignored_schemamigration optix" from your host
-manage() {
-    site=$1
-    shift
-    ddjango "OPTIX_API_SERVER=$OPTIX_API_SERVER vpython ${site}_dev manage.py $@" 
-}
-
-debugserver() {
-    manage $1 runserver 10.9.8.7:8001
-}
-
-# Python in the virtual-virtualenv of the given site
-# eg. dvpython leap my_script.py
-dvpython() {
-    site=$1
-    if [ -z "$site" ]; then
-        site=testfixture
-    fi
-    shift
-    ddjango "vpython ${site}_dev $@" 
-}
-
-# 'dtest' to test detecting changes
-# 'dtest <site>' to test given site
-dtest() {
-    site=$1
-    shift
-    unit_tests=/vagrant/mainrepo/infra/BuildUtil/unit_tests.py
-    if [ "$site" == "all" ]; then
-        time dvpython testfixture $unit_tests --jobs=4 $@; alert
-    elif [ -n "$site" ]; then
-        time dvpython $site $unit_tests --jobs=4 --site=$site $@; alert
-    else
-        time dvpython testfixture $unit_tests --jobs=4 -d $@; alert
-    fi
-}
-
-hg_incoming_migrations() {
-    hg incoming --stat | grep "migrations"
+    /usr/bin/ssh -t dev sudo tail -F /var/log/syslog
 }
 
 workon_energysavvy() {
