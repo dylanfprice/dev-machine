@@ -18,6 +18,7 @@
   with_items:
     - firefox
     - git
+    - libxml2-utils
     - meld
     - mercurial
     - mercurial-keyring
