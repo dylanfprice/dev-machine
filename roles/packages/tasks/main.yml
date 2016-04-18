@@ -16,6 +16,7 @@
 - name: install packages
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
+    - aptitude
     - firefox
     - git
     - libxml2-utils
