@@ -1,7 +1,6 @@
 ### EnergySavvy specific ###
 
 export ENERGYSAVVY_DIR="$HOME/energysavvy/"
-export ENERGYSAVVY_VENV="$HOME/energysavvy_venv"
 export PATH=$PATH:$ENERGYSAVVY_DIR/hgesvhooks/bin/
 
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
@@ -17,10 +16,6 @@ restoreorig() {
 
 dtail() {
     /usr/bin/ssh -t dev sudo tail -F /var/log/syslog
-}
-
-workon_energysavvy() {
-    source $ENERGYSAVVY_VENV/bin/activate
 }
 
 hazwebz() {
