@@ -5,3 +5,4 @@
     - { role: packages, become: yes }
     - solarized_terminal
     - vim
+    - { role: bluetooth, become: yes }
