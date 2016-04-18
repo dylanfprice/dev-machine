@@ -1,2 +1,0 @@
-- name: add user to bluetooth group
-  user: groups=bluetooth append=yes name={{ ansible_env.USER }}
