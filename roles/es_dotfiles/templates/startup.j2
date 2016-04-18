@@ -4,8 +4,6 @@
 {{ ansible_env.HOME }}/bin/copy_files.sh &
 {{ ansible_env.HOME }}/bin/update_repos.sh &
 
-setxkbmap -option ctrl:swapcaps
-
 firefox &
 hipchat4 &
 LC_TMUX_SESSION_NAME=session-1 gnome-terminal --maximize --working-directory='{{ ansible_env.HOME }}/energysavvy/' &
