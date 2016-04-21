@@ -26,7 +26,7 @@
 #fi
 
 if [ -x /usr/bin/setxkbmap ]; then
-    setxkbmap -option ctrl:swapcaps
+    setxkbmap -option caps:ctrl_modifier
 fi
 
 source ~/.bashrc
