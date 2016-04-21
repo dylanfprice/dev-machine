@@ -25,6 +25,7 @@
     - mercurial-keyring
     - mosh
     - nodejs
+    - python-dev
     - python3-pip
     - python-pip
     - silversearcher-ag
@@ -54,6 +55,7 @@
   with_items:
     - isort
     - flake8
+    - mkdocs
 
 - name: install npm packages
   npm: name={{ item }} state=latest global=yes
