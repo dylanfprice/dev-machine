@@ -2,7 +2,7 @@
 
 import os
 from os.path import basename, dirname
-from subprocess import check_output
+from subprocess import check_output, CalledProcessError
 
 
 ISORT_CFG_TEMPLATE = '''
@@ -15,6 +15,13 @@ known_first_party={known_first_party}
 not_skip=__init__.py
 lines_after_imports=2
 '''
+
+
+def _ag_setup_pys(repo):
+    try:
+        return check_output(['ag', '-g', '/setup.py$', repo]).split('\n')
+    except CalledProcessError:
+        return ()
 
 
 def get_top_level_python_packages(energysavvy_dir):
@@ -33,7 +40,7 @@ def get_top_level_python_packages(energysavvy_dir):
     setup_pys = (
         setup_py
         for repo in repos
-        for setup_py in check_output(['ag', '-g', '/setup.py$', repo]).split('\n')
+        for setup_py in _ag_setup_pys(repo)
         if setup_py
     )
 
