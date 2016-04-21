@@ -3,4 +3,4 @@
        dest=/tmp/gnome-terminal-colors-solarized/
 
 - name: run set dark script
-  command: /tmp/gnome-terminal-colors-solarized/set_dark.sh
+  command: /tmp/gnome-terminal-colors-solarized/install.sh -s dark -p Default
