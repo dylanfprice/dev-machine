@@ -79,3 +79,7 @@
   with_items:
     - fzf
     - fzf-tmux
+
+- name: install boot-clj
+  command: bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && chmod 755 boot"
+           creates=/usr/local/bin/boot
