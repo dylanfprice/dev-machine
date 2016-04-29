@@ -51,6 +51,9 @@
     # doesn't work with the firefox_addon role :(
     #- https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
 
+- name: use vim compiled for python2
+  alternatives: name=vim path=/usr/bin/vim.gtk-py2
+
 - name: install pip packages
   pip: name={{ item }} state=latest
   with_items:
