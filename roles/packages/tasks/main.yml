@@ -17,6 +17,7 @@
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
     - aptitude
+    - default-jdk
     - firefox
     - git
     - libxml2-utils
@@ -25,13 +26,13 @@
     - mercurial-keyring
     - mosh
     - nodejs
+    - python
     - python-dev
-    - python3-pip
     - python-pip
     - silversearcher-ag
     - tmux
     - tree
-    - vim-gtk
+    - vim-gtk-py2
     - xclip
 
 - name: install firefox add-ons
