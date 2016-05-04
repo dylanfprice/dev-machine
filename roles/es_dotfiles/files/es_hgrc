@@ -20,13 +20,7 @@ pager =
 progress =
 purge =
 record =
-reviewboard = ~/energysavvy/mercurial-reviewboard
 shelve = 
-
-[reviewboard]
-server = https://reviews.evoworx.org/
-user = dylan
-target_groups = foundation
 
 [pager]
 pager = LESS='FSRX' less

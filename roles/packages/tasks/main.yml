@@ -57,9 +57,11 @@
 - name: install pip packages
   pip: name={{ item }} state=latest
   with_items:
-    - isort
     - flake8
+    - isort
     - mkdocs
+    - RBTools
+    - virtualenv
 
 - name: install npm packages
   npm: name={{ item }} state=latest global=yes
