@@ -3,3 +3,4 @@ syntax:glob
 *.swp
 *.ropeproject
 *.tox
+*.reviewboardrc
