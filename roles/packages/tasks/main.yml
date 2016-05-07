@@ -61,6 +61,7 @@
     - isort
     - mkdocs
     - RBTools
+    - s3cmd
     - virtualenv
 
 - name: install npm packages
