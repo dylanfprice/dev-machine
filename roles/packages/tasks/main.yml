@@ -58,6 +58,7 @@
   pip: name={{ item }} state=latest
   with_items:
     - flake8
+    - ipython
     - isort
     - mkdocs
     - RBTools
