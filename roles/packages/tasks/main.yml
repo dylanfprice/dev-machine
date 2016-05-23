@@ -39,8 +39,6 @@
   firefox_addon:
     url: '{{ item }}'
     state: present
-  environment:
-    display: '{{ ansible_env.DISPLAY }}'
   with_items:
     - https://addons.mozilla.org/en-US/firefox/addon/vimperator/
     - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
