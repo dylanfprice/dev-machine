@@ -15,7 +15,6 @@ hgcontains = ~/bin/contains.py
 hgext.eol = 
 hgext.extdiff =
 hgext.fetch =
-mercurial_keyring =
 pager =
 progress =
 purge =
