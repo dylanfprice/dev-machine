@@ -85,3 +85,7 @@
 - name: install leiningen
   command: bash -c "cd /usr/local/bin && curl -fsSLo lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && chmod 755 lein"
            creates=/usr/local/bin/lein
+
+- name: install boot
+  command: bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && chmod 755 boot"
+           creates=/usr/local/bin/boot
