@@ -7,11 +7,13 @@
   apt_repository:
     repo: 'deb https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
     state: present
+    mode: 644
 
 - name: add NodeSource deb-src repository
   apt_repository:
     repo: 'deb-src https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
     state: present
+    mode: 644
 
 - name: install packages
   apt: name={{ item }} state=latest update_cache=yes
