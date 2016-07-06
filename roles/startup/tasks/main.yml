@@ -1,0 +1,18 @@
+- name: ensures directories exist
+  file: path={{ ansible_env.HOME }}/{{ item }} state=directory
+  with_items:
+    - bin/
+    - .config/autostart/
+  tags:
+    - startup
+
+- name: copy templates
+  template: src={{ item.src }}
+            dest={{ ansible_env.HOME }}/{{ item.dest }}
+            owner={{ ansible_env.USER }}
+            mode=0755
+  with_items:
+    - {src: 'startup.j2', dest: 'bin/startup'}
+    - {src: 'startup.desktop.j2', dest: '.config/autostart/startup.desktop'}
+  tags:
+    - startup
