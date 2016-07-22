@@ -5,6 +5,7 @@
     - bin/
     - .config/
     - .lein/
+    - .boot/
 
 - name: copy files
   copy: src={{ item.src }}
@@ -25,3 +26,4 @@
     - {src: 'local-eslint', dest: 'bin/local-eslint', mode: '0744'}
     - {src: 'flake8', dest: '.config/flake8'}
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
+    - {src: 'profile.boot', dest: '.boot/profile.boot'}
