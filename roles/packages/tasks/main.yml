@@ -22,10 +22,7 @@
     - default-jdk
     - firefox
     - git
-    - libxml2-utils
     - meld
-    - mercurial
-    - mercurial-keyring
     - mosh
     - nodejs
     - python
@@ -57,18 +54,7 @@
 - name: install pip packages
   pip: name={{ item }} state=latest
   with_items:
-    - flake8
     - ipython
-    - isort
-    - mkdocs
-    - RBTools
-    - s3cmd
-    - virtualenv
-
-- name: install npm packages
-  npm: name={{ item }} state=latest global=yes
-  with_items:
-    - eslint
 
 - name: fzf | clone repo
   git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf depth=1
