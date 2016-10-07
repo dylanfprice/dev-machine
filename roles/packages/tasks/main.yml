@@ -29,6 +29,7 @@
     - python-dev
     - python-pip
     - silversearcher-ag
+    - texlive-latex-base
     - tmux
     - tree
     - vim-gtk-py2
