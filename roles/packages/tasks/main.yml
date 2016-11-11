@@ -28,6 +28,7 @@
     - python
     - python-dev
     - python-pip
+    - s3cmd
     - silversearcher-ag
     - texlive-latex3
     - tmux
