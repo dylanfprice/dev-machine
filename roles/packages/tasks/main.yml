@@ -36,20 +36,6 @@
     - vim-gtk-py2
     - xclip
 
-- name: install firefox add-ons
-  firefox_addon:
-    url: '{{ item }}'
-    state: present
-  with_items:
-    - https://addons.mozilla.org/en-US/firefox/addon/vimperator/
-    - https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/
-    - https://addons.mozilla.org/en-US/firefox/addon/session-manager/
-    - https://addons.mozilla.org/en-US/firefox/addon/privacy-badger-firefox/
-    - https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/
-    # doesn't work with the firefox_addon role :(
-    # - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
-    #- https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
-
 - name: use vim compiled for python2
   alternatives: name=vim path=/usr/bin/vim.gtk-py2
 
