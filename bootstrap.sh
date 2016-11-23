@@ -6,7 +6,7 @@ sudo apt-get update
 sudo apt-get install ansible
 
 echo '\nmake sure you have an ssh key, and pushed it to github and bitbucket' 
-read -p 
+read
 
 echo 'install the following firefox add-ons:'
 echo 'https://addons.mozilla.org/en-US/firefox/addon/vimperator/'
@@ -16,4 +16,4 @@ echo 'https://addons.mozilla.org/en-US/firefox/addon/privacy-badger-firefox/'
 echo 'https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/'
 echo 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/'
 echo 'https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/'
-read -p
+read
