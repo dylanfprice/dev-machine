@@ -1,4 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
+
+DOCUMENTATION = '''
+---
+module: gsettings
+short_description: Manage GNOME settings
+'''
+
+EXAMPLES = '''
+- gsettings: schema=org.gnome.software key=download-updates value=false
+'''
 
 import json
 import re
@@ -6,52 +16,30 @@ import subprocess
 
 from ansible.module_utils.basic import *
 
-def _escape_single_quotes(string):
-    return re.sub("'", r"'\''", string)
 
-def _split_key(full_key):
-    key_array = full_key.split('.')
-    schema = '.'.join(key_array[0:-1])
-    single_key = key_array[-1]
-    return (schema, single_key)
+def get_dbus_launch_call():
+    if 'DBUS_SESSION_BUS_ADDRESS' in os.environ:
+        return []
+    else:
+        return ['dbus-launch', '--exit-with-session', '--']
 
-def _set_value(user, full_key, value):
+def gsettings_get(schema, key):
+    result = subprocess.check_output(get_dbus_launch_call() + [
+        'gsettings', 'get', schema, key])
+    assert result.endswith('\n')
+    return result[:-1]
 
-    schema, single_key = _split_key(full_key)
-    command = " ".join([
-        'export `/usr/bin/dbus-launch`',
-        ';',
-        '/usr/bin/gsettings set', schema, single_key,
-        "'%s'" % _escape_single_quotes(value),
-        ';',
-        'kill $DBUS_SESSION_BUS_PID &> /dev/null'
-    ])
+def gsettings_set(schema, key, value):
+    subprocess.check_output(get_dbus_launch_call() + [
+        'gsettings', 'set', schema, key, value])
 
-    return subprocess.check_output([
-        'su', '-', user , '-c', command
-    ]).strip()
-
-def _get_value(user, full_key):
-
-    schema, single_key = _split_key(full_key)
-    command = " ".join([
-        'export `/usr/bin/dbus-launch`',
-        ';',
-        '/usr/bin/gsettings get', schema, single_key,
-        ';',
-        'kill $DBUS_SESSION_BUS_PID &> /dev/null'
-    ])
-
-    return subprocess.check_output([
-        'su', '-', user , '-c', command
-    ]).strip()
 
 def main():
 
     module = AnsibleModule(
         argument_spec = {
             'state': { 'choices': ['present'], 'default': 'present' },
-            'user': { 'required': True },
+            'schema': { 'required': True },
             'key': { 'required': True },
             'value': { 'required': True },
         },
@@ -60,21 +48,18 @@ def main():
 
     params = module.params
     state = module.params['state']
-    user = module.params['user']
+    schema = module.params['schema']
     key = module.params['key']
     value = module.params['value']
 
-    old_value = _get_value(user, key)
-    changed = old_value != value
+    current_value = gsettings_get(schema, key)
+    changed = current_value != value
 
     if changed and not module.check_mode:
-        _set_value(user, key, value)
+        gsettings_set(schema, key, value)
 
-    print json.dumps({
-        'changed': changed,
-        'key': key,
-        'value': value,
-        'old_value': old_value,
-    })
+    module.exit_json(changed=changed)
 
-main()
+
+if __name__ == '__main__':
+    main()
