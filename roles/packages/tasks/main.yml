@@ -43,6 +43,7 @@
   pip: name={{ item }} state=latest
   with_items:
     - ipython
+    - isort
 
 - name: fzf | clone repo
   git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf depth=1
