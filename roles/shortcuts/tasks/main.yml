@@ -1,0 +1,13 @@
+- name: set shortcuts
+  gsetting: schema=org.gnome.desktop.wm.keybindings
+            key={{ item.key }}
+            value={{ item.value }}
+  with_items:
+    - { key: switch-to-workspace-left, value: "['<Control><Alt>h']" }
+    - { key: switch-to-workspace-down, value: "['<Control><Alt>j']" }
+    - { key: switch-to-workspace-up, value: "['<Control><Alt>k']" }
+    - { key: switch-to-workspace-right, value: "['<Control><Alt>l']" }
+    - { key: move-to-workspace-left, value: "['<Shift><Control><Alt>h']" }
+    - { key: move-to-workspace-down, value: "['<Shift><Control><Alt>j']" }
+    - { key: move-to-workspace-up, value: "['<Shift><Control><Alt>k']" }
+    - { key: move-to-workspace-right, value: "['<Shift><Control><Alt>l']" }

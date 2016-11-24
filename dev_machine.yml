@@ -5,4 +5,5 @@
     - { role: packages, become: yes }
     - solarized_terminal
     - vim
-    - { role: fonts, become: yes }
+    - fonts
+    - shortcuts
