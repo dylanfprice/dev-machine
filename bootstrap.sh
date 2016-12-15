@@ -19,4 +19,5 @@ echo 'https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/'
 echo 'https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/'
 echo 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/'
 echo 'https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/'
+echo 'https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/'
 read
