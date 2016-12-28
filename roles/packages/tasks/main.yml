@@ -22,6 +22,7 @@
     - default-jdk
     - firefox
     - git
+    - hfsprogs
     - meld
     - mosh
     - nodejs
@@ -30,7 +31,8 @@
     - python-pip
     - s3cmd
     - silversearcher-ag
-    - texlive-latex3
+    - texlive-latex-recommended
+    - texlive-fonts-recommended
     - tmux
     - tree
     - vim-gtk-py2
