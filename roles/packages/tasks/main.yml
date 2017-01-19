@@ -35,6 +35,7 @@
     - git
     - google-talkplugin
     - hfsprogs
+    - libdvd-pkg
     - meld
     - mosh
     - nodejs
@@ -49,6 +50,13 @@
     - tree
     - vim-gtk-py2
     - xclip
+
+- name: configure libdvd-pkg (for watching encrypted dvds)
+  dpkg_reconfigure: 
+    pkg: libdvd-pkg
+    answers:
+      libdvd-pkg/build: "yes"
+      libdvd-pkg/post-invoke_hook-remove: "no"
 
 - name: use vim compiled for python2
   alternatives: name=vim path=/usr/bin/vim.gtk-py2
