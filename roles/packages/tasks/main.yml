@@ -12,7 +12,6 @@
 - name: install packages
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
-    - aptitude
     - default-jdk
     - firefox
     - git
