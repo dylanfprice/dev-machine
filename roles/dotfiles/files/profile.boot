@@ -1,3 +1,5 @@
+; vi: ft=clojure
+
 (require 'boot.repl)
 
 (swap! boot.repl/*default-dependencies*
