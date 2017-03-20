@@ -30,6 +30,7 @@
     - tmux
     - tree
     - vim-gtk-py2
+    - visualvm
     - xclip
 
 - name: configure libdvd-pkg (for watching encrypted dvds)
