@@ -2,7 +2,7 @@
 
 set defsearch=duckduckgo
 set suggestengines=duckduckgo
-set complete=Sl
+set complete=Slf
 
 set passthrough=true
 
