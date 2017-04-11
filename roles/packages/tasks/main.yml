@@ -1,3 +1,20 @@
+- name: import the NodeSource GPG key into apt
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: add NodeSource deb repository
+  apt_repository:
+    repo: 'deb https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state: present
+    mode: 644
+
+- name: add NodeSource deb-src repository
+  apt_repository:
+    repo: 'deb-src https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state: present
+    mode: 644
+
 - name: import the google talk plugin key
   apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
@@ -20,6 +37,7 @@
     - libdvd-pkg
     - meld
     - mosh
+    - nodejs
     - python
     - python-dev
     - python-pip
