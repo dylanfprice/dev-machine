@@ -65,9 +65,10 @@
 - name: install pip packages
   pip: name={{ item }} state=latest
   with_items:
+    # pip must come first!
+    - pip
     - jupyter
     - isort
-    - pip
 
 - name: fzf | clone repo
   git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf depth=1
