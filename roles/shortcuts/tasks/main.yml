@@ -1,4 +1,4 @@
-- name: set shortcuts
+- name: set window manager shortcuts
   gsetting: schema=org.gnome.desktop.wm.keybindings
             key={{ item.key }}
             value={{ item.value }}
@@ -11,3 +11,8 @@
     - { key: move-to-workspace-down, value: "['<Shift><Control><Alt>j']" }
     - { key: move-to-workspace-up, value: "['<Shift><Control><Alt>k']" }
     - { key: move-to-workspace-right, value: "['<Shift><Control><Alt>l']" }
+
+- name: set lock screeen shortcut
+  gsetting: schema=org.gnome.settings-daemon.plugins.media-keys
+            key=screensaver
+            value="<Super>l"
