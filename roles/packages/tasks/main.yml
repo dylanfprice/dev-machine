@@ -29,6 +29,7 @@
 - name: install packages
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
+    - curl
     - default-jdk
     - firefox
     - git
