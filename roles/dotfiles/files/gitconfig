@@ -6,7 +6,7 @@
 	ci = commit
 	st = status
 [merge]
-	tool = vimdiff
+	tool = meld
 [core]
 	editor = vim
 [push]
