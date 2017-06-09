@@ -1,6 +1,5 @@
 [user]
-	name = Dylan Price
-	email = the.dylan.price@gmail.com
+    name = Dylan Price
 [alias]
 	co = checkout
 	br = branch
