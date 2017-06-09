@@ -9,5 +9,6 @@
 	tool = meld
 [core]
 	editor = vim
+    excludesfile = ~/.gitignore
 [push]
 	default = simple

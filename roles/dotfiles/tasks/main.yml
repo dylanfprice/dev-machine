@@ -17,6 +17,7 @@
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'dircolors-dark', dest: '.dircolors'}
     - {src: 'gitconfig', dest: '.gitconfig'}
+    - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'hgrc', dest: '.hgrc'}
     - {src: 'hgignore', dest: '.hgignore'}
     - {src: 'inputrc', dest: '.inputrc'}
