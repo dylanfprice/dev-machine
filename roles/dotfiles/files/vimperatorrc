@@ -10,3 +10,4 @@ set passthrough=true
 ignorekeys add -except=:,t,T,f,F,b,<C-6> mail.google.com
 ignorekeys add -except=:,b,d,f,F,g,t,T,o,O,h,j,k,l,y,<C-o>,<C-i>,<C-6> jira.evoworx.org
 
+set urlseparator=;\s
