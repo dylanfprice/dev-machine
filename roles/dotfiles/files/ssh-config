@@ -7,9 +7,6 @@ Host *.evoworx.org
 Host repo.evoworx.org
   User www-data
 
-Host cronus
-  HostName cronus.evoworx.org
-
 Host dev
   HostName 127.0.0.1
   Port 2222
