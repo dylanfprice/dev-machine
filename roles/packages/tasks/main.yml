@@ -67,8 +67,9 @@
   with_items:
     # pip must come first!
     - pip
-    - jupyter
     - isort
+    - jupyter
+    - mkdocs
 
 - name: fzf | clone repo
   git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf depth=1
