@@ -10,3 +10,4 @@ Host repo.evoworx.org
 Host dev
   HostName 127.0.0.1
   Port 2222
+  ForwardAgent yes
