@@ -30,6 +30,7 @@
     - python3
     - python3-dev
     - python3-pip
+    - python3-venv
     - s3cmd
     - silversearcher-ag
     - texlive-latex-recommended
@@ -46,15 +47,6 @@
     answers:
       libdvd-pkg/build: "yes"
       libdvd-pkg/post-invoke_hook-remove: "no"
-
-- name: install pip packages
-  pip: name={{ item }} state=latest executable=pip3
-  with_items:
-    # pip must come first!
-    - pip
-    - flake8
-    - isort
-    - jupyter
 
 - name: fzf | clone repo
   git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf depth=1
