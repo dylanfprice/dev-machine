@@ -21,6 +21,7 @@
     - {src: 'hgrc', dest: '.hgrc'}
     - {src: 'hgignore', dest: '.hgignore'}
     - {src: 'inputrc', dest: '.inputrc'}
+    - {src: 'make-project-venv', dest: 'bin/make-project-venv', mode: '0744'}
     - {src: 'ssh-config', dest: '.ssh/config'}
     - {src: 'vimperatorrc', dest: '.vimperatorrc'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
