@@ -15,17 +15,6 @@
     state: present
     mode: 644
 
-- name: import the google talk plugin key
-  apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-    state: present
-
-- name: add google talk plugin repository
-  apt_repository:
-    repo: 'deb http://dl.google.com/linux/talkplugin/deb/ stable main'
-    state: present
-    mode: 644
-
 - name: install packages
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
@@ -33,7 +22,6 @@
     - default-jdk
     - firefox
     - git
-    - google-talkplugin
     - hfsprogs
     - libdvd-pkg
     - meld
