@@ -11,13 +11,5 @@ read
 echo 'create a new gnome terminal profile with the name "Default"'
 read
 
-echo 'install the following firefox add-ons:'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/vimperator/'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/session-manager/'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/'
-echo 'https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/'
+echo 'log in to firefox account and sync add-ons'
 read
