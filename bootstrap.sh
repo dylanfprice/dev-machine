@@ -13,3 +13,6 @@ read
 
 echo 'log in to firefox account and sync add-ons'
 read
+
+echo 'energysavvy: you will need to copy pip.conf file to host machine'
+read
