@@ -1,5 +1,5 @@
 #! /bin/bash
 
 firefox &
-LC_TMUX_SESSION_NAME=session-1 gnome-terminal --maximize --working-directory='{{ ansible_env.HOME }}/esv/' &
+gnome-terminal --maximize --working-directory='/home/dylan/esv/' --command="tmux new-session -s ${USER}-session-1" &
 hipchat4 &
