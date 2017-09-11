@@ -3,6 +3,6 @@
             key={{ item.key }}
             value="'{{ item.value }}'"
   with_items:
-    - { key: document-font-name, value: Sans 12 }
-    - { key: font-name, value: Ubuntu 12 }
-    - { key: monospace-font-name, value: Ubuntu Mono 15 }
+    - { key: document-font-name, value: Sans 11 }
+    - { key: font-name, value: Ubuntu 11 }
+    - { key: monospace-font-name, value: Ubuntu Mono 13 }
