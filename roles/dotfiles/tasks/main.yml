@@ -15,7 +15,6 @@
   with_items:
     - {src: 'bash_profile', dest: '.bash_profile'}
     - {src: 'bashrc', dest: '.bashrc'}
-    - {src: 'dircolors-dark', dest: '.dircolors'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'hgrc', dest: '.hgrc'}

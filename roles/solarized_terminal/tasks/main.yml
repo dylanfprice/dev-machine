@@ -2,5 +2,10 @@
   git: repo=https://github.com/Anthony25/gnome-terminal-colors-solarized.git
        dest=/tmp/gnome-terminal-colors-solarized/
 
+  # hack to get profile id, assumes just one entry
+- name: get profile id
+  shell: gsettings get org.gnome.Terminal.ProfilesList list | python -c 'import sys; print(eval(sys.stdin.read())[0])'
+  register: profile_id
+
 - name: run set dark script
-  command: /tmp/gnome-terminal-colors-solarized/install.sh -s dark -p Default
+  command: /tmp/gnome-terminal-colors-solarized/install.sh -s dark -p {{ profile_id.stdout }} --install-dircolors

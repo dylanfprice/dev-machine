@@ -34,7 +34,7 @@ fi
 
 # Set up dircolors to use solarized colors
 if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  test -r ~/.dir_colors/dircolors && eval "$(dircolors -b ~/.dir_colors/dircolors)" || eval "$(dircolors -b)"
 fi
 
 # fzf
