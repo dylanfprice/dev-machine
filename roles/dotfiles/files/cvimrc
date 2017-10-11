@@ -3,7 +3,17 @@ set localconfig
 let homedirectory = "/home/dylan"
 
 let barposition = "bottom"
+
 let defaultengine = "duckduckgo"
+
+let searchengine amazon = "http://www.amazon.com/exec/obidos/external-search/?field-keywords=%s&mode=blended&tag=wwwcanoniccom-20"
+let searchengine ebay = "http://rover.ebay.com/rover/1/711-47294-18009-3/4?mfe=search&mpre=http://www.ebay.com/sch/i.html?_nkw=%s"
+let searchengine drive = "https://drive.google.com/drive/search?q=%s"
+let searchengine trello = "https://trello.com/search?q=%s"
+
+let searchengine projects = "https://projects.evoworx.org/search?utf8=✓&search=%s&group_id=&project_id=&repository_ref="
+let searchengine jira = "https://jira.evoworx.org/secure/QuickSearch.jspa?searchString=%s"
+let searchengine redmine = "https://redmine.evoworx.org/projects/global/search?utf8=✓&wiki_pages=1&q=%s"
 
 set numerichints
 set typelinkhints
@@ -24,5 +34,5 @@ map <C-u> scrollPageUp
 unmap R
 
 site '*://mail.google.com/*' {
-      call insertMode
+    call insertMode
 }
