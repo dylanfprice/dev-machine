@@ -1,0 +1,22 @@
+set localconfig
+
+let barposition = "bottom"
+let defaultengine = "duckduckgo"
+
+set numerichints
+set typelinkhints
+
+set autohidecursor
+
+set noautofocus
+
+map b :buffer<SPACE>
+map B :bookmarks<SPACE>
+
+map <C-f> scrollFullPageDown
+map <C-b> scrollFullPageUp
+map <C-d> scrollPageDown
+map <C-u> scrollPageUp
+
+" umap R to go to next tab
+unmap R

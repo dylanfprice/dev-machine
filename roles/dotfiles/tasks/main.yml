@@ -15,6 +15,7 @@
   with_items:
     - {src: 'bash_profile', dest: '.bash_profile'}
     - {src: 'bashrc', dest: '.bashrc'}
+    - {src: 'cvimrc', dest: '.cvimrc'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'hgrc', dest: '.hgrc'}
