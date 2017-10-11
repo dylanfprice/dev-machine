@@ -1,5 +1,7 @@
 set localconfig
 
+let homedirectory = "/home/dylan"
+
 let barposition = "bottom"
 let defaultengine = "duckduckgo"
 
@@ -20,3 +22,7 @@ map <C-u> scrollPageUp
 
 " umap R to go to next tab
 unmap R
+
+site '*://mail.google.com/*' {
+      call insertMode
+}
