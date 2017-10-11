@@ -19,8 +19,8 @@
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
     - curl
+    - chromium-browser
     - default-jdk
-    - firefox
     - git
     - hfsprogs
     - libdvd-pkg
