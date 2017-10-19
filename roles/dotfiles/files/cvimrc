@@ -30,6 +30,7 @@ set noautofocus
 
 map b :buffer<SPACE>
 map B :bookmarks!<SPACE>
+map u :restore<SPACE>
 
 map <C-f> scrollFullPageDown
 map <C-b> scrollFullPageUp
