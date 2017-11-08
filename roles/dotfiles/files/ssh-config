@@ -3,6 +3,7 @@ Host *.evoworx.org
   ServerAliveInterval 10
   ServerAliveCountMax 10
   TCPKeepAlive no
+  ForwardAgent yes
 
 Host repo.evoworx.org
   User www-data
