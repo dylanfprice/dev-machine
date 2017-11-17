@@ -2,8 +2,9 @@
   roles:
     - dotfiles
     - startup
-    - { role: packages, become: yes }
+    - {role: packages, become: yes}
     - solarized_terminal
     - vim
     - fonts
     - gsettings
+    - {role: hipchat, become: yes}
