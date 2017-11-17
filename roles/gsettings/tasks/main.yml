@@ -20,7 +20,7 @@
 - name: disable middle click paste
   gsetting: schema=org.gnome.desktop.interface
             key=gtk-enable-primary-paste
-            value="False"
+            value="false"
 
 - name: make caps lock a ctrl
   gsetting: schema=org.gnome.desktop.input-sources
