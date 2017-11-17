@@ -16,3 +16,8 @@
   gsetting: schema=org.gnome.settings-daemon.plugins.media-keys
             key=screensaver
             value="<Super>l"
+
+- name: make caps lock a ctrl
+  gsetting: schema=org.gnome.desktop.input-sources
+            key=xkb-options
+            value="['ctrl:nocaps']"
