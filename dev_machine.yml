@@ -5,6 +5,5 @@
     - {role: packages, become: yes}
     - solarized_terminal
     - vim
-    - fonts
     - gsettings
     - {role: hipchat, become: yes}
