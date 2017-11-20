@@ -44,3 +44,6 @@ if [ -x ~/.fzf ]; then
     source ~/.fzf/shell/completion.bash
     source ~/.fzf/shell/key-bindings.bash
 fi
+
+# add local bin to PATH
+export PATH=$PATH:~/bin
