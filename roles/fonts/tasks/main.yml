@@ -1,8 +1,0 @@
-- name: set fonts
-  gsetting: schema=org.gnome.desktop.interface
-            key={{ item.key }}
-            value="'{{ item.value }}'"
-  with_items:
-    - { key: document-font-name, value: Sans 10 }
-    - { key: font-name, value: Ubuntu 10 }
-    - { key: monospace-font-name, value: Ubuntu Mono 13 }
