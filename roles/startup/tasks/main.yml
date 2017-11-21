@@ -12,7 +12,6 @@
             owner={{ ansible_env.USER }}
             mode=0755
   with_items:
-    - {src: 'redshift.desktop.j2', dest: '.config/autostart/redshift.desktop'}
     - {src: 'startup.j2', dest: 'bin/startup'}
     - {src: 'startup.desktop.j2', dest: '.config/autostart/startup.desktop'}
   tags:
