@@ -38,3 +38,7 @@ unmap R
 site "*://mail.google.com/*" {
     call insertMode
 }
+
+site "*://*.hipchat.com/chat/*" {
+    call insertMode
+}
