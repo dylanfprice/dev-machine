@@ -6,4 +6,3 @@
     - solarized_terminal
     - vim
     - gsettings
-    - {role: hipchat, become: yes}
