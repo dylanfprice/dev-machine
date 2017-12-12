@@ -45,5 +45,5 @@ if [ -x ~/.fzf ]; then
     source ~/.fzf/shell/key-bindings.bash
 fi
 
-# add local bin to PATH
-export PATH=$PATH:~/bin
+# add local bins to PATH
+export PATH=$PATH:~/bin:~/.local/bin
