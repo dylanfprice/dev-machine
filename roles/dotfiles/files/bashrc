@@ -47,3 +47,6 @@ fi
 
 # add local bins to PATH
 export PATH=$PATH:~/bin:~/.local/bin
+
+# set client on esv servers
+export CLIENT=$(hostname | python -c 'import sys; import re; print(re.match(r"\w+-(.*)", sys.stdin.read()).groups(1)[0])')
