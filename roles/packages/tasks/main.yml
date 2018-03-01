@@ -58,7 +58,7 @@
     creates: '{{ ansible_env.HOME }}/.fzf/bin/fzf'
 
 - name: fzf | link into home bin
-  file: src={{ ansible_env.HOME }}/.fzf/bin/{{ item }} dest={{ ansible_env.HOME }}/bin/{{ item }} state=link
+  file: src={{ ansible_env.HOME }}/.fzf/bin/{{ item }} dest={{ ansible_env.HOME }}/.local/bin/{{ item }} state=link
   with_items:
     - fzf
     - fzf-tmux

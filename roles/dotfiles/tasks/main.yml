@@ -2,7 +2,7 @@
   file: path={{ ansible_env.HOME }}/{{ item }} state=directory
   with_items:
     - .ssh/
-    - bin/
+    - .local/bin/
     - .config/
     - .lein/
     - .boot/
@@ -22,11 +22,11 @@
     - {src: 'hgignore', dest: '.hgignore'}
     - {src: 'inputrc', dest: '.inputrc'}
     - {src: 'isort.cfg', dest: '.isort.cfg'}
-    - {src: 'make-project-venv', dest: 'bin/make-project-venv', mode: '0744'}
+    - {src: 'make-project-venv', dest: '.local/bin/make-project-venv', mode: '0744'}
     - {src: 'ssh-config', dest: '.ssh/config'}
     - {src: 'vimperatorrc', dest: '.vimperatorrc'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
-    - {src: 'local-eslint', dest: 'bin/local-eslint', mode: '0744'}
+    - {src: 'local-eslint', dest: '.local/bin/local-eslint', mode: '0744'}
     - {src: 'flake8', dest: '.config/flake8'}
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'profile.boot', dest: '.boot/profile.boot'}

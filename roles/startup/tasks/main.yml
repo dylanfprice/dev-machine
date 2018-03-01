@@ -1,7 +1,7 @@
 - name: ensures directories exist
   file: path={{ ansible_env.HOME }}/{{ item }} state=directory
   with_items:
-    - bin/
+    - .local/bin/
     - .config/autostart/
   tags:
     - startup
@@ -12,7 +12,7 @@
             owner={{ ansible_env.USER }}
             mode=0755
   with_items:
-    - {src: 'startup.j2', dest: 'bin/startup'}
+    - {src: 'startup.j2', dest: '.local/bin/startup'}
     - {src: 'startup.desktop.j2', dest: '.config/autostart/startup.desktop'}
   tags:
     - startup
