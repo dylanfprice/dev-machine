@@ -24,7 +24,6 @@
     - {src: 'isort.cfg', dest: '.isort.cfg'}
     - {src: 'make-project-venv', dest: '.local/bin/make-project-venv', mode: '0744'}
     - {src: 'ssh-config', dest: '.ssh/config'}
-    - {src: 'vimperatorrc', dest: '.vimperatorrc'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
     - {src: 'local-eslint', dest: '.local/bin/local-eslint', mode: '0744'}
     - {src: 'flake8', dest: '.config/flake8'}
