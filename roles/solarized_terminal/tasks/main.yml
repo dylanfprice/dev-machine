@@ -7,5 +7,5 @@
   shell: gsettings get org.gnome.Terminal.ProfilesList list | python -c 'import sys; print(eval(sys.stdin.read())[0])'
   register: profile_id
 
-- name: run set dark script
+- name: run install solarized script
   command: /tmp/gnome-terminal-colors-solarized/install.sh -s light -p {{ profile_id.stdout }} --install-dircolors
