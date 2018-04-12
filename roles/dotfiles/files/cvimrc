@@ -7,7 +7,7 @@ let barposition = "bottom"
 
 let defaultengine = "duckduckgo"
 
-let searchengine devdocs = "http://devdocs.io/#q=%s"
+let searchengine devdocs = "https://devdocs.io/#q=%s"
 let searchengine drive = "https://drive.google.com/drive/u/1/search?q=%s"
 let searchengine projects = "https://projects.evoworx.org/search?utf8=✓&search=%s&group_id=&project_id=&repository_ref="
 let searchengine jira = "https://jira.evoworx.org/secure/QuickSearch.jspa?searchString=%s"
