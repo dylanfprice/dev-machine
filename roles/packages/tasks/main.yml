@@ -15,15 +15,6 @@
     state: present
     mode: 644
 
-- name: import the Docker GPG key into apt
-  apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    state: present
-
-- name: add Docker deb repository
-  apt_repository:
-    repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
-
 - name: install packages
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
