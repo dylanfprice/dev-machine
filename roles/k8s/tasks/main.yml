@@ -1,0 +1,83 @@
+## Docker
+
+- name: import the Docker gpg key into apt
+  apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+
+- name: add Docker deb repository
+  apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
+
+- name: install Docker
+  apt: name=docker-ce state=latest update_cache=yes
+
+- name: add docker group
+  group: name=docker
+
+- name: add current user to docker group
+  user:
+    name: '{{ ansible_env.USER }}'
+    groups: docker
+    append: yes
+
+
+## kubectl
+
+- name: import the google cloud gpg key into apt
+  apt_key: url=https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: add kubectl deb repository
+  apt_repository:
+    repo: 'deb http://apt.kubernetes.io/ kubernetes-xenial main'
+
+- name: install kubectl
+  apt: 
+    name: kubectl
+    state: latest
+    update_cache: yes
+
+
+## minikube
+
+- name: install minikube
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/v0.26.1/minikube-linux-amd64
+    dest: /usr/local/bin/minikube
+    mode: 0555
+
+
+## Helm
+
+- name: see if Helm installed
+  stat: path=/usr/local/bin/helm
+  register: helm_binary
+
+- name: create download folder
+  file:
+    path: /tmp/helm
+    state: directory
+  when: not helm_binary.stat.exists
+
+- name: download Helm
+  unarchive: 
+    src: https://storage.googleapis.com/kubernetes-helm/helm-v2.8.2-linux-amd64.tar.gz
+    remote_src: yes
+    dest: /tmp/helm
+  when: not helm_binary.stat.exists
+
+- name: install Helm
+  copy:
+    src: /tmp/helm/linux-amd64/helm 
+    remote_src: yes
+    dest: /usr/local/bin/helm
+    mode: 0555
+  when: not helm_binary.stat.exists
+
+
+## Vault
+
+- name: install Vault
+  unarchive:
+    src: https://releases.hashicorp.com/vault/0.10.0/vault_0.10.0_linux_amd64.zip
+    remote_src: yes
+    dest: /usr/local/bin
+    mode: 0555
