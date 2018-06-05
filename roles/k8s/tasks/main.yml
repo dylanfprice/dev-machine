@@ -40,7 +40,7 @@
 
 - name: install minikube
   get_url:
-    url: https://storage.googleapis.com/minikube/releases/v0.26.1/minikube-linux-amd64
+    url: https://storage.googleapis.com/minikube/releases/v0.27.0/minikube-linux-amd64
     dest: /usr/local/bin/minikube
     mode: 0555
 
