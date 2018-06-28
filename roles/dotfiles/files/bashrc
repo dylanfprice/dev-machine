@@ -50,3 +50,6 @@ export PATH=$PATH:~/.local/bin
 
 # set client on esv servers
 export CLIENT=$(hostname | python -c 'import sys; import re; print(re.match(r"\w+-(.*)", sys.stdin.read()).groups(1)[0])')
+
+# set vault address
+export VAULT_ADDR="https://secrets.evoworx.org:8200"
