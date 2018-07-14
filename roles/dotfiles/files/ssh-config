@@ -12,3 +12,6 @@ Host dev
   HostName 127.0.0.1
   Port 2222
   ForwardAgent yes
+
+Host hookyarncarabiner.com
+  User hookyar2
