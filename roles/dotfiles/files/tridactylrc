@@ -25,6 +25,3 @@ set hintnames numeric
 
 " Make Tridactyl work on more sites at the expense of some security
 fixamo
-
-" Mosquito nets won't make themselves
-autocmd DocStart www.amazon.co.uk js tri.excmds.urlmodify("-t www smile")
