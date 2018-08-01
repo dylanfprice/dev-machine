@@ -11,7 +11,7 @@ read
 echo 'create a new gnome terminal profile with the name "Default"'
 read
 
-echo 'log in to firefox account and sync add-ons'
+echo 'log in to chromium account and sync add-ons'
 read
 
 echo 'energysavvy: you will need to copy pip.conf file to host machine'
