@@ -1,0 +1,30 @@
+" vim: set filetype=vim:
+
+sanitise tridactyllocal tridactylsync
+
+blacklistadd mail.google.com/mail
+blacklistadd hipchat.com/chat
+
+set searchengine duckduckgo
+
+set searchurls.devdocs https://devdocs.io/#q=
+set searchurls.drive https://drive.google.com/u/1/search?q=
+set searchurls.projects https://projects.evoworx.org/search?utf8=✓&group_id=&project_id=&repository_ref=&search=%s
+set searchurls.jira https://jira.evoworx.org/secure/QuickSearch.jspa?searchString=
+set searchurls.redmine https://redmine.evoworx.org/projects/global/search?utf8=✓&wiki_pages=1&q=
+set searchurls.docs https://docs.evoworx.org/search/?q=
+
+
+" set editorcmd to suckless terminal, or use the defaults on other platforms
+js tri.browserBg.runtime.getPlatformInfo().then(os=>{const editorcmd = os.os=="linux" ? "st vim" : "auto"; tri.config.set("editorcmd", editorcmd)})
+
+
+" Sane hinting mode
+set hintfiltermode vimperator-reflow
+set hintnames numeric
+
+" Make Tridactyl work on more sites at the expense of some security
+fixamo
+
+" Mosquito nets won't make themselves
+autocmd DocStart www.amazon.co.uk js tri.excmds.urlmodify("-t www smile")
