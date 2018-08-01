@@ -39,6 +39,7 @@
     - tmux
     - tree
     - vim
+    - vim-gui-common
     - visualvm
     - xclip
 
