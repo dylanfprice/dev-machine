@@ -21,7 +21,6 @@
     - curl
     - chromium-browser
     - default-jdk
-    - docker-ce
     - git
     - hfsprogs
     - libdvd-pkg
