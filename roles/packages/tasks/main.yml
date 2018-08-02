@@ -24,6 +24,7 @@
     - default-jdk
     - firefox
     - git
+    - gnumeric
     - hfsprogs
     - libdvd-pkg
     - meld
