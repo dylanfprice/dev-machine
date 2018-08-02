@@ -45,6 +45,12 @@
     - visualvm
     - xclip
 
+- name: install pip packages
+  pip: name={{item}} state=latest executable=pip3
+  with_items:
+    - mkdocs
+    - pip-tools
+
 - name: configure libdvd-pkg (for watching encrypted dvds)
   dpkg_reconfigure: 
     pkg: libdvd-pkg
