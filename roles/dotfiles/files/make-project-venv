@@ -4,5 +4,5 @@ python3 -m venv .git/.venv && \
   . .git/.venv/bin/activate && \
   pip install --upgrade pip && \
   pip install --upgrade flake8 isort jedi && \
-  pip install -r requirements.txt && \
+  if [ -f requirements.txt ]; then pip install -r requirements.txt; fi && \
   if [ -f test_requirements.txt ]; then pip install -r test_requirements.txt; fi
