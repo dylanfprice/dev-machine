@@ -16,17 +16,20 @@
     - {src: 'bash_profile', dest: '.bash_profile'}
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'cvimrc', dest: '.cvimrc'}
+    - {src: 'flake8', dest: '.config/flake8'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
-    - {src: 'hgrc', dest: '.hgrc'}
     - {src: 'hgignore', dest: '.hgignore'}
+    - {src: 'hgrc', dest: '.hgrc'}
     - {src: 'inputrc', dest: '.inputrc'}
     - {src: 'isort.cfg', dest: '.isort.cfg'}
+    - {src: 'local-eslint', dest: '.local/bin/local-eslint', mode: '0744'}
     - {src: 'make-project-venv', dest: '.local/bin/make-project-venv', mode: '0744'}
+    - {src: 'profile.boot', dest: '.boot/profile.boot'}
+    - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
     - {src: 'tridactylrc', dest: '.tridactylrc'}
-    - {src: 'local-eslint', dest: '.local/bin/local-eslint', mode: '0744'}
-    - {src: 'flake8', dest: '.config/flake8'}
-    - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
-    - {src: 'profile.boot', dest: '.boot/profile.boot'}
+    - {src: 'update-systemd-resolved', dest: '.local/bin/update-systemd-resolved', mode: '0744'}
+    - {src: 'vpn-start', dest: '.local/bin/vpn-start', mode: '0744'}
+    - {src: 'vpn-stop', dest: '.local/bin/vpn-stop', mode: '0744'}
