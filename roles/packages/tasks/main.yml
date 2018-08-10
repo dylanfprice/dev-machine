@@ -29,6 +29,7 @@
     - libdvd-pkg
     - meld
     - mosh
+    - mtp-tools
     - nodejs
     - python3
     - python3-dev
