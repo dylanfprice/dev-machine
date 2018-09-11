@@ -50,7 +50,7 @@
 - name: install pip packages
   pip: name={{item}} state=latest executable=pip3
   with_items:
-    - ipython
+    - jupyter
     - mkdocs
     - pip-tools
     - tox
