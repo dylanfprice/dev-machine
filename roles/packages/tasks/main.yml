@@ -53,6 +53,7 @@
     - ipython
     - mkdocs
     - pip-tools
+    - tox
 
 - name: configure libdvd-pkg (for watching encrypted dvds)
   dpkg_reconfigure: 
