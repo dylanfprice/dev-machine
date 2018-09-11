@@ -53,3 +53,6 @@ export CLIENT=$(hostname | python -c 'import sys; import re; print(re.match(r"\w
 
 # set vault address
 export VAULT_ADDR="https://secrets.evoworx.org:8200"
+
+# set pip conf url
+export PIP_INDEX_URL='https://packages:wheelNice!@packages.evoworx.org/build/internal'
