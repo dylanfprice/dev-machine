@@ -50,10 +50,34 @@
 - name: install pip packages
   pip: name={{item}} state=latest executable=pip3
   with_items:
-    - jupyter
+    - pipsi
+
+- name: install pipsi packages
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  command: pipsi install {{ item }}
+  args:
+    creates: '{{ ansible_env.HOME }}/.local/venvs/{{ item }}'
+  with_items:
+    - jupyter-console
     - mkdocs
     - pip-tools
     - tox
+
+# Because the jupyter meta package has no script entries itself, pipsi won't
+# install it directly.
+- name: install jupyter into jupyter-console venv
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  command: '{{ ansible_env.HOME }}/.local/venvs/jupyter-console/bin/pip install --upgrade jupyter'
+  args:
+    creates: '{{ ansible_env.HOME }}/.local/venvs/jupyter-console/bin/jupyter'
+
+- name: link jupyter into local bin
+  file:
+    src: '{{ ansible_env.HOME }}/.local/venvs/jupyter-console/bin/jupyter'
+    dest: '{{ ansible_env.HOME }}/.local/bin/jupyter'
+    state: link
 
 - name: configure libdvd-pkg (for watching encrypted dvds)
   dpkg_reconfigure: 
