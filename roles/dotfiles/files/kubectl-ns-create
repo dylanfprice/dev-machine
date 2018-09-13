@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+NAMESPACE=$1
+CLIENT=${NAMESPACE:$(expr index $NAMESPACE -)}
+USER=${NAMESPACE%-$CLIENT}
+STAGE=$2
+LIMIT_GROUP=${STAGE}-${CLIENT}
+
+cd ~/esv/repos/build
+git pull
+./deploy-to-cluster.sh $LIMIT_GROUP configuration/${CLIENT}-config
+helm upgrade \
+    --install \
+    --namespace $NAMESPACE \
+    --set image_credentials.password=$(vault read -field=password secret/fni/image-pull) \
+    --recreate-pods \
+    $NAMESPACE-hdfs energysavvy/hdfs
+

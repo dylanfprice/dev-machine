@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+NAMESPACE=$1
+
+kubectl delete namespace $NAMESPACE
+helm list -q --namespace=$NAMESPACE | while read -r release; do helm delete --purge $release; done 
