@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 
+USAGE="Usage: $0 <namespace> <stage>"
+
 NAMESPACE=$1
 CLIENT=${NAMESPACE:$(expr index $NAMESPACE -)}
 USER=${NAMESPACE%-$CLIENT}
 STAGE=$2
 LIMIT_GROUP=${STAGE}-${CLIENT}
+
+if [[ -z "$NAMESPACE" || -z "$STAGE" ]]; then
+    echo "$USAGE"
+    exit 1
+fi
 
 cd ~/esv/repos/build
 git pull
