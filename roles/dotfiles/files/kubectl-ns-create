@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -o errexit
+set -o nounset
+
 USAGE="Usage: $0 <namespace> <stage>"
 
 NAMESPACE=$1
