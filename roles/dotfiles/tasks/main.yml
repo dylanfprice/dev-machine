@@ -16,6 +16,7 @@
     - {src: 'bash_profile', dest: '.bash_profile'}
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'cvimrc', dest: '.cvimrc'}
+    - {src: 'docker-dev', dest: '.local/bin/docker-dev', mode: '0744'}
     - {src: 'flake8', dest: '.config/flake8'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}

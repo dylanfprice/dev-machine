@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+TAG=$(basename ${PWD})
+
+# build
+docker build --build-arg PIP_INDEX_URL=${PIP_INDEX_URL} -t ${TAG} .
+
+# run
+if [ -f environment.list ] 
+then
+    ENV_FILE_ARG="--env-file environment.list"
+else
+    ENV_FILE_ARG=""
+fi
+
+docker run --rm -it --workdir /app --env PIP_INDEX_URL=${PIP_INDEX_URL} ${ENV_FILE_ARG} -v ${PWD}:/app ${TAG} bash
