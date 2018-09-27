@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-TAG=$(basename ${PWD})
+TAG=$(basename $PWD)
+PIP_INDEX_URL=$(grep index-url /etc/pip.conf | sed 's/.*= *//g')
 
 # build
-docker build --build-arg PIP_INDEX_URL=${PIP_INDEX_URL} -t ${TAG} .
+docker build --build-arg PIP_INDEX_URL="$PIP_INDEX_URL" -t $TAG .
 
 # run
 if [ -f environment.list ] 
@@ -13,4 +14,4 @@ else
     ENV_FILE_ARG=""
 fi
 
-docker run --rm -it --workdir /app --env PIP_INDEX_URL=${PIP_INDEX_URL} ${ENV_FILE_ARG} -v ${PWD}:/app ${TAG} bash
+docker run --rm -it --workdir /app --env PIP_INDEX_URL="$PIP_INDEX_URL" $ENV_FILE_ARG -v ${PWD}:/app $TAG bash
