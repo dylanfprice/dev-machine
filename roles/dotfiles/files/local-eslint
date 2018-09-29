@@ -7,16 +7,14 @@ from os.path import abspath, join, exists, dirname
 
 
 def main():
-    possible_file_arg = sys.argv[-1]
     eslint = 'eslint'
-    if exists(join(os.getcwd(), possible_file_arg)):
-        try:
-            eslint = search_up(
-                dirname(possible_file_arg),
-                'node_modules/.bin/eslint'
-            )
-        except FileNotFound as e:
-            pass
+    try:
+        eslint = search_up(
+            os.getcwd(),
+            'node_modules/.bin/eslint'
+        )
+    except FileNotFound as e:
+        pass
 
     os.execvp(eslint, [eslint] + sys.argv[1:])
 
