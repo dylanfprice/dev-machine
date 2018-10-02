@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
 set -o errexit
-set -o nounset
+
+USAGE="Usage: $0 <namespace>"
+
+if [[ -z "$1" ]]; then
+    echo "$USAGE"
+    exit 1
+fi
 
 NAMESPACE=$1
 

@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 set -o errexit
-set -o nounset
 
 USAGE="Usage: $0 <namespace> <stage>"
+
+if [[ -z "$1" || -z "$2" ]]; then
+    echo "$USAGE"
+    exit 1
+fi
 
 NAMESPACE=$1
 STAGE=$2
 
-if [[ -z "$NAMESPACE" || -z "$STAGE" ]]; then
-    echo "$USAGE"
-    exit 1
-fi
 
 CLIENT=${NAMESPACE:$(expr index $NAMESPACE -)}
 USER=${NAMESPACE%-$CLIENT}
