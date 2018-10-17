@@ -19,6 +19,7 @@ LIMIT_GROUP=${STAGE}-${CLIENT}
 
 cd ~/esv/repos/build
 git pull
+helm repo update
 kubectl create namespace $NAMESPACE
 ./deploy-to-cluster.sh $LIMIT_GROUP configuration/${CLIENT}-config
 helm upgrade \
