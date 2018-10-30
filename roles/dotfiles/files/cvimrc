@@ -14,6 +14,7 @@ let searchengine jira = "https://jira.evoworx.org/secure/QuickSearch.jspa?search
 let searchengine redmine = "https://redmine.evoworx.org/projects/global/search?utf8=✓&wiki_pages=1&q=%s"
 let searchengine docs = "https://docs.evoworx.org/search/?q=%s"
 let searchengine pypi = "https://pypi.org/search/?q=%s"
+let searchengine dd = "https://app.datadoghq.com/logs?query=%s"
 
 let completionengines = ["duckduckgo", "devdocs", "drive", "projects", "jira", "redmine", "docs"]
 
