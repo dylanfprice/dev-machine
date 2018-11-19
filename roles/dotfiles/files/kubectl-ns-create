@@ -25,7 +25,6 @@ kubectl create namespace $NAMESPACE
 helm upgrade \
     --install \
     --namespace $NAMESPACE \
-    --set image_credentials.password=$(vault read -field=password secret/fni/image-pull) \
     --recreate-pods \
     $NAMESPACE-hdfs energysavvy/hdfs
 
