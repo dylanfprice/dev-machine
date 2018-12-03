@@ -30,7 +30,6 @@
       - hfsprogs
       - jq
       - libdvd-pkg
-      - meld
       - mosh
       - mtp-tools
       - nodejs
@@ -38,7 +37,6 @@
       - python3-dev
       - python3-pip
       - python3-venv
-      - s3cmd
       - silversearcher-ag
       - texlive-latex-recommended
       - texlive-fonts-recommended
@@ -46,7 +44,6 @@
       - tree
       - vim
       - vim-gui-common
-      - visualvm
       - xclip
 
 - name: install pip packages
