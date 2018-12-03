@@ -47,9 +47,11 @@
       - xclip
 
 - name: install pip packages
-  pip: name={{item}} state=latest executable=pip3
-  with_items:
-    - pipsi
+  pip:
+    state: latest
+    executable: pip3
+    name: 
+      - pipsi
 
 - name: install pipsi packages
   become: yes
