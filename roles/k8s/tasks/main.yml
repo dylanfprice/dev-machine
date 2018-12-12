@@ -91,7 +91,7 @@
 
 - name: install Vault
   unarchive:
-    src: https://releases.hashicorp.com/vault/0.10.0/vault_0.10.0_linux_amd64.zip
+    src: https://releases.hashicorp.com/vault/1.0.0/vault_1.0.0_linux_amd64.zip
     remote_src: yes
     dest: /usr/local/bin
     mode: 0555
