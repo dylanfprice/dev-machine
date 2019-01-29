@@ -15,16 +15,18 @@ STAGE=$2
 
 CLIENT=${NAMESPACE:$(expr index $NAMESPACE -)}
 USER=${NAMESPACE%-$CLIENT}
-LIMIT_GROUP=${STAGE}-${CLIENT}
 
 cd ~/esv/repos/build
 git pull
 helm repo update
 kubectl create namespace $NAMESPACE
-./deploy-to-cluster.sh $LIMIT_GROUP configuration/${CLIENT}-config
+deploy project \
+    --stage $STAGE \
+    --prefix $USER \
+    --client $CLIENT \
+    --project ${CLIENT}-config
 helm upgrade \
     --install \
     --namespace $NAMESPACE \
     --recreate-pods \
     $NAMESPACE-hdfs energysavvy/hdfs
-
