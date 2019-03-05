@@ -17,6 +17,7 @@
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'cvimrc', dest: '.cvimrc'}
     - {src: 'deploy', dest: '.local/bin/deploy', mode: '0744'}
+    - {src: 'dig-evoworx', dest: '.local/bin/dig-evoworx', mode: '0744'}
     - {src: 'docker-dev', dest: '.local/bin/docker-dev', mode: '0744'}
     - {src: 'flake8', dest: '.config/flake8'}
     - {src: 'gitconfig', dest: '.gitconfig'}
