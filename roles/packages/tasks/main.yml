@@ -47,18 +47,20 @@
       - xclip
 
 - name: install pip packages
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
   pip:
     state: latest
     executable: pip3
-    name: 
-      - pipsi
+    extra_args: --user
+    name: pipx
 
-- name: install pipsi packages
+- name: install pipx packages
   become: yes
   become_user: '{{ ansible_env.USER }}'
-  command: pipsi install {{ item }}
+  command: pipx install {{ item }}
   args:
-    creates: '{{ ansible_env.HOME }}/.local/venvs/{{ item }}'
+    creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/{{ item }}'
   with_items:
     - jupyter-console
     - mkdocs
@@ -70,13 +72,13 @@
 - name: install jupyter into jupyter-console venv
   become: yes
   become_user: '{{ ansible_env.USER }}'
-  command: '{{ ansible_env.HOME }}/.local/venvs/jupyter-console/bin/pip install --upgrade jupyter'
+  command: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter-console/bin/pip install --upgrade jupyter'
   args:
-    creates: '{{ ansible_env.HOME }}/.local/venvs/jupyter-console/bin/jupyter'
+    creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter-console/bin/jupyter'
 
 - name: link jupyter into local bin
   file:
-    src: '{{ ansible_env.HOME }}/.local/venvs/jupyter-console/bin/jupyter'
+    src: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter-console/bin/jupyter'
     dest: '{{ ansible_env.HOME }}/.local/bin/jupyter'
     state: link
 
