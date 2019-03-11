@@ -31,8 +31,8 @@
 
 - name: install kubectl
   apt: 
-    name: kubectl
-    state: latest
+    name: kubectl=1.11.7-00
+    state: present
     update_cache: yes
 
 
