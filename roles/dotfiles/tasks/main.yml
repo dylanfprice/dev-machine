@@ -36,5 +36,3 @@
     - {src: 'tmux.conf', dest: '.tmux.conf'}
     - {src: 'tridactylrc', dest: '.tridactylrc'}
     - {src: 'update-systemd-resolved', dest: '.local/bin/update-systemd-resolved', mode: '0744'}
-    - {src: 'vpn-start', dest: '.local/bin/vpn-start', mode: '0744'}
-    - {src: 'vpn-stop', dest: '.local/bin/vpn-stop', mode: '0744'}
