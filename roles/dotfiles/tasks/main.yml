@@ -22,8 +22,6 @@
     - {src: 'flake8', dest: '.config/flake8'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
-    - {src: 'hgignore', dest: '.hgignore'}
-    - {src: 'hgrc', dest: '.hgrc'}
     - {src: 'inputrc', dest: '.inputrc'}
     - {src: 'isort.cfg', dest: '.isort.cfg'}
     - {src: 'kubectl-ns-create', dest: '.local/bin/kubectl-ns-create', mode: '0744'}
