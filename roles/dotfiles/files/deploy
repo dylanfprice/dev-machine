@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 
+IMAGE=projects.evoworx.org:4567/infrastructure/k8s/deploy
+
+docker pull $IMAGE
 docker run \
     --volume ~/.kube:/.kube \
     --volume ~/.vault-token:/.vault-token \
     --volume ~/esv:/energysavvy \
     --volume /var/run/docker.sock:/var/run/docker.sock \
-    projects.evoworx.org:4567/infrastructure/k8s/deploy $*
+    $IMAGE $*
