@@ -16,8 +16,6 @@ STAGE=$2
 CLIENT=${NAMESPACE:$(expr index $NAMESPACE -)}
 USER=${NAMESPACE%-$CLIENT}
 
-cd ~/esv/repos/build
-git pull
 helm repo update
 kubectl create namespace $NAMESPACE
 deploy project \
