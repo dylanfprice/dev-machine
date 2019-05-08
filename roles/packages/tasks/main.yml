@@ -74,6 +74,20 @@
   args:
     creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter'
 
+- name: install jupyterlab
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  command: pipx inject jupyter jupyterlab --include-binaries
+  args:
+    creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter/bin/jupyter-lab'
+
+- name: install jupyterlab vim extension
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  command: jupyter-labextension install jupyterlab_vim
+  args:
+    creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter/share/jupyter/lab/extensions/jupyterlab_vim*'
+
 - name: configure libdvd-pkg (for watching encrypted dvds)
   dpkg_reconfigure: 
     pkg: libdvd-pkg
