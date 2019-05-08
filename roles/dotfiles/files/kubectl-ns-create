@@ -17,7 +17,7 @@ CLIENT=${NAMESPACE:$(expr index $NAMESPACE -)}
 USER=${NAMESPACE%-$CLIENT}
 
 helm repo update
-kubectl create namespace $NAMESPACE
+kubectl create namespace $NAMESPACE || echo 'namespace already exists'
 deploy project \
     --stage $STAGE \
     --prefix $USER \
