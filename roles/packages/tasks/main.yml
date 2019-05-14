@@ -29,6 +29,7 @@
       - gnumeric
       - hfsprogs
       - jq
+      - lastpass-cli
       - mosh
       - mtp-tools
       - nodejs
