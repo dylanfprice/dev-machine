@@ -1,27 +1,10 @@
 " vim: set filetype=vim:
 
-" Ignore most keys in gmail
-autocmd DocStart mail.google.com/mail mode ignore
-unbindurl mail.google.com/mail --mode=ignore <S-Insert>
-unbindurl mail.google.com/mail --mode=ignore <CA-Escape>
-unbindurl mail.google.com/mail --mode=ignore <CA-`>
-unbindurl mail.google.com/mail --mode=ignore <S-Escape>
-unbindurl mail.google.com/mail --mode=ignore <C-^>
-unbindurl mail.google.com/mail --mode=ignore I
-bindurl   mail.google.com/mail --mode=ignore <C-b> fillcmdline tab
-bindurl   mail.google.com/mail --mode=ignore <C-t> fillcmdline tabopen
+" Sane hinting mode
+set hintfiltermode vimperator-reflow
+set hintnames numeric
 
-" Ignore most keys in slack
-autocmd DocStart energysavvy.slack.com mode ignore
-unbindurl energysavvy.slack.com --mode=ignore <S-Insert>
-unbindurl energysavvy.slack.com --mode=ignore <CA-Escape>
-unbindurl energysavvy.slack.com --mode=ignore <CA-`>
-unbindurl energysavvy.slack.com --mode=ignore <S-Escape>
-unbindurl energysavvy.slack.com --mode=ignore <C-^>
-unbindurl energysavvy.slack.com --mode=ignore I
-bindurl   energysavvy.slack.com --mode=ignore <C-b> fillcmdline tab
-bindurl   energysavvy.slack.com --mode=ignore <C-t> fillcmdline tabopen
-
+" Search stuff
 set searchengine duckduckgo
 
 set searchurls.devdocs https://devdocs.io/#q=
@@ -33,9 +16,38 @@ set searchurls.docs https://docs.evoworx.org/search/?q=
 set searchurls.pypi https://pypi.org/search/?q=
 set searchurls.dd https://app.datadoghq.com/logs?query=
 
-" Sane hinting mode
-set hintfiltermode vimperator-reflow
-set hintnames numeric
+" GMail settings
+autocmd DocStart mail.google.com/mail mode ignore
+unbindurl mail.google.com/mail --mode=ignore <S-Insert>
+unbindurl mail.google.com/mail --mode=ignore <CA-Escape>
+unbindurl mail.google.com/mail --mode=ignore <CA-`>
+unbindurl mail.google.com/mail --mode=ignore <S-Escape>
+unbindurl mail.google.com/mail --mode=ignore <C-^>
+unbindurl mail.google.com/mail --mode=ignore I
+bindurl   mail.google.com/mail --mode=ignore <C-b> fillcmdline tab
+bindurl   mail.google.com/mail --mode=ignore <C-t> fillcmdline tabopen
 
-" Fix infinite redirect loop
-seturl insperity.com noiframe true
+" Slack settings
+autocmd DocStart energysavvy.slack.com mode ignore
+unbindurl energysavvy.slack.com --mode=ignore <S-Insert>
+unbindurl energysavvy.slack.com --mode=ignore <CA-Escape>
+unbindurl energysavvy.slack.com --mode=ignore <CA-`>
+unbindurl energysavvy.slack.com --mode=ignore <S-Escape>
+unbindurl energysavvy.slack.com --mode=ignore <C-^>
+unbindurl energysavvy.slack.com --mode=ignore I
+bindurl   energysavvy.slack.com --mode=ignore <C-b> fillcmdline tab
+bindurl   energysavvy.slack.com --mode=ignore <C-t> fillcmdline tabopen
+
+" Insperity settings
+seturl insperity.com noiframe true " infinite redirect otherwise
+
+" JIRA settings
+seturl    jira.evoworx.org allowautofocus true
+unbindurl jira.evoworx.org .
+unbindurl jira.evoworx.org j
+unbindurl jira.evoworx.org k
+unbindurl jira.evoworx.org n
+unbindurl jira.evoworx.org p
+
+" Gitlab settings
+seturl projects.evoworx.org allowautofocus true
