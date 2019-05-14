@@ -36,3 +36,6 @@ set searchurls.dd https://app.datadoghq.com/logs?query=
 " Sane hinting mode
 set hintfiltermode vimperator-reflow
 set hintnames numeric
+
+" Fix infinite redirect loop
+seturl insperity.com noiframe true
