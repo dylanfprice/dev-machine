@@ -1,9 +1,26 @@
 " vim: set filetype=vim:
 
-sanitise tridactyllocal tridactylsync
+" Ignore most keys in gmail
+autocmd DocStart mail.google.com/mail mode ignore
+unbindurl mail.google.com/mail --mode=ignore <S-Insert>
+unbindurl mail.google.com/mail --mode=ignore <CA-Escape>
+unbindurl mail.google.com/mail --mode=ignore <CA-`>
+unbindurl mail.google.com/mail --mode=ignore <S-Escape>
+unbindurl mail.google.com/mail --mode=ignore <C-^>
+unbindurl mail.google.com/mail --mode=ignore I
+bindurl   mail.google.com/mail --mode=ignore <C-b> fillcmdline tab
+bindurl   mail.google.com/mail --mode=ignore <C-t> fillcmdline tabopen
 
-blacklistadd mail.google.com/mail
-blacklistadd hipchat.com/chat
+" Ignore most keys in slack
+autocmd DocStart energysavvy.slack.com mode ignore
+unbindurl energysavvy.slack.com --mode=ignore <S-Insert>
+unbindurl energysavvy.slack.com --mode=ignore <CA-Escape>
+unbindurl energysavvy.slack.com --mode=ignore <CA-`>
+unbindurl energysavvy.slack.com --mode=ignore <S-Escape>
+unbindurl energysavvy.slack.com --mode=ignore <C-^>
+unbindurl energysavvy.slack.com --mode=ignore I
+bindurl   energysavvy.slack.com --mode=ignore <C-b> fillcmdline tab
+bindurl   energysavvy.slack.com --mode=ignore <C-t> fillcmdline tabopen
 
 set searchengine duckduckgo
 
@@ -13,15 +30,9 @@ set searchurls.projects https://projects.evoworx.org/search?utf8=✓&group_id=&p
 set searchurls.jira https://jira.evoworx.org/secure/QuickSearch.jspa?searchString=
 set searchurls.redmine https://redmine.evoworx.org/projects/global/search?utf8=✓&wiki_pages=1&q=
 set searchurls.docs https://docs.evoworx.org/search/?q=
-
-
-" set editorcmd to suckless terminal, or use the defaults on other platforms
-js tri.browserBg.runtime.getPlatformInfo().then(os=>{const editorcmd = os.os=="linux" ? "st vim" : "auto"; tri.config.set("editorcmd", editorcmd)})
-
+set searchurls.pypi https://pypi.org/search/?q=
+set searchurls.dd https://app.datadoghq.com/logs?query=
 
 " Sane hinting mode
 set hintfiltermode vimperator-reflow
 set hintnames numeric
-
-" Make Tridactyl work on more sites at the expense of some security
-fixamo

@@ -47,6 +47,13 @@
       - vim-gui-common
       - xclip
 
+- name: install tridactyl native messenger
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  shell: curl -fsSl https://raw.githubusercontent.com/tridactyl/tridactyl/master/native/install.sh | bash
+  args:
+    creates: '{{ ansible_env.HOME }}/.mozilla/native-messaging-hosts/tridactyl.json'
+
 - name: install pip packages
   become: yes
   become_user: '{{ ansible_env.USER }}'
