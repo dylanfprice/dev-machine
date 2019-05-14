@@ -29,7 +29,6 @@
       - gnumeric
       - hfsprogs
       - jq
-      - libdvd-pkg
       - mosh
       - mtp-tools
       - nodejs
@@ -94,13 +93,6 @@
   command: jupyter-labextension install jupyterlab_vim
   args:
     creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter/share/jupyter/lab/extensions/jupyterlab_vim*'
-
-- name: configure libdvd-pkg (for watching encrypted dvds)
-  dpkg_reconfigure: 
-    pkg: libdvd-pkg
-    answers:
-      libdvd-pkg/build: "yes"
-      libdvd-pkg/post-invoke_hook-remove: "no"
 
 - name: fzf | clone repo
   git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf depth=1
