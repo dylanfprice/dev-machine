@@ -52,8 +52,8 @@ bindurl   docs.google.com --mode=ignore <C-b> fillcmdline tab
 bindurl   docs.google.com --mode=ignore <C-t> fillcmdline tabopen
 bindurl   docs.google.com --mode=ignore <C-f> hint -t; mode ignore
 
-" Insperity settings
-seturl insperity.com noiframe true " infinite redirect otherwise
+" Insperity settings (infinite redirect otherwise)
+seturl insperity.com noiframe true
 
 " JIRA settings
 seturl    jira.evoworx.org allowautofocus true
@@ -65,3 +65,6 @@ unbindurl jira.evoworx.org p
 
 " Gitlab settings
 seturl projects.evoworx.org allowautofocus true
+
+" Datadog settings
+seturl app.datadoghq.com allowautofocus true
