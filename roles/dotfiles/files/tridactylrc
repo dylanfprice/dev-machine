@@ -17,6 +17,7 @@ set searchurls.pypi https://pypi.org/search/?q=
 set searchurls.dd https://app.datadoghq.com/logs?query=
 
 " GMail settings
+seturl           mail.google.com/mail allowautofocus true
 autocmd DocStart mail.google.com/mail mode ignore
 unbindurl mail.google.com/mail --mode=ignore <S-Insert>
 unbindurl mail.google.com/mail --mode=ignore <CA-Escape>
