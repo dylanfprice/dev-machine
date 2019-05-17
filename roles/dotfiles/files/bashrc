@@ -53,3 +53,7 @@ export CLIENT=$(hostname | python -c 'import sys; import re; print(re.match(r"\w
 
 # set vault address
 export VAULT_ADDR="https://secrets.evoworx.org:8200"
+
+# After logging in the agent should not timeout. After all, this is how the
+# browser behaves.
+export LPASS_AGENT_TIMEOUT=0
