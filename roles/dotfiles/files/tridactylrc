@@ -42,6 +42,7 @@ bindurl   energysavvy.slack.com --mode=ignore <C-t> fillcmdline tabopen
 bindurl   energysavvy.slack.com --mode=ignore <C-f> hint -t; mode ignore
 
 " Docs settings
+seturl           docs.google.com allowautofocus true
 autocmd DocStart docs.google.com mode ignore
 unbindurl docs.google.com --mode=ignore <S-Insert>
 unbindurl docs.google.com --mode=ignore <CA-Escape>
@@ -52,6 +53,19 @@ unbindurl docs.google.com --mode=ignore I
 bindurl   docs.google.com --mode=ignore <C-b> fillcmdline tab
 bindurl   docs.google.com --mode=ignore <C-t> fillcmdline tabopen
 bindurl   docs.google.com --mode=ignore <C-f> hint -t; mode ignore
+
+" Jupyter Lab settings
+seturl           localhost:8888/lab allowautofocus true
+autocmd DocStart localhost:8888/lab mode ignore
+unbindurl localhost:8888/lab --mode=ignore <S-Insert>
+unbindurl localhost:8888/lab --mode=ignore <CA-Escape>
+unbindurl localhost:8888/lab --mode=ignore <CA-`>
+unbindurl localhost:8888/lab --mode=ignore <S-Escape>
+unbindurl localhost:8888/lab --mode=ignore <C-^>
+unbindurl localhost:8888/lab --mode=ignore I
+bindurl   localhost:8888/lab --mode=ignore <C-b> fillcmdline tab
+bindurl   localhost:8888/lab --mode=ignore <C-t> fillcmdline tabopen
+bindurl   localhost:8888/lab --mode=ignore <C-f> hint -t; mode ignore
 
 " Insperity settings (infinite redirect otherwise)
 seturl insperity.com noiframe true
