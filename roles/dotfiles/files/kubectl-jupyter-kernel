@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+import argparse
+import base64
+import configparser
+import json
+import os
+import shlex
+import subprocess
+
+def main():
+    parser = argparse.ArgumentParser(
+        description=(
+            'Make sure spark-k8s-kernel-job and prerequisites are deployed to '
+            'a namespace. Patch credentials with ~/.aws/credentials values.'
+        )
+    )
+    parser.add_argument('namespace')
+    args = parser.parse_args()
+    namespace = args.namespace
+
+    subprocess.check_call(shlex.split(f'kubectl-ns-create {namespace} dev'))
+    _patch_credentials(namespace)
+    _ensure_kernel_job_deployed(namespace)
+
+
+def _patch_credentials(namespace):
+    secret_exists = not subprocess.run(
+        shlex.split(
+            f'kubectl -n {namespace} get secret all'
+        ),
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    ).returncode
+
+    if not secret_exists:
+        raise RuntimeError(
+            'Secret "all" does not exist, either config is not deployed or it '
+            'needs an entry for "all".'
+        )
+    credentials = _get_aws_credentials()
+    subprocess.run(shlex.split(
+        f'kubectl -n {namespace} patch secret all '
+        f'-p=\'{json.dumps(credentials)}\''
+    ))
+
+
+def _get_aws_credentials():
+    config = configparser.ConfigParser()
+    config.read(f'{os.environ["HOME"]}/.aws/credentials')
+    return {'data': {
+        'S3_API_USER': (
+            base64.b64encode(
+                config['default']['aws_access_key_id'].encode('utf-8')
+            )
+            .decode('utf-8')
+        ),
+        'S3_API_KEY': (
+            base64.b64encode(
+                config['default']['aws_secret_access_key'].encode('utf-8')
+            )
+            .decode('utf-8')
+        ),
+    }}
+
+
+def _ensure_kernel_job_deployed(namespace):
+    running_pods = json.loads(
+        subprocess.check_output(shlex.split(
+            f'kubectl -n {namespace} -o json get pods '
+            f'--field-selector=status.phase=Running'
+        ))
+    )
+    is_kernel_job_deployed = any(
+        'spark-k8s-kernel-job' in container['image']
+        for item in running_pods['items']
+        for container in item['spec']['containers']
+    )
+    if is_kernel_job_deployed:
+        print('spark-k8s-kernel-job already running')
+    else:
+        prefix, client = _get_prefix_and_client(namespace)
+        subprocess.check_call(shlex.split(
+            f'deploy project --stage dev --prefix {prefix} --client {client} '
+            f'--project spark-k8s-kernel-job'
+        ))
+
+
+def _get_prefix_and_client(namespace):
+    return namespace.split('-')
+
+
+if __name__ == '__main__':
+    main()
