@@ -10,6 +10,9 @@
 - name: install Docker
   apt: name=docker-ce state=latest update_cache=yes
 
+- name: install docker-compose
+  apt: name=docker-compose state=latest update_cache=yes
+
 - name: add docker group
   group: name=docker
 
