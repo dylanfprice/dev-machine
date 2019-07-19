@@ -1,5 +1,5 @@
 #! /bin/bash
 
-env GTK_THEME=Ambiance firefox &
+env GTK_THEME=Ambiance /home/dylan/Downloads/firefox-68.0/firefox/firefox &
 gnome-terminal --maximize --hide-menubar --working-directory='/home/dylan/esv/' --command="tmux new-session -s ${USER}-session-1" &
 zoom &
