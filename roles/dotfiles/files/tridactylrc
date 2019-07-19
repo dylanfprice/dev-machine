@@ -30,7 +30,7 @@ bindurl   mail.google.com/mail --mode=ignore <C-t> fillcmdline tabopen
 bindurl   mail.google.com/mail --mode=ignore <C-f> composite hint -t; mode ignore
 
 " Slack settings
-autocmd DocStart energysavvy.slack.com mode ignore
+autocmd DocStart tendrilinc.slack.com mode ignore
 unbindurl energysavvy.slack.com --mode=ignore <S-Insert>
 unbindurl energysavvy.slack.com --mode=ignore <CA-Escape>
 unbindurl energysavvy.slack.com --mode=ignore <CA-`>
