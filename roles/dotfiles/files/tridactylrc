@@ -29,18 +29,6 @@ bindurl   mail.google.com/mail --mode=ignore <C-b> fillcmdline tab
 bindurl   mail.google.com/mail --mode=ignore <C-t> fillcmdline tabopen
 bindurl   mail.google.com/mail --mode=ignore <C-f> composite hint -t; mode ignore
 
-" Slack settings
-autocmd DocStart tendrilinc.slack.com mode ignore
-unbindurl energysavvy.slack.com --mode=ignore <S-Insert>
-unbindurl energysavvy.slack.com --mode=ignore <CA-Escape>
-unbindurl energysavvy.slack.com --mode=ignore <CA-`>
-unbindurl energysavvy.slack.com --mode=ignore <S-Escape>
-unbindurl energysavvy.slack.com --mode=ignore <C-^>
-unbindurl energysavvy.slack.com --mode=ignore I
-bindurl   energysavvy.slack.com --mode=ignore <C-b> fillcmdline tab
-bindurl   energysavvy.slack.com --mode=ignore <C-t> fillcmdline tabopen
-bindurl   energysavvy.slack.com --mode=ignore <C-f> hint -t; mode ignore
-
 " Docs settings
 seturl           docs.google.com allowautofocus true
 autocmd DocStart docs.google.com mode ignore
