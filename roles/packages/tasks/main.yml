@@ -72,7 +72,6 @@
   with_items:
     - mkdocs
     - pip-tools
-    - poetry
     - tox
 
 - name: install jupyter with pipx
