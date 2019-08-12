@@ -45,9 +45,6 @@ if [ -x ~/.fzf ]; then
     source ~/.fzf/shell/key-bindings.bash
 fi
 
-# add local bin to PATH
-export PATH=$PATH:~/.local/bin:.tox/.package/bin/
-
 # set client on esv servers
 export CLIENT=$(hostname | python -c 'import sys; import re; print(re.match(r"\w+-(.*)", sys.stdin.read()).groups(1)[0])')
 
