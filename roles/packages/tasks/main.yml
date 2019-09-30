@@ -23,7 +23,6 @@
       - awscli
       - chromium-browser
       - curl
-      - default-jdk
       - firefox
       - git
       - gnumeric
@@ -71,7 +70,6 @@
     creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/{{ item }}'
   with_items:
     - mkdocs
-    - pip-tools
     - tox
 
 - name: install jupyter with pipx

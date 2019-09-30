@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-dig @172.31.30.83 +short +search $* | tail -n 1
