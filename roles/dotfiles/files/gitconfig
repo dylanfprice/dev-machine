@@ -1,14 +1,15 @@
 [user]
     name = Dylan Price
+    email = the.dylan.price@gmail.com
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
 [merge]
-	tool = meld
+    tool = meld
 [core]
-	editor = vim
+    editor = vim
     excludesfile = ~/.gitignore
 [push]
-	default = simple
+    default = simple
