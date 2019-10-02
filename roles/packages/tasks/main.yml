@@ -21,7 +21,6 @@
     update_cache: yes
     name:
       - awscli
-      - chromium-browser
       - curl
       - firefox
       - git
