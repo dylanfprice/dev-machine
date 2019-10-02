@@ -6,4 +6,4 @@
     - solarized_terminal
     - vim
     - gsettings
-    - {role: k8s, become: yes}
+    - {role: docker, become: yes}
