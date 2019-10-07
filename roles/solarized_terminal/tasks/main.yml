@@ -8,4 +8,4 @@
   register: profile_id
 
 - name: run install solarized script
-  command: /tmp/gnome-terminal-colors-solarized/install.sh -s dark -p {{ profile_id.stdout }} --install-dircolors
+  command: /tmp/gnome-terminal-colors-solarized/install.sh -s light -p {{ profile_id.stdout }} --install-dircolors
