@@ -15,6 +15,10 @@
     - { key: move-to-workspace-down, value: "['<Shift><Super>j']" }
     - { key: move-to-workspace-up, value: "['<Shift><Super>k']" }
     - { key: move-to-workspace-right, value: "['<Shift><Super>l']" }
+    - { key: move-to-workspace-1, value: "['<Shift><Super>1']" }
+    - { key: move-to-workspace-2, value: "['<Shift><Super>2']" }
+    - { key: move-to-workspace-3, value: "['<Shift><Super>3']" }
+    - { key: move-to-workspace-4, value: "['<Shift><Super>4']" }
 
 - name: set lock screeen shortcut
   gsetting: schema=org.gnome.settings-daemon.plugins.media-keys
@@ -30,3 +34,13 @@
   gsetting: schema=org.gnome.desktop.input-sources
             key=xkb-options
             value="['ctrl:nocaps']"
+
+- name: set static workspaces
+  gsetting: schema=org.gnome.mutter
+            key=dynamic-workspaces
+            value="false"
+
+- name: configure 4 static workspaces
+  gsetting: schema=org.gnome.desktop.wm.preferences
+            key=num-workspaces
+            value="4"
