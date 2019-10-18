@@ -3,22 +3,18 @@
             key={{ item.key }}
             value={{ item.value }}
   with_items:
-    - { key: switch-to-workspace-left, value: "['<Super>h']" }
-    - { key: switch-to-workspace-down, value: "['<Super>j']" }
-    - { key: switch-to-workspace-up, value: "['<Super>k']" }
-    - { key: switch-to-workspace-right, value: "['<Super>l']" }
-    - { key: switch-to-workspace-1, value: "['<Super>1']" }
-    - { key: switch-to-workspace-2, value: "['<Super>2']" }
-    - { key: switch-to-workspace-3, value: "['<Super>3']" }
-    - { key: switch-to-workspace-4, value: "['<Super>4']" }
-    - { key: move-to-workspace-left, value: "['<Shift><Super>h']" }
-    - { key: move-to-workspace-down, value: "['<Shift><Super>j']" }
-    - { key: move-to-workspace-up, value: "['<Shift><Super>k']" }
-    - { key: move-to-workspace-right, value: "['<Shift><Super>l']" }
-    - { key: move-to-workspace-1, value: "['<Shift><Super>1']" }
-    - { key: move-to-workspace-2, value: "['<Shift><Super>2']" }
-    - { key: move-to-workspace-3, value: "['<Shift><Super>3']" }
-    - { key: move-to-workspace-4, value: "['<Shift><Super>4']" }
+    - { key: switch-to-workspace-down, value: "['<Alt>j']" }
+    - { key: switch-to-workspace-up, value: "['<Alt>k']" }
+    - { key: switch-to-workspace-1, value: "['<Alt>1']" }
+    - { key: switch-to-workspace-2, value: "['<Alt>2']" }
+    - { key: switch-to-workspace-3, value: "['<Alt>3']" }
+    - { key: switch-to-workspace-4, value: "['<Alt>4']" }
+    - { key: move-to-workspace-down, value: "['<Shift><Alt>j']" }
+    - { key: move-to-workspace-up, value: "['<Shift><Alt>k']" }
+    - { key: move-to-workspace-1, value: "['<Shift><Alt>1']" }
+    - { key: move-to-workspace-2, value: "['<Shift><Alt>2']" }
+    - { key: move-to-workspace-3, value: "['<Shift><Alt>3']" }
+    - { key: move-to-workspace-4, value: "['<Shift><Alt>4']" }
 
 - name: set lock screeen shortcut
   gsetting: schema=org.gnome.settings-daemon.plugins.media-keys
