@@ -121,3 +121,4 @@
     remote_src: yes
     dest: /usr/local/bin
     mode: 0555
+    creates: /usr/local/bin/terraform
