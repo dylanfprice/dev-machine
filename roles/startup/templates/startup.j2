@@ -1,6 +1,10 @@
 #! /bin/bash
 
+firefox -CreateProfile work
+firefox -CreateProfile communication
+firefox -CreateProfile personal
+firefox -p work &
+firefox -p communication
 firefox -p personal &
-firefox &
 gnome-terminal --maximize --hide-menubar --working-directory='/home/dylan/workspace/' --command="tmux new-session -s ${USER}-session-1" &
 zoom &
