@@ -8,13 +8,8 @@ set hintnames numeric
 set searchengine duckduckgo
 
 set searchurls.devdocs https://devdocs.io/#q=
-set searchurls.drive https://drive.google.com/u/1/search?q=
-set searchurls.projects https://projects.evoworx.org/search?utf8=✓&group_id=&project_id=&repository_ref=&search=%s
-set searchurls.jira https://jira.evoworx.org/secure/QuickSearch.jspa?searchString=
-set searchurls.redmine https://redmine.evoworx.org/projects/global/search?utf8=✓&wiki_pages=1&q=
-set searchurls.docs https://docs.evoworx.org/search/?q=
+set searchurls.drive https://drive.google.com/drive/search?q=
 set searchurls.pypi https://pypi.org/search/?q=
-set searchurls.dd https://app.datadoghq.com/logs?query=
 
 " GMail settings
 seturl           mail.google.com/mail allowautofocus true
@@ -57,17 +52,3 @@ bindurl   localhost:8888/lab --mode=ignore <C-f> hint -t; mode ignore
 
 " Insperity settings (infinite redirect otherwise)
 seturl insperity.com noiframe true
-
-" JIRA settings
-seturl    jira.evoworx.org allowautofocus true
-unbindurl jira.evoworx.org .
-unbindurl jira.evoworx.org j
-unbindurl jira.evoworx.org k
-unbindurl jira.evoworx.org n
-unbindurl jira.evoworx.org p
-
-" Gitlab settings
-seturl projects.evoworx.org allowautofocus true
-
-" Datadog settings
-seturl app.datadoghq.com allowautofocus true
