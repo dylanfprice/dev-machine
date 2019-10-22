@@ -37,6 +37,19 @@ bindurl   docs.google.com --mode=ignore <C-b> fillcmdline tab
 bindurl   docs.google.com --mode=ignore <C-t> fillcmdline tabopen
 bindurl   docs.google.com --mode=ignore <C-f> hint -t; mode ignore
 
+" Trello settings
+seturl           trello.com allowautofocus true
+autocmd DocStart trello.com mode ignore
+unbindurl trello.com --mode=ignore <S-Insert>
+unbindurl trello.com --mode=ignore <CA-Escape>
+unbindurl trello.com --mode=ignore <CA-`>
+unbindurl trello.com --mode=ignore <S-Escape>
+unbindurl trello.com --mode=ignore <C-^>
+unbindurl trello.com --mode=ignore I
+bindurl   trello.com --mode=ignore <C-b> fillcmdline tab
+bindurl   trello.com --mode=ignore <C-t> fillcmdline tabopen
+bindurl   trello.com --mode=ignore <C-f> hint -t; mode ignore
+
 " Jupyter Lab settings
 seturl           localhost:8888/lab allowautofocus true
 autocmd DocStart localhost:8888/lab mode ignore
