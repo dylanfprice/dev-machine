@@ -8,3 +8,5 @@ firefox -p communication &
 firefox -p personal &
 gnome-terminal --maximize --hide-menubar --working-directory='/home/{{ ansible_env.USER }}/hello-broker/' --command="tmux new-session -s {{ ansible_env.USER }}-session-1" &
 zoom &
+
+place-windows
