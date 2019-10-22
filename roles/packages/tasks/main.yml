@@ -44,6 +44,7 @@
       - tree
       - vim
       - vim-gui-common
+      - wmctrl
       - xclip
 
 - name: install tridactyl native messenger
