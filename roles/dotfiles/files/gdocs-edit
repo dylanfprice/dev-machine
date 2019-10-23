@@ -1,0 +1,20 @@
+#!/bin/sh
+
+FILE_ID=$1
+
+TEMP_DIR=$(mktemp -d)
+MD_FILE=$(tempfile -d $TEMP_DIR --suffix=.md)
+FILE_NAME=$(gdrive info $FILE_ID | grep Name | perl -p -e 's/Name: (.*)/\1/')
+
+cd $TEMP_DIR
+
+gdrive export $FILE_ID \
+    --mime application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+pandoc "${FILE_NAME}.docx" -f docx -t gfm -o $MD_FILE
+
+vim $MD_FILE
+
+pandoc $MD_FILE -f gfm -t docx -o "$FILE_NAME"
+
+gdrive update $FILE_ID "$FILE_NAME"

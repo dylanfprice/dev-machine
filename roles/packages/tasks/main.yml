@@ -32,6 +32,7 @@
       - mtp-tools
       - nodejs
       - npm
+      - pandoc
       - parallel
       - python3
       - python3-dev
@@ -123,3 +124,9 @@
     dest: /usr/local/bin
     mode: 0555
     creates: /usr/local/bin/terraform
+
+- name: install gdrive
+  get_url:
+    url: https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64
+    dest: /usr/local/bin/gdrive
+    mode: 0555

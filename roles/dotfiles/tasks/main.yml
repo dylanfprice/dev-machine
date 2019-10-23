@@ -16,6 +16,7 @@
     - {src: 'bash_profile', dest: '.bash_profile'}
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'flake8', dest: '.config/flake8'}
+    - {src: 'gdocs-edit', dest: '.local/bin/gdocs-edit', mode: '0744'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'inputrc', dest: '.inputrc'}
