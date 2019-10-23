@@ -1,17 +1,17 @@
-## Docker
-
-- name: import the Docker gpg key into apt
+- name: import the docker gpg key into apt
   apt_key: url=https://download.docker.com/linux/ubuntu/gpg
 
-- name: add Docker deb repository
+- name: add docker deb repository
   apt_repository:
     repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
 
-- name: install Docker
-  apt: name=docker-ce state=latest update_cache=yes
-
-- name: install docker-compose
-  apt: name=docker-compose state=latest update_cache=yes
+- name: install docker and docker-compose
+  apt: 
+    state: latest
+    update_cache: yes
+    name: 
+      - docker-ce
+      - docker-compose
 
 - name: add docker group
   group: name=docker
