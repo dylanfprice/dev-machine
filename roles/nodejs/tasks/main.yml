@@ -1,0 +1,24 @@
+- name: import the nodesource gpg key into apt
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: add nodesource deb repository
+  apt_repository:
+    repo: 'deb https://deb.nodesource.com/node_8.x {{ ansible_distribution_release }} main'
+    state: present
+    mode: 644
+
+- name: add nodesource deb-src repository
+  apt_repository:
+    repo: 'deb-src https://deb.nodesource.com/node_8.x {{ ansible_distribution_release }} main'
+    state: present
+    mode: 644
+
+- name: install nodejs and npm
+  apt:
+    state: latest
+    update_cache: yes
+    name:
+      - nodejs
+      - npm

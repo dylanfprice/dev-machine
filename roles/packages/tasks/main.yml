@@ -1,20 +1,3 @@
-- name: import the NodeSource GPG key into apt
-  apt_key:
-    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-    state: present
-
-- name: add NodeSource deb repository
-  apt_repository:
-    repo: 'deb https://deb.nodesource.com/node_8.x {{ ansible_distribution_release }} main'
-    state: present
-    mode: 644
-
-- name: add NodeSource deb-src repository
-  apt_repository:
-    repo: 'deb-src https://deb.nodesource.com/node_8.x {{ ansible_distribution_release }} main'
-    state: present
-    mode: 644
-
 - name: install packages
   apt:
     state: latest
@@ -30,8 +13,6 @@
       - lastpass-cli
       - mosh
       - mtp-tools
-      - nodejs
-      - npm
       - pandoc
       - parallel
       - python3
