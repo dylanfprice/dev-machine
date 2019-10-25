@@ -17,4 +17,5 @@ vim $MD_FILE
 
 pandoc $MD_FILE -f gfm -t docx -o "$FILE_NAME"
 
+echo "gdrive update $FILE_ID ${TEMP_DIR}/${FILE_NAME}"
 gdrive update $FILE_ID "$FILE_NAME"
