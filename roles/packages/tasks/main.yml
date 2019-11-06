@@ -53,6 +53,7 @@
     creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/{{ item }}'
   with_items:
     - mkdocs
+    - poetry
     - tox
 
 - name: install jupyter with pipx
