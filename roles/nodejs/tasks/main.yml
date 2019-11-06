@@ -21,4 +21,3 @@
     update_cache: yes
     name:
       - nodejs
-      - npm
