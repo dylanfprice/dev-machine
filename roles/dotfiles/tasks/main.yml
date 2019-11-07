@@ -21,6 +21,7 @@
     - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'inputrc', dest: '.inputrc'}
     - {src: 'isort.cfg', dest: '.isort.cfg'}
+    - {src: 'local-eslint', dest: '.local/bin/local-eslint', mode: '0744'}
     - {src: 'make-project-venv', dest: '.local/bin/make-project-venv', mode: '0744'}
     - {src: 'place-windows', dest: '.local/bin/place-windows', mode: '0744'}
     - {src: 'profile.boot', dest: '.boot/profile.boot'}
