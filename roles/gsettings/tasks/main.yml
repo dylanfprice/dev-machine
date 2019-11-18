@@ -19,7 +19,7 @@
 - name: set lock screeen shortcut
   gsetting: schema=org.gnome.settings-daemon.plugins.media-keys
             key=screensaver
-            value="<Alt>l"
+            value="['<Alt>l']"
 
 - name: disable middle click paste
   gsetting: schema=org.gnome.desktop.interface
