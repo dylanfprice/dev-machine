@@ -1,5 +1,6 @@
 - name: install packages
   apt:
+    force_apt_get: yes
     state: latest
     update_cache: yes
     name:
