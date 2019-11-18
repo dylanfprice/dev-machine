@@ -1,17 +1,2 @@
-Host *.evoworx.org
-  ConnectionAttempts 10
-  ServerAliveInterval 10
-  ServerAliveCountMax 10
-  TCPKeepAlive no
-  ForwardAgent yes
-
-Host repo.evoworx.org
-  User www-data
-
-Host dev
-  HostName 127.0.0.1
-  Port 2222
-  ForwardAgent yes
-
 Host hookyarncarabiner.com
   User hookyar2
