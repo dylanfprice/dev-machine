@@ -12,6 +12,7 @@
       - hfsprogs
       - jq
       - lastpass-cli
+      - libpq-dev
       - mosh
       - mtp-tools
       - pandoc
