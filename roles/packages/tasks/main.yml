@@ -12,7 +12,6 @@
       - jq
       - lastpass-cli
       - libpq-dev
-      - mosh
       - pandoc
       - parallel
       - pavucontrol

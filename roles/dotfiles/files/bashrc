@@ -8,24 +8,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Set correct term for tmux so solarized theme works in vim
 alias tmux="TERM=screen-256color-bce tmux"
 
-function mosht () {
-    LC_TMUX_SESSION_NAME=remote /usr/bin/mosh -- "$@"
-    printf '\033]2;%s\033\\' $(hostname) # re-set tmux pane to correct title
-}
-
 # Set editors
 export VISUAL=vim
 export EDITOR=vim
 
 # vi mode
 set -o vi
-
-# if the LC_TMUX_SESSION_NAME environment variable is set, start tmux
-if [ -n "$LC_TMUX_SESSION_NAME" -a $TERM != "screen" ]; then
-    echo -ne "\033]0;"${USER}@${HOSTNAME}"\007"  # Set terminal title
-    session_name=$USER-$LC_TMUX_SESSION_NAME
-    tmux has-session -t $session_name && tmux attach-session -t $session_name || tmux new-session -s $session_name
-fi
 
 # Set up dircolors to use solarized colors
 if [ -x /usr/bin/dircolors ]; then
