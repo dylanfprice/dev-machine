@@ -4,6 +4,7 @@
     - .ssh/
     - .local/bin/
     - .config/
+    - .jupyter/
     - .lein/
     - .boot/
 
@@ -19,6 +20,7 @@
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'inputrc', dest: '.inputrc'}
+    - {src: 'jupyter_console_config.py', dest: '.jupyter/jupyter_console_config.py'}
     - {src: 'local-eslint', dest: '.local/bin/local-eslint', mode: '0744'}
     - {src: 'place-windows', dest: '.local/bin/place-windows', mode: '0744'}
     - {src: 'profile.boot', dest: '.boot/profile.boot'}
