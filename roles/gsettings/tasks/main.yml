@@ -58,7 +58,7 @@
 - name: make caps lock a ctrl
   gsetting: schema=org.gnome.desktop.input-sources
             key=xkb-options
-            value="['ctrl:swap_lalt_lctl', 'ctrl:swap_ralt_rctl', 'caps:backspace']"
+            value="['ctrl:swap_lalt_lctl', 'ctrl:swap_ralt_rctl', 'caps:escape']"
 
 - name: set static workspaces
   gsetting: schema=org.gnome.mutter
