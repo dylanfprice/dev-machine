@@ -1,21 +1,21 @@
 #!/bin/sh
 
-FILE_ID=$1
+FILE_NAME=$*
 
 TEMP_DIR=$(mktemp -d)
 MD_FILE=$(tempfile -d $TEMP_DIR --suffix=.md)
-FILE_NAME=$(gdrive info $FILE_ID | grep Name | perl -p -e 's/Name: (.*)/\1/')
 
 cd $TEMP_DIR
 
-gdrive export $FILE_ID \
-    --mime application/vnd.openxmlformats-officedocument.wordprocessingml.document
+if rclone ls google-drive:"$FILE_NAME" > /dev/null 2>&1; then
+    rclone --drive-export-formats docx copy google-drive:"$FILE_NAME" .
+    pandoc "$FILE_NAME" -f docx -t gfm -o $MD_FILE
+fi
 
-pandoc "${FILE_NAME}.docx" -f docx -t gfm -o $MD_FILE
 
 vim $MD_FILE
 
-pandoc $MD_FILE -f gfm -t docx -o "$FILE_NAME"
+pandoc $MD_FILE -f gfm -t docx -o $(basename FILE_NAME)
 
-echo "gdrive update $FILE_ID ${TEMP_DIR}/${FILE_NAME}"
-gdrive update $FILE_ID "$FILE_NAME"
+rclone --drive-import-formats docx \
+       copyto $(basename FILE_NAME) google-drive:"$FILE_NAME"
