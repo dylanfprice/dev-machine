@@ -44,7 +44,10 @@
     state: latest
     executable: pip3
     extra_args: --user
-    name: pipx
+    name:
+    - pipx
+      # For ghost-text
+    - websockets
 
 - name: install pipx packages
   become: yes
