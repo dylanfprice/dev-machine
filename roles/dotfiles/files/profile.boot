@@ -1,10 +1,10 @@
 ; vi: ft=clojure
 
-(require 'boot.repl)
+(set-env! :dependencies '[[nrepl "0.6.0"]
+                          [cider/cider-nrepl "0.24.0"]])
 
-(swap! boot.repl/*default-dependencies*
-       concat '[[cider/cider-nrepl "0.14.0"] 
-                [jonase/eastwood "0.2.3"]])
+(require '[cider.tasks :refer [add-middleware]])
 
-(swap! boot.repl/*default-middleware*
-       conj 'cider.nrepl/cider-middleware)
+(task-options! add-middleware {:middleware '[cider.nrepl.middleware.apropos/wrap-apropos
+                                             cider.nrepl.middleware.version/wrap-version]})
+
