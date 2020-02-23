@@ -79,3 +79,6 @@ bindurl   localhost:8888/lab --mode=ignore <C-f> hint -t; mode ignore
 
 " Insperity settings (infinite redirect otherwise)
 seturl insperity.com noiframe true
+
+" BECU settings (infinite redirect otherwise)
+set url becu.org noiframe true
