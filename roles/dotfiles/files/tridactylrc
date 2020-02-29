@@ -1,9 +1,5 @@
 " vim: set filetype=vim:
 
-" Sane hinting mode
-set hintfiltermode vimperator-reflow
-set hintnames numeric
-
 " Search stuff
 set searchengine duckduckgo
 
