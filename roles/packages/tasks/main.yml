@@ -8,7 +8,6 @@
       - curl
       - default-jre
       - firefox
-      - fzf
       - git
       - gnumeric
       - lastpass-cli
