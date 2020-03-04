@@ -8,6 +8,7 @@
       - curl
       - default-jre
       - firefox
+      - fzf
       - git
       - gnumeric
       - lastpass-cli
@@ -82,20 +83,6 @@
   command: jupyter-labextension install jupyterlab_vim
   args:
     creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/jupyter/share/jupyter/lab/extensions/jupyterlab_vim*'
-
-- name: fzf | clone repo
-  git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf depth=1
-
-- name: fzf | install
-  command: '{{ ansible_env.HOME }}/.fzf/install' 
-  args:
-    creates: '{{ ansible_env.HOME }}/.fzf/bin/fzf'
-
-- name: fzf | link into home bin
-  file: src={{ ansible_env.HOME }}/.fzf/bin/{{ item }} dest={{ ansible_env.HOME }}/.local/bin/{{ item }} state=link
-  with_items:
-    - fzf
-    - fzf-tmux
 
 - name: install Terraform
   unarchive:
