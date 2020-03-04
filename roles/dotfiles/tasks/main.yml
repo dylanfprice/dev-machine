@@ -14,7 +14,6 @@
         owner={{ ansible_env.USER }}
         mode={{ item.mode | default('0644') }}
   with_items:
-    - {src: 'bash_profile', dest: '.bash_profile'}
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'gdocs-edit', dest: '.local/bin/gdocs-edit', mode: '0744'}
     - {src: 'gitconfig', dest: '.gitconfig'}
@@ -23,6 +22,7 @@
     - {src: 'jupyter_console_config.py', dest: '.jupyter/jupyter_console_config.py'}
     - {src: 'local-eslint', dest: '.local/bin/local-eslint', mode: '0744'}
     - {src: 'place-windows', dest: '.local/bin/place-windows', mode: '0744'}
+    - {src: 'profile', dest: '.profile'}
     - {src: 'profile.boot', dest: '.boot/profile.boot'}
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
