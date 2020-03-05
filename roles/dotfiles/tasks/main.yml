@@ -3,7 +3,7 @@
   with_items:
     - .ssh/
     - .local/bin/
-    - .config/
+    - .config/alacritty
     - .jupyter/
     - .lein/
     - .boot/
@@ -14,6 +14,7 @@
         owner={{ ansible_env.USER }}
         mode={{ item.mode | default('0644') }}
   with_items:
+    - {src: 'alacritty.yml', dest: '.config/alacritty/alacritty.yml'}
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'gdocs-edit', dest: '.local/bin/gdocs-edit', mode: '0744'}
     - {src: 'gitconfig', dest: '.gitconfig'}
