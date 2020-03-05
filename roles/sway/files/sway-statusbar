@@ -7,7 +7,7 @@ function print_statusbar() {
     ################
 
     # Date and time
-    date_and_week=$(date "+%Y-%m-%d")
+    date_and_week=$(date "+%a, %b %d")
     current_time=$(date "+%H:%M")
 
     #############
@@ -51,7 +51,7 @@ function print_statusbar() {
         audio_active='🔊'
     fi
 
-    echo "$date_and_week 🕘 $current_time | $audio_active $audio_volume | $battery_pluggedin $battery_charge | $network_active $interface_easyname | 🏋$loadavg_5min |"
+    echo "🕘 $date_and_week $current_time | $audio_active $audio_volume | $battery_pluggedin $battery_charge | $network_active $interface_easyname | 🏋$loadavg_5min |"
 }
 
 trap print_statusbar SIGHUP
