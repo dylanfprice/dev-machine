@@ -8,3 +8,4 @@
     - {role: clojure, become: yes}
     - {role: docker, become: yes}
     - {role: nodejs, become: yes}
+    - jupyter
