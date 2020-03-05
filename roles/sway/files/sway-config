@@ -7,7 +7,9 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
+set $alt Mod1
+set $ctrl Ctrl
+set $super Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -38,7 +40,7 @@ exec swayidle -w \
     before-sleep 'swaylock -f -i $background'
 
 # Lock the screen
-bindsym Mod4+l exec "swaylock -f -i $background"
+bindsym $super+l exec "swaylock -f -i $background"
 
 ### Input configuration
 input type:keyboard {
@@ -58,85 +60,78 @@ input type:touchpad {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $alt+t exec $term
 
     # Kill focused window
-    bindsym $mod+Ctrl+q kill
+    bindsym $alt+$ctrl+q kill
 
     # Start your launcher
-    bindsym $mod+d exec \
+    bindsym $alt+d exec \
         $term --class=launcher \
         -e ~/.local/bin/sway-launcher
-    for_window [app_id="^launcher$"] floating enable
+    for_window [app_id="^launcher$"] {
+        floating enable
+        resize set height 200
+    }
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
+    # Drag floating windows by holding down $ctrl and left mouse button.
+    # Resize them with right mouse button + $ctrl.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    floating_modifier $ctrl normal
 
     # Reload the configuration file
-    bindsym $mod+Ctrl+c reload
+    bindsym $alt+$ctrl+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Ctrl+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $alt+$ctrl+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
     # Move your focus around
-    bindsym Ctrl+$left  exec "swaymsg focus left"
-    bindsym Ctrl+$down  exec "swaymsg focus down"
-    bindsym Ctrl+$up    exec "swaymsg focus up"
-    bindsym Ctrl+$right exec "swaymsg focus right"
-    bindsym $mod+$left  exec "swaymsg focus left"
-    bindsym $mod+$down  exec "swaymsg focus down"
-    bindsym $mod+$up    exec "swaymsg focus up"
-    bindsym $mod+$right exec "swaymsg focus right"
+    bindsym $ctrl+$left  exec "swaymsg focus left"
+    bindsym $ctrl+$down  exec "swaymsg focus down"
+    bindsym $ctrl+$up    exec "swaymsg focus up"
+    bindsym $ctrl+$right exec "swaymsg focus right"
 
-
-    # Move the focused window with the same, but add Ctrl
-    bindsym $mod+Ctrl+$left move left
-    bindsym $mod+Ctrl+$down move down
-    bindsym $mod+Ctrl+$up move up
-    bindsym $mod+Ctrl+$right move right
-    bindsym Ctrl+Shift+$left move left
-    bindsym Ctrl+Shift+$down move down
-    bindsym Ctrl+Shift+$up move up
-    bindsym Ctrl+Shift+$right move right
+    # Move the focused window with the same, but add $ctrl
+    bindsym $ctrl+Shift+$left move left
+    bindsym $ctrl+Shift+$down move down
+    bindsym $ctrl+Shift+$up move up
+    bindsym $ctrl+Shift+$right move right
 #
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
+    bindsym $alt+1 workspace 1
+    bindsym $alt+2 workspace 2
+    bindsym $alt+3 workspace 3
+    bindsym $alt+4 workspace 4
+    bindsym $alt+5 workspace 5
+    bindsym $alt+6 workspace 6
+    bindsym $alt+7 workspace 7
+    bindsym $alt+8 workspace 8
+    bindsym $alt+9 workspace 9
+    bindsym $alt+0 workspace 10
     # Move focused container to workspace
-    bindsym $mod+Ctrl+1 move container to workspace 1
-    bindsym $mod+Ctrl+2 move container to workspace 2
-    bindsym $mod+Ctrl+3 move container to workspace 3
-    bindsym $mod+Ctrl+4 move container to workspace 4
-    bindsym $mod+Ctrl+5 move container to workspace 5
-    bindsym $mod+Ctrl+6 move container to workspace 6
-    bindsym $mod+Ctrl+7 move container to workspace 7
-    bindsym $mod+Ctrl+8 move container to workspace 8
-    bindsym $mod+Ctrl+9 move container to workspace 9
-    bindsym $mod+Ctrl+0 move container to workspace 10
+    bindsym $alt+$ctrl+1 move container to workspace 1
+    bindsym $alt+$ctrl+2 move container to workspace 2
+    bindsym $alt+$ctrl+3 move container to workspace 3
+    bindsym $alt+$ctrl+4 move container to workspace 4
+    bindsym $alt+$ctrl+5 move container to workspace 5
+    bindsym $alt+$ctrl+6 move container to workspace 6
+    bindsym $alt+$ctrl+7 move container to workspace 7
+    bindsym $alt+$ctrl+8 move container to workspace 8
+    bindsym $alt+$ctrl+9 move container to workspace 9
+    bindsym $alt+$ctrl+0 move container to workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
 # Layout stuff:
 #
     default_border pixel
-    bindsym $mod+o layout toggle split
-    bindsym $mod+f fullscreen
+    bindsym $alt+f fullscreen
 #
 # Scratchpad:
 #
@@ -144,11 +139,11 @@ input type:touchpad {
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Ctrl+minus move scratchpad
+    bindsym $ctrl+s move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    bindsym $ctrl+Shift+s scratchpad show
 #
 # Resizing containers:
 #
@@ -162,17 +157,11 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $ctrl+Shift+r mode "resize"
 
 
 ### Multimedia
