@@ -2,6 +2,7 @@
   roles:
     - dotfiles
     - {role: packages, become: yes}
+    - fzf
     - solarized_terminal
     - vim
     - gsettings
