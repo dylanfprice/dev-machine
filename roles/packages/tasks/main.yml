@@ -30,7 +30,6 @@
       - tree
       - vim
       - vim-gui-common
-      - wl-clipboard
       - wmctrl
       - xclip
 
