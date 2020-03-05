@@ -2,6 +2,7 @@
   apt:
     state: latest
     name:
+      - brightnessctl
       - sway
       - swaylock
       - swayidle
