@@ -4,7 +4,7 @@
     - .ssh/
     - .local/bin/
     - .config/alacritty
-    - .config/sway
+    - .config/tridactyl
     - .jupyter/
     - .lein/
     - .boot/
@@ -27,4 +27,4 @@
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
-    - {src: 'tridactylrc', dest: '.tridactylrc'}
+    - {src: 'tridactylrc', dest: '.config/tridactyl/tridactylrc'}
