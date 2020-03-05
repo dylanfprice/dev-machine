@@ -29,3 +29,12 @@ fi
 # After logging in the agent should not timeout. After all, this is how the
 # browser behaves.
 export LPASS_AGENT_TIMEOUT=0
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*|tmux*)
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+    ;;
+*)
+    ;;
+esac
