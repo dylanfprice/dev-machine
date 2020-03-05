@@ -1,3 +1,7 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
@@ -11,12 +15,12 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term alacritty
-set $lockscreen_background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# Set background image
+output * bg $background fill
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 set $laptop eDP-1
@@ -28,13 +32,13 @@ bindswitch --reload lid:off output $laptop enable
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 600 'swaylock -f -i $lockscreen_background' \
+    timeout 600 'swaylock -f -i $background' \
     timeout 900 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -i $lockscreen_background'
+    before-sleep 'swaylock -f -i $background'
 
 # Lock the screen
-bindsym Mod4+l exec "swaylock -f -i $lockscreen_background"
+bindsym Mod4+l exec "swaylock -f -i $background"
 
 ### Input configuration
 input type:keyboard {
@@ -173,11 +177,11 @@ bindsym $mod+r mode "resize"
 
 ### Multimedia
 bindsym XF86AudioRaiseVolume exec \
-    "pactl set-sink-volume @DEFAULT_SINK@ +1%; pkill -SIGHUP -f sway-statusbar"
+    "pactl set-sink-volume @DEFAULT_SINK@ +1%; pkill -SIGHUP sway-statusbar"
 bindsym XF86AudioLowerVolume exec \
-    "pactl set-sink-volume @DEFAULT_SINK@ -1%; pkill -SIGHUP -f sway-statusbar"
+    "pactl set-sink-volume @DEFAULT_SINK@ -1%; pkill -SIGHUP sway-statusbar"
 bindsym XF86AudioMute exec \
-    "pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -SIGHUP -f sway-statusbar"
+    "pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -SIGHUP sway-statusbar"
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
