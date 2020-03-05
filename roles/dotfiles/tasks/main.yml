@@ -4,6 +4,7 @@
     - .ssh/
     - .local/bin/
     - .config/alacritty
+    - .config/sway
     - .jupyter/
     - .lein/
     - .boot/
@@ -25,5 +26,8 @@
     - {src: 'profile.boot', dest: '.boot/profile.boot'}
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
+    - {src: 'sway-config', dest: '.config/sway/config'}
+    - {src: 'sway-launcher', dest: '.local/bin/sway-launcher', mode: '0744'}
+    - {src: 'sway-statusbar', dest: '.local/bin/sway-statusbar', mode: '0744'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
     - {src: 'tridactylrc', dest: '.tridactylrc'}

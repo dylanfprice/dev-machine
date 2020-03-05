@@ -1,0 +1,197 @@
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod1
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term alacritty
+set $lockscreen_background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+set $laptop eDP-1
+set $monitor HDMI-A-1
+output $laptop resolution 1920x1080
+output $monitor resolution 1920x1080
+bindswitch --reload lid:on output $laptop disable
+bindswitch --reload lid:off output $laptop enable
+
+### Idle configuration
+exec swayidle -w \
+    timeout 600 'swaylock -f -i $lockscreen_background' \
+    timeout 900 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -i $lockscreen_background'
+
+# Lock the screen
+bindsym Mod4+l exec "swaylock -f -i $lockscreen_background"
+
+### Input configuration
+input type:keyboard {
+    xkb_layout us
+    xkb_model pc105
+    xkb_options "ctrl:swap_lalt_lctl, ctrl:swap_ralt_rctl, caps:escape"
+}
+
+input type:touchpad {
+    tap enabled
+    dwt enabled
+    pointer_accel 0.6
+}
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Ctrl+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec \
+        $term --class=launcher \
+        -e ~/.local/bin/sway-launcher
+    for_window [app_id="^launcher$"] floating enable
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Ctrl+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Ctrl+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym Ctrl+$left  exec "swaymsg focus left"
+    bindsym Ctrl+$down  exec "swaymsg focus down"
+    bindsym Ctrl+$up    exec "swaymsg focus up"
+    bindsym Ctrl+$right exec "swaymsg focus right"
+    bindsym $mod+$left  exec "swaymsg focus left"
+    bindsym $mod+$down  exec "swaymsg focus down"
+    bindsym $mod+$up    exec "swaymsg focus up"
+    bindsym $mod+$right exec "swaymsg focus right"
+
+
+    # Move the focused window with the same, but add Ctrl
+    bindsym $mod+Ctrl+$left move left
+    bindsym $mod+Ctrl+$down move down
+    bindsym $mod+Ctrl+$up move up
+    bindsym $mod+Ctrl+$right move right
+    bindsym Ctrl+Shift+$left move left
+    bindsym Ctrl+Shift+$down move down
+    bindsym Ctrl+Shift+$up move up
+    bindsym Ctrl+Shift+$right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace 2
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
+    bindsym $mod+6 workspace 6
+    bindsym $mod+7 workspace 7
+    bindsym $mod+8 workspace 8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+0 workspace 10
+    # Move focused container to workspace
+    bindsym $mod+Ctrl+1 move container to workspace 1
+    bindsym $mod+Ctrl+2 move container to workspace 2
+    bindsym $mod+Ctrl+3 move container to workspace 3
+    bindsym $mod+Ctrl+4 move container to workspace 4
+    bindsym $mod+Ctrl+5 move container to workspace 5
+    bindsym $mod+Ctrl+6 move container to workspace 6
+    bindsym $mod+Ctrl+7 move container to workspace 7
+    bindsym $mod+Ctrl+8 move container to workspace 8
+    bindsym $mod+Ctrl+9 move container to workspace 9
+    bindsym $mod+Ctrl+0 move container to workspace 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+    default_border normal
+    bindsym $mod+o layout toggle split
+    bindsym $mod+f fullscreen
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Ctrl+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+### Multimedia
+bindsym XF86AudioRaiseVolume exec \
+    "pactl set-sink-volume @DEFAULT_SINK@ +1%; pkill -SIGHUP -f sway-statusbar"
+bindsym XF86AudioLowerVolume exec \
+    "pactl set-sink-volume @DEFAULT_SINK@ -1%; pkill -SIGHUP -f sway-statusbar"
+bindsym XF86AudioMute exec \
+    "pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -SIGHUP -f sway-statusbar"
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# Status Bar:
+# For detailed information type "man sway-bar"
+bar {
+    position top
+
+    status_command ~/.local/bin/sway-statusbar
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+    font "Terminus (TTF)"
+}
