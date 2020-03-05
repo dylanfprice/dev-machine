@@ -134,7 +134,7 @@ input type:touchpad {
 #
 # Layout stuff:
 #
-    default_border normal
+    default_border pixel
     bindsym $mod+o layout toggle split
     bindsym $mod+f fullscreen
 #
