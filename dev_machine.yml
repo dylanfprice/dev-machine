@@ -1,7 +1,6 @@
 - hosts: all
   roles:
     - dotfiles
-    - startup
     - {role: packages, become: yes}
     - solarized_terminal
     - vim
