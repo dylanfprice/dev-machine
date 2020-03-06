@@ -62,7 +62,6 @@ printf "%s\n" "${update_line}" "${command_history}" | \
 command_array=($command_str)
 full_command=$(which ${command_array[0]})
 args=$(echo ${command_array[@]:1})
-
 echo "$full_command $args"
 swaymsg -t command exec "$full_command $args"
 
