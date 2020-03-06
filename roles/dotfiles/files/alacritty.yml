@@ -67,7 +67,10 @@ schemes:
       
 colors: *solarized_light
 shell:
-  program: /usr/bin/tmux
+  program: /usr/bin/vim
+  args:
+    - -c
+    - terminal ++curwin ++kill=term
 scrolling:
   # Disable history since we use tmux for that.
   history: 0
