@@ -1,0 +1,4 @@
+#!/bin/bash
+
+meeting_id=$1
+exec chromium https://zoom.us/wc/join/$meeting_id
