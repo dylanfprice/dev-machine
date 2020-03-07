@@ -63,7 +63,7 @@ input type:touchpad {
     bindsym $alt+t exec $term
 
     # Kill focused window
-    bindsym $ctrl+Shift+q kill
+    bindsym $alt+$ctrl+q kill
 
     # Start your launcher
     bindsym $alt+d exec \
@@ -79,7 +79,7 @@ input type:touchpad {
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $ctrl normal
+    floating_modifier $alt normal
 
     # Reload the configuration file
     bindsym $alt+$ctrl+c reload
@@ -90,16 +90,16 @@ input type:touchpad {
 # Moving around:
 #
     # Move your focus around
-    bindsym $ctrl+$left  exec "swaymsg focus left"
-    bindsym $ctrl+$down  exec "swaymsg focus down"
-    bindsym $ctrl+$up    exec "swaymsg focus up"
-    bindsym $ctrl+$right exec "swaymsg focus right"
+    bindsym $alt+$left  exec "swaymsg focus left"
+    bindsym $alt+$down  exec "swaymsg focus down"
+    bindsym $alt+$up    exec "swaymsg focus up"
+    bindsym $alt+$right exec "swaymsg focus right"
 
     # Move the focused window with the same, but add $ctrl
-    bindsym $ctrl+Shift+$left move left
-    bindsym $ctrl+Shift+$down move down
-    bindsym $ctrl+Shift+$up move up
-    bindsym $ctrl+Shift+$right move right
+    bindsym $alt+$ctrl+$left move left
+    bindsym $alt+$ctrl+$down move down
+    bindsym $alt+$ctrl+$up move up
+    bindsym $alt+$ctrl+$right move right
 #
 # Workspaces:
 #
@@ -131,8 +131,27 @@ input type:touchpad {
 # Layout stuff:
 #
     default_border pixel
+
+    # You can "split" the current object of your focus with
+    # $alt+o or $alt+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $alt+o splith
+    bindsym $alt+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $alt+s layout stacking
+    bindsym $alt+w layout tabbed
+    bindsym $alt+e layout toggle split
+
     bindsym $alt+f fullscreen
-    bindsym $ctrl+Shift+f fullscreen
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $alt+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $alt+a focus parent
+    bindsym $alt+z focus child
+
 #
 # Scratchpad:
 #
@@ -140,11 +159,11 @@ input type:touchpad {
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $ctrl+s move scratchpad
+    bindsym $alt+$ctrl+minus move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $ctrl+Shift+s scratchpad show
+    bindsym $alt+minus scratchpad show; floating disable
 #
 # Resizing containers:
 #
@@ -162,7 +181,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $ctrl+Shift+r mode "resize"
+bindsym $alt+$ctrl+r mode "resize"
 
 
 ### Multimedia
