@@ -1,5 +1,9 @@
 # bashrc runs for non-login shells, e.g. when you launch gnome-terminal from a desktop
 
+if [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion
+fi
+
 # Aliases
 alias ls="/bin/ls --color=auto"
 alias ll="/bin/ls --color=auto -l"
