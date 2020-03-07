@@ -68,9 +68,14 @@ input type:touchpad {
     bindsym $alt+d exec \
         $term --class=launcher \
         -e ~/.local/bin/sway-launcher
+
+    # Window styling
     for_window [app_id="^launcher$"] {
         floating enable
         resize set height 200
+    }
+    for_window [app_id="^tridactyl-editor$"] {
+        floating enable
     }
 
     # Drag floating windows by holding down $ctrl and left mouse button.

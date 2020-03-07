@@ -1,5 +1,7 @@
 " vim: set filetype=vim:
 
+set editorcmd alacritty --class=tridactyl-editor -e vim
+
 " Search stuff
 set searchengine duckduckgo
 
