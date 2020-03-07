@@ -2,6 +2,11 @@
 
 set editorcmd alacritty --class=tridactyl-editor -e vim
 
+bind <C-l> tabnext
+bind <C-h> tabprev
+bind <C-;> tab
+bind <C-'> tabopen
+
 " Search stuff
 set searchengine duckduckgo
 
