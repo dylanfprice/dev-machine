@@ -28,8 +28,6 @@
       - texlive-fonts-recommended
       - tmux
       - tree
-      - wmctrl
-      - xclip
 
 - name: install tridactyl native messenger
   become: yes
