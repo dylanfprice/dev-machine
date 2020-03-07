@@ -5,6 +5,7 @@
     - fzf
     - solarized_terminal
     - vim
+    - {role: xkb, become: yes}
     - gsettings
     - {role: clojure, become: yes}
     - {role: docker, become: yes}
