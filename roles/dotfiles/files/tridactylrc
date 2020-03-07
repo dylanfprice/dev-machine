@@ -17,67 +17,37 @@ set searchurls.pypi https://pypi.org/search/?q=
 " GMail settings
 seturl           mail.google.com/mail allowautofocus true
 autocmd DocStart mail.google.com/mail mode ignore
-unbindurl mail.google.com/mail --mode=ignore <S-Insert>
-unbindurl mail.google.com/mail --mode=ignore <CA-Escape>
-unbindurl mail.google.com/mail --mode=ignore <CA-`>
-unbindurl mail.google.com/mail --mode=ignore <S-Escape>
-unbindurl mail.google.com/mail --mode=ignore <C-^>
-unbindurl mail.google.com/mail --mode=ignore I
-bindurl   mail.google.com/mail --mode=ignore <C-b> fillcmdline tab
-bindurl   mail.google.com/mail --mode=ignore <C-t> fillcmdline tabopen
+bindurl   mail.google.com/mail --mode=ignore <C-;> fillcmdline tab
+bindurl   mail.google.com/mail --mode=ignore <C-'> fillcmdline tabopen
 bindurl   mail.google.com/mail --mode=ignore <C-f> composite hint -t; mode ignore
 
 " Drive settings
 seturl           drive.google.com allowautofocus true
 autocmd DocStart drive.google.com mode ignore
-unbindurl drive.google.com --mode=ignore <S-Insert>
-unbindurl drive.google.com --mode=ignore <CA-Escape>
-unbindurl drive.google.com --mode=ignore <CA-`>
-unbindurl drive.google.com --mode=ignore <S-Escape>
-unbindurl drive.google.com --mode=ignore <C-^>
-unbindurl drive.google.com --mode=ignore I
-bindurl   drive.google.com --mode=ignore <C-b> fillcmdline tab
-bindurl   drive.google.com --mode=ignore <C-t> fillcmdline tabopen
+bindurl   drive.google.com --mode=ignore <C-;> fillcmdline tab
+bindurl   drive.google.com --mode=ignore <C-'> fillcmdline tabopen
 bindurl   drive.google.com --mode=ignore <C-f> hint -t; mode ignore
 
 " Docs settings
 seturl           docs.google.com allowautofocus true
 autocmd DocStart docs.google.com mode ignore
-unbindurl docs.google.com --mode=ignore <S-Insert>
-unbindurl docs.google.com --mode=ignore <CA-Escape>
-unbindurl docs.google.com --mode=ignore <CA-`>
-unbindurl docs.google.com --mode=ignore <S-Escape>
-unbindurl docs.google.com --mode=ignore <C-^>
-unbindurl docs.google.com --mode=ignore I
-bindurl   docs.google.com --mode=ignore <C-b> fillcmdline tab
-bindurl   docs.google.com --mode=ignore <C-t> fillcmdline tabopen
+bindurl   docs.google.com --mode=ignore <C-;> fillcmdline tab
+bindurl   docs.google.com --mode=ignore <C-'> fillcmdline tabopen
 bindurl   docs.google.com --mode=ignore <C-f> hint -t; mode ignore
 
 " Trello settings
 seturl           trello.com allowautofocus true
 autocmd DocStart trello.com mode ignore
-unbindurl trello.com --mode=ignore <S-Insert>
-unbindurl trello.com --mode=ignore <CA-Escape>
-unbindurl trello.com --mode=ignore <CA-`>
-unbindurl trello.com --mode=ignore <S-Escape>
-unbindurl trello.com --mode=ignore <C-^>
-unbindurl trello.com --mode=ignore I
-bindurl   trello.com --mode=ignore <C-b> fillcmdline tab
-bindurl   trello.com --mode=ignore <C-t> fillcmdline tabopen
+bindurl   trello.com --mode=ignore <C-;> fillcmdline tab
+bindurl   trello.com --mode=ignore <C-'> fillcmdline tabopen
 bindurl   trello.com --mode=ignore <C-f> hint -t; mode ignore
 bindurl   trello.com --mode=ignore <C-i> editor
 
 " Jupyter Lab settings
 seturl           localhost:8888/lab allowautofocus true
 autocmd DocStart localhost:8888/lab mode ignore
-unbindurl localhost:8888/lab --mode=ignore <S-Insert>
-unbindurl localhost:8888/lab --mode=ignore <CA-Escape>
-unbindurl localhost:8888/lab --mode=ignore <CA-`>
-unbindurl localhost:8888/lab --mode=ignore <S-Escape>
-unbindurl localhost:8888/lab --mode=ignore <C-^>
-unbindurl localhost:8888/lab --mode=ignore I
-bindurl   localhost:8888/lab --mode=ignore <C-b> fillcmdline tab
-bindurl   localhost:8888/lab --mode=ignore <C-t> fillcmdline tabopen
+bindurl   localhost:8888/lab --mode=ignore <C-;> fillcmdline tab
+bindurl   localhost:8888/lab --mode=ignore <C-'> fillcmdline tabopen
 bindurl   localhost:8888/lab --mode=ignore <C-f> hint -t; mode ignore
 
 " Insperity settings (infinite redirect otherwise)
