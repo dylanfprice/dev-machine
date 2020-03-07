@@ -3,6 +3,8 @@
     state: latest
     name:
       - brightnessctl
+      - grim
+      - slurp
       - sway
       - swaylock
       - swayidle
