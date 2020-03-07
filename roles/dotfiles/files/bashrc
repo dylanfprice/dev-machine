@@ -42,3 +42,6 @@ xterm*|rxvt*|tmux*)
 *)
     ;;
 esac
+
+# Run firefox on wayland
+export MOZ_ENABLE_WAYLAND=1
