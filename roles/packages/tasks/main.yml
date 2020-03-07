@@ -28,8 +28,6 @@
       - texlive-fonts-recommended
       - tmux
       - tree
-      - vim
-      - vim-gui-common
       - wmctrl
       - xclip
 

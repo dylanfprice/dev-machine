@@ -1,3 +1,10 @@
+- name: install vim
+  apt:
+    state: latest
+    name:
+      - vim
+      - vim-gui-common
+
 - name: clone vim repo
   git: repo=git@github.com:dylanfprice/vim.git
        dest={{ ansible_env.HOME }}/.vim
