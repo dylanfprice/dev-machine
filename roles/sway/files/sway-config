@@ -40,7 +40,8 @@ exec swayidle -w \
     before-sleep 'swaylock -f -i $background'
 
 # Lock the screen
-bindsym $super+l exec "swaylock -f -i $background"
+bindsym $super+l \
+    exec "pkill -SIGUSR1 swayidle"
 
 ### Input configuration
 input type:keyboard {
