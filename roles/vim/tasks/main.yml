@@ -4,6 +4,8 @@
     name:
       - vim
       - vim-gui-common
+      # Seems to make copy/paste better under wayland for now.
+      - xclip
 
 - name: clone vim repo
   git: repo=git@github.com:dylanfprice/vim.git
