@@ -4,6 +4,7 @@
     name:
       - brightnessctl
       - grim
+      - pulseaudio
       - slurp
       - sway
       - swaylock
