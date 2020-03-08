@@ -10,6 +10,14 @@
       - swayidle
       - wl-clipboard
 
+- name: add me to video and input groups
+  user:
+    name: {{ ansible_env.USER }}
+    append: yes
+    groups:
+      - input
+      - video
+
 - name: ensures directories exist
   file: path={{ ansible_env.HOME }}/{{ item }} state=directory
   with_items:
