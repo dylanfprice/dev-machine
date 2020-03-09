@@ -34,10 +34,10 @@ bindswitch --reload lid:off output $laptop enable
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 300 'swaylock -f -i $background' \
-    timeout 300 'swaymsg "output * dpms off"' \
+    timeout 300 swaylock \
+    timeout 330 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -i $background'
+    before-sleep swaylock
 
 # Lock the screen
 bindsym $super+l \

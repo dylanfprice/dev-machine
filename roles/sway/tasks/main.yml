@@ -24,6 +24,7 @@
   with_items:
     - .local/bin/
     - .config/sway
+    - .config/swaylock
 
 - name: copy files
   copy: src={{ item.src }}
@@ -33,4 +34,5 @@
   with_items:
     - {src: 'sway-config', dest: '.config/sway/config'}
     - {src: 'sway-launcher', dest: '.local/bin/sway-launcher', mode: '0744'}
+    - {src: 'swaylock-config', dest: '.config/swaylock/config'}
     - {src: 'sway-statusbar', dest: '.local/bin/sway-statusbar', mode: '0744'}
