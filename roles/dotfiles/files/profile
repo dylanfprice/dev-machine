@@ -50,3 +50,7 @@ if [ -f "${SSH_ENV}" ]; then
 else
      start_agent;
 fi
+
+if [ "$(tty)" = "/dev/tty1" ]; then
+	exec sway
+fi
