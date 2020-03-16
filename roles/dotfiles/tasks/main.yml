@@ -21,12 +21,12 @@
     - {src: 'gdocs-edit', dest: '.local/bin/gdocs-edit', mode: '0744'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
-    - {src: 'gnome-control-center', dest: '.local/bin/gnome-control-center', mode: '0744'}
     - {src: 'inputrc', dest: '.inputrc'}
     - {src: 'jupyter_console_config.py', dest: '.jupyter/jupyter_console_config.py'}
     - {src: 'profile', dest: '.profile'}
     - {src: 'profile.boot', dest: '.boot/profile.boot'}
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
+    - {src: 'start-gnome-session', dest: '.local/bin/start-gnome-session', mode: '0744'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
     - {src: 'tridactylrc', dest: '.config/tridactyl/tridactylrc'}
