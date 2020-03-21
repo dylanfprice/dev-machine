@@ -44,6 +44,14 @@
     - { key: screenshot, value: "['<Shift>Print']" }
     - { key: area-screenshot, value: "['Print']" }
 
+- name: set touchpad settings
+  gsetting: schema=org.gnome.desktop.peripherals.touchpad
+            key={{ item.key }}
+            value={{ item.value }}
+  with_items:
+    - { key: natural-scroll, value: "false" }
+    - { key: speed, value: "0.65" }
+
 - name: disable middle click paste
   gsetting: schema=org.gnome.desktop.interface
             key=gtk-enable-primary-paste
