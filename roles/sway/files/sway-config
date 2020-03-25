@@ -29,8 +29,8 @@ set $laptop eDP-1
 set $monitor HDMI-A-1
 output $laptop resolution 1920x1080
 output $monitor resolution 1920x1080
-bindswitch --reload lid:on output $laptop disable
-bindswitch --reload lid:off output $laptop enable
+bindswitch --locked --reload lid:on output $laptop disable
+bindswitch --locked --reload lid:off output $laptop enable
 
 ### Idle configuration
 exec swayidle -w \
