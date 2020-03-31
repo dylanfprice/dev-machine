@@ -3,11 +3,13 @@
     - dotfiles
     - {role: packages, become: yes}
     - fzf
-    - solarized_terminal
     - vim
+    - {role: sway, become: yes}
     - {role: xkb, become: yes}
-    - gsettings
     - {role: clojure, become: yes}
     - {role: docker, become: yes}
     - {role: nodejs, become: yes}
     - jupyter
+    # Gnome roles
+    - solarized_terminal
+    - gsettings

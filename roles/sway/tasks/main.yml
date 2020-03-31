@@ -13,7 +13,7 @@
 
 - name: add me to video and input groups
   user:
-    name: {{ ansible_env.USER }}
+    name: '{{ ansible_env.USER }}'
     append: yes
     groups:
       - input
@@ -36,3 +36,16 @@
     - {src: 'sway-launcher', dest: '.local/bin/sway-launcher', mode: '0744'}
     - {src: 'swaylock-config', dest: '.config/swaylock/config'}
     - {src: 'sway-statusbar', dest: '.local/bin/sway-statusbar', mode: '0744'}
+
+
+- name: wl-clipboard-x11 | clone repo
+  git: repo=https://github.com/brunelli/wl-clipboard-x11.git
+       dest=/tmp/wl-clipboard-x11
+       accept_hostkey=yes
+
+- name: wl-clipboard-x11 | install
+  command: make install
+  args:
+    chdir: /tmp/wl-clipboard-x11
+    creates: /usr/bin/xclip
+
