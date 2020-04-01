@@ -215,4 +215,4 @@ bar {
     font "Terminus (TTF)"
 }
 
-exec mako
+exec mako --default-timeout 10000
