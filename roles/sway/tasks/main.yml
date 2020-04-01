@@ -36,6 +36,7 @@
     - {src: 'sway-launcher', dest: '.local/bin/sway-launcher', mode: '0744'}
     - {src: 'swaylock-config', dest: '.config/swaylock/config'}
     - {src: 'sway-statusbar', dest: '.local/bin/sway-statusbar', mode: '0744'}
+    - {src: 'mako', dest: '.local/bin/mako', mode: '0744'}
 
 
 - name: wl-clipboard-x11 | clone repo

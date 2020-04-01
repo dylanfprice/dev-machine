@@ -214,3 +214,5 @@ bar {
     }
     font "Terminus (TTF)"
 }
+
+exec mako
