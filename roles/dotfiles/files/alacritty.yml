@@ -72,7 +72,7 @@ shell:
     - -c
     - terminal ++curwin ++kill=term
 scrolling:
-  # Disable history since we use tmux for that.
+  # Disable history since we use vim for that.
   history: 0
 dynamic_title: true
 font:
