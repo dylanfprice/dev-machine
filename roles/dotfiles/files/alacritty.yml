@@ -67,10 +67,8 @@ schemes:
       
 colors: *solarized_light
 shell:
-  program: /usr/bin/vim
-  args:
-    - -c
-    - terminal ++curwin ++kill=term
+  program: /usr/bin/nvim
+  args: [-c, terminal]
 scrolling:
   # Disable history since we use vim for that.
   history: 0

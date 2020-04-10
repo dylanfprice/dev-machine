@@ -1,11 +1,12 @@
 - name: install vim
   apt:
     state: latest
-    name:
-      - vim
-      - vim-gui-common
+    name: neovim
+
+- name: ensures directories exist
+  file: path={{ ansible_env.HOME }}/.config/nvim state=directory
 
 - name: clone vim repo
   git: repo=git@github.com:dylanfprice/vim.git
-       dest={{ ansible_env.HOME }}/.vim
+       dest={{ ansible_env.HOME }}/.config/nvim
        accept_hostkey=yes
