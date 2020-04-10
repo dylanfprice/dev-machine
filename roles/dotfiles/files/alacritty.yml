@@ -64,10 +64,6 @@ schemes:
       cyan:    '#93a1a1' # base1
       white:   '#fdf6e3' # base3
 
-      
-env:
-  # Makes copy/paste work
-  WINIT_UNIX_BACKEND: x11
 colors: *solarized_light
 shell:
   program: /usr/bin/nvim
