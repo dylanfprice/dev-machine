@@ -9,6 +9,7 @@ alias ls="/bin/ls --color=auto"
 alias ll="/bin/ls --color=auto -l"
 alias la="/bin/ls --color=auto --almost-all"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias vim=nvim
 
 # Set editors
 export VISUAL=vim
