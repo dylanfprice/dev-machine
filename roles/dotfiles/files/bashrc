@@ -35,14 +35,5 @@ fi
 # browser behaves.
 export LPASS_AGENT_TIMEOUT=0
 
-# If this is an xterm or tmux term set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*|tmux*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-    ;;
-*)
-    ;;
-esac
-
 # Run firefox on wayland
 export MOZ_ENABLE_WAYLAND=1
