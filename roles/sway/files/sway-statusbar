@@ -2,13 +2,14 @@
 # From: https://git.sr.ht/~oscarcp/ghostfiles/tree/master/sway_wm/scripts/sway_bar.sh
 
 function print_statusbar() {
-    ################
+    #############
     # Variables
-    ################
+    #############
 
     # Date and time
     date_and_week=$(date "+%a, %b %d")
     current_time=$(date "+%H:%M")
+
 
     #############
     # Commands
@@ -51,7 +52,29 @@ function print_statusbar() {
         audio_active='🔊'
     fi
 
+
+    #############
+    # Status Line
+    #############
+
     echo "🕘 $date_and_week $current_time | $audio_active $audio_volume | $battery_pluggedin $battery_charge | $network_active $interface_easyname | 🏋$loadavg_5min |"
+
+
+    #############
+    # Alerts
+    #############
+
+    if [ ${battery_charge::-1} -lt 5 ]
+    then
+        notify-send \
+            --urgency=critical \
+            "Battery Low!" \
+            "Battery below $battery_charge. Computer will suspend soon if not plugged in."
+    elif [ ${battery_charge::-1} -lt 3 ]
+    then
+        notify-send --urgency=critical "Battery Low!" "Suspending..."
+        systemctl suspend
+    fi
 }
 
 trap print_statusbar SIGHUP
