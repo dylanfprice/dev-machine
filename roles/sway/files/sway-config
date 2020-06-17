@@ -216,3 +216,4 @@ bar {
 }
 
 exec mako --default-timeout 10000
+exec redshift
