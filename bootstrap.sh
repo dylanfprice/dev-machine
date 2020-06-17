@@ -1,14 +1,13 @@
 #!/bin/bash 
 
+echo 'disabling graphical boot'
+sudo systemctl set-default multi-user.target
+
 echo 'installing ansible'
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
+sudo apt update
+sudo apt install ansible
 
 echo '\nmake sure you have an ssh key, and pushed it to github and bitbucket' 
-read
-
-echo 'create a new gnome terminal profile with the name "Default"'
 read
 
 echo 'log in to firefox account and sync add-ons'
