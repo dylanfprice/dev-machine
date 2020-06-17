@@ -1,6 +1,7 @@
 #!/bin/bash 
 
 echo 'disabling graphical boot'
+sudo systemctl disable display-manager.service
 sudo systemctl set-default multi-user.target
 
 echo 'installing ansible'
