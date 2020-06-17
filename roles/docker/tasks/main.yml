@@ -3,7 +3,7 @@
 
 - name: add docker deb repository
   apt_repository:
-    repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable'
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
 
 - name: install docker and docker-compose
   apt: 
