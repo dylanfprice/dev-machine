@@ -217,3 +217,8 @@ bar {
 
 exec mako --default-timeout 10000
 exec redshift
+exec obsidian
+for_window [class="^obsidian$"] {
+    move scratchpad
+}
+
