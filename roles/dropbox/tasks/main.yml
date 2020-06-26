@@ -1,0 +1,29 @@
+- name: import gpg key
+  apt_key:
+    keyserver: pgp.mit.edu
+    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+
+- name: add apt repository
+  # TODO: update to {{ ansible_distribution_release }} when dropbox has focal
+  apt_repository:
+    repo: 'deb https://linux.dropbox.com/ubuntu disco main'
+
+- name: install
+  apt: 
+    update_cache: yes
+    state: latest
+    name: dropbox
+
+- name: install systemd unit file
+  template: src=dropbox.service dest=/etc/systemd/user/dropbox.service
+
+- name: configure systemd to autostart dropboxd
+  systemd:
+    name: dropbox.service
+    scope: user
+    enabled: yes
+    state: started
+  environment:
+    XDG_RUNTIME_DIR: '/run/user/{{ lookup("env", "UID") }}'
+  become: yes
+  become_user: '{{ ansible_env.USER }}'

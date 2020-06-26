@@ -2,6 +2,7 @@
   roles:
     - dotfiles
     - {role: packages, become: yes}
+    - {role: dropbox, become: yes}
     - fzf
     - vim
     - {role: sway, become: yes}

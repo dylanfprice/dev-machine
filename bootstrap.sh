@@ -13,3 +13,5 @@ read
 
 echo 'log in to firefox account and sync add-ons'
 read
+
+echo '*after* running the playbook, run `dropbox status`'
