@@ -28,6 +28,7 @@
       - texlive-fonts-recommended
       - tmux
       - tree
+      - universal-ctags
 
 - name: install tridactyl native messenger
   become: yes
