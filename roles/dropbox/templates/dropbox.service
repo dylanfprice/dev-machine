@@ -2,9 +2,10 @@
 Description=Dropbox
 
 [Service]
-ExecStart=/usr/bin/dropbox start -i
 Type=forking
+ExecStart=/usr/bin/dropbox start -i
 PIDFile=%h/.dropbox/dropbox.pid
+Restart=on-failure
 
 [Install]
 WantedBy=default.target
