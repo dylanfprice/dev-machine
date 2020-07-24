@@ -3,6 +3,7 @@
     - dotfiles
     - {role: packages, become: yes}
     - {role: dropbox, become: yes}
+    - {role: redshift, become: yes}
     - fzf
     - vim
     - {role: sway, become: yes}

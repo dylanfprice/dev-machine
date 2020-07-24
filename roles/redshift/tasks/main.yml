@@ -1,0 +1,11 @@
+- name: install systemd unit file
+  template: src=redshift.service dest=/etc/systemd/user/redshift.service
+
+- name: configure systemd to autostart redshift
+  systemd:
+    name: redshift.service
+    scope: user
+    enabled: yes
+    state: started
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
