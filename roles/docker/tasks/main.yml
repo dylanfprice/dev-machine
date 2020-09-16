@@ -22,3 +22,12 @@
     name: '{{ ansible_env.USER }}'
     groups: docker
     append: yes
+
+- name: install docker-credential-secretservice
+  unarchive:
+    src: https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-secretservice-v0.6.3-amd64.tar.gz
+    remote_src: yes
+    dest: /usr/local/bin
+    mode: 0555
+    creates: /usr/local/bin/docker-credential-secretservice
+
