@@ -1,4 +1,5 @@
 - name: install vim
+  become: yes
   apt:
     state: latest
     name: neovim
