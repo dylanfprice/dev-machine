@@ -8,7 +8,7 @@ echo 'installing ansible'
 sudo apt update
 sudo apt install ansible
 
-echo '\nmake sure you have an ssh key, and pushed it to github and bitbucket' 
+echo '\nmake sure you have an ssh key, and pushed it to github and gitlab' 
 read
 
 echo 'log in to firefox account and sync add-ons'
