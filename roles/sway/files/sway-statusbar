@@ -64,13 +64,13 @@ function print_statusbar() {
     # Alerts
     #############
 
-    if [ ${battery_charge::-1} -lt 5 ]
+    if [ ${battery_charge::-1} -lt 6 ] && [ $battery_status = "discharging" ]
     then
         notify-send \
             --urgency=critical \
             "Battery Low!" \
             "Battery below $battery_charge. Computer will suspend soon if not plugged in."
-    elif [ ${battery_charge::-1} -lt 3 ]
+    elif [ ${battery_charge::-1} -lt 3 ] && [ $battery_status = "discharging" ]
     then
         notify-send --urgency=critical "Battery Low!" "Suspending..."
         systemctl suspend
