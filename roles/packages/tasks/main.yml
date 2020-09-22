@@ -14,6 +14,10 @@
       - lastpass-cli
       - libnotify-bin
       - libpq-dev
+      # For Duke VPN
+      - openvpn
+      - openconnect
+      # /For Duke VPN
       - pandoc
       - parallel
       - pavucontrol

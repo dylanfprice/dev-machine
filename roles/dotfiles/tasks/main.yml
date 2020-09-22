@@ -30,3 +30,6 @@
     - {src: 'start-gnome-session', dest: '.local/bin/start-gnome-session', mode: '0744'}
     - {src: 'tmux.conf', dest: '.tmux.conf'}
     - {src: 'tridactylrc', dest: '.config/tridactyl/tridactylrc'}
+    # For Duke VPN
+    - {src: 'vpn', dest: '.local/bin/vpn', mode: '0744'}
+    # /For Duke VPN

@@ -1,0 +1,3 @@
+sudo openvpn --mktun --dev tun1
+sudo ifconfig tun1 up
+sudo openconnect portal.duke.edu -b --user=dfp12 --authgroup=-Default- --interface=tun1
