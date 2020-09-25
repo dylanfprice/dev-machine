@@ -1,3 +1,4 @@
 sudo openvpn --mktun --dev tun1
 sudo ifconfig tun1 up
+# dmvpn.duhs.duke.edu for elevated vpn access
 sudo openconnect vpn.duhs.duke.edu -b --user=dfp12 --authgroup=-Default- --interface=tun1
