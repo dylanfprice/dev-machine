@@ -6,3 +6,10 @@ sudo ifconfig tun1 up
 sudo openconnect vpn.duhs.duke.edu -b --user=dfp12 --interface=tun1
 # for elevated access
 # sudo openconnect dmvpn.duhs.duke.edu -b --user=dfp12 --interface=tun1
+
+# attempt to force split tunnel
+# sudo openconnect vpn.duhs.duke.edu \
+#     --user=dfp12 \
+#     --interface=tun1 \
+#     --disable-ipv6 \
+#     -s '/home/dylan/.local/bin/vpn-slice gitlab.dhe.duke.edu exdnc-scan1.dhe.duke.edu vld-apisdev01.dhe.duke.edu vld-1kp.dhe.duke.edu'
