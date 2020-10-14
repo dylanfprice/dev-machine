@@ -50,8 +50,6 @@ bindurl   localhost:8888/lab --mode=ignore <C-;> fillcmdline tab
 bindurl   localhost:8888/lab --mode=ignore <C-'> fillcmdline tabopen
 bindurl   localhost:8888/lab --mode=ignore <C-f> hint -t; mode ignore
 
-" Insperity settings (infinite redirect otherwise)
 seturl insperity.com noiframe true
-
-" BECU settings (infinite redirect otherwise)
-set url becu.org noiframe true
+seturl service-now.com noiframe true
+seturl becu.org noiframe true
