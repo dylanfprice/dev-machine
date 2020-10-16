@@ -8,6 +8,6 @@
 # sudo openconnect dmvpn.duhs.duke.edu -b --user=dfp12
 
 # attempt to force split tunnel
-sudo openconnect vpn.duhs.duke.edu \
+sudo openconnect dmvpn.duhs.duke.edu \
     --user=dfp12 \
-    -s '/home/dylan/.local/bin/vpn-slice gitlab.dhe.duke.edu exdnc-scan1.dhe.duke.edu vld-apisdev01.dhe.duke.edu vld-1kp.dhe.duke.edu redcap.duke.edu groups.oit.duke.edu oauth.oit.duke.edu apis-dev.ori.duke.edu dev.fulcrum.duke.edu test.fulcrum.duke.edu fulcrum.duke.edu smtp.duhs.duke.edu'
+    -s '/home/dylan/.local/bin/vpn-slice gitlab.dhe.duke.edu exdnc-scan1.dhe.duke.edu vld-apisdev01.dhe.duke.edu vld-1kp.dhe.duke.edu redcap.duke.edu groups.oit.duke.edu oauth.oit.duke.edu apis-dev.ori.duke.edu dev.fulcrum.duke.edu test.fulcrum.duke.edu fulcrum.duke.edu smtp.duhs.duke.edu awsportal.duhs.duke.edu'
