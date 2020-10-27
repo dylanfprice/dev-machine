@@ -12,17 +12,18 @@ HOSTNAMES=(
   apis-dev.ori.duke.edu
   awsportal.duhs.duke.edu
   dev.fulcrum.duke.edu
+  dev.snowball.dukecrucible.net
   exdnc-scan1.dhe.duke.edu
   fulcrum.duke.edu
   gitlab.dhe.duke.edu
   groups.oit.duke.edu
   oauth.oit.duke.edu
   redcap.duke.edu
+  sftp.dev.snowball.dukecrucible.net
   smtp.duhs.duke.edu
   test.fulcrum.duke.edu
   vld-1kp.dhe.duke.edu
   vld-apisdev01.dhe.duke.edu
-  vpce-0edbdb95ffd5f23ad-mla0pv1m.server.transfer.us-east-1.vpce.amazonaws.com
 )
 SCRIPT="/home/dylan/.local/bin/vpn-slice ${HOSTNAMES[@]}"
 sudo openconnect vpn.duhs.duke.edu \
