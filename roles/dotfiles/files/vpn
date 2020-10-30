@@ -9,6 +9,7 @@
 
 # force split tunnel
 HOSTNAMES=(
+  10.96.56.216
   apis-dev.ori.duke.edu
   awsportal.duhs.duke.edu
   dev.fulcrum.duke.edu
@@ -20,7 +21,9 @@ HOSTNAMES=(
   oauth.oit.duke.edu
   redcap.duke.edu
   sftp.dev.snowball.dukecrucible.net
+  sftp.prod.snowball.dukecrucible.net
   smtp.duhs.duke.edu
+  snowball-dev.cluster-cropzucl3dtp.us-east-1.docdb.amazonaws.com
   test.fulcrum.duke.edu
   vld-1kp.dhe.duke.edu
   vld-apisdev01.dhe.duke.edu
