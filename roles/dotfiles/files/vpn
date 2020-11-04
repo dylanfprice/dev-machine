@@ -15,7 +15,6 @@ HOSTNAMES=(
   dev.fulcrum.duke.edu
   dev.snowball.dukecrucible.net
   devguide.dhe.duke.edu
-  devguide.duhs.duke.edu
   exdnc-scan1.dhe.duke.edu
   fulcrum.duke.edu
   gitlab.dhe.duke.edu
