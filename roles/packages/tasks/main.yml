@@ -28,8 +28,9 @@
       - rclone
       - rlwrap
       - silversearcher-ag
-      - texlive-latex-recommended
       - texlive-fonts-recommended
+      - texlive-latex-extra
+      - texlive-latex-recommended
       - tmux
       - tree
       - universal-ctags
