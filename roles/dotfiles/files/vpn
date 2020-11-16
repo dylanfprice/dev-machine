@@ -30,6 +30,8 @@ HOSTNAMES=(
   vld-apisdev01.dhe.duke.edu
 )
 SCRIPT="/home/dylan/.local/bin/vpn-slice ${HOSTNAMES[@]}"
+{ lpass show --password duke.edu; echo push; } | \
 sudo openconnect vpn.duhs.duke.edu \
     --user=dfp12 \
+    --passwd-on-stdin \
     --script="$SCRIPT"
