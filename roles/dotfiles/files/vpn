@@ -11,6 +11,7 @@
 HOSTNAMES=(
   10.96.56.216
   apis-dev.ori.duke.edu
+  apis.ori.duke.edu
   awsportal.duhs.duke.edu
   dev.fulcrum.duke.edu
   dev.snowball.dukecrucible.net
@@ -20,6 +21,7 @@ HOSTNAMES=(
   gitlab.dhe.duke.edu
   groups.oit.duke.edu
   oauth.oit.duke.edu
+  prod.fulcrum.duke.edu
   redcap.duke.edu
   sftp.dev.snowball.dukecrucible.net
   sftp.prod.snowball.dukecrucible.net
@@ -28,6 +30,7 @@ HOSTNAMES=(
   test.fulcrum.duke.edu
   vld-1kp.dhe.duke.edu
   vld-apisdev01.dhe.duke.edu
+  vlp-apisprod01.dhe.duke.edu
 )
 SCRIPT="/home/dylan/.local/bin/vpn-slice ${HOSTNAMES[@]}"
 { lpass show --password duke.edu; echo push; } | \
