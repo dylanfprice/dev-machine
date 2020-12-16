@@ -80,6 +80,17 @@
     dest: /usr/local/bin/kubectl
     mode: 0555
 
+- name: install k9s
+  unarchive:
+    src: https://github.com/derailed/k9s/releases/download/v0.24.2/k9s_Linux_x86_64.tar.gz
+    remote_src: yes
+    dest: /usr/local/bin
+    exclude:
+      - LICENSE
+      - README.md
+    mode: 0555
+    creates: /usr/local/bin/k9s
+
 - name: install jmespath
   get_url:
     url: https://github.com/jmespath/jp/releases/download/0.1.3/jp-linux-amd64
