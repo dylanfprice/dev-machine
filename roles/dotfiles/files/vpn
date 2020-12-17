@@ -13,6 +13,7 @@ HOSTNAMES=(
   apis-dev.ori.duke.edu
   apis.ori.duke.edu
   awsportal.duhs.duke.edu
+  crucible-platform-dev-ba6b9d28.hcp.eastus.azmk8s.io
   dev.fulcrum.duke.edu
   dev.snowball.dukecrucible.net
   devguide.dhe.duke.edu
