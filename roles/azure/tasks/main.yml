@@ -1,0 +1,13 @@
+- name: import key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: add apt repo
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ {{ ansible_distribution_release }} main'
+
+- name: install
+  apt:
+    update_cache: yes
+    state: latest
+    name: azure-cli
