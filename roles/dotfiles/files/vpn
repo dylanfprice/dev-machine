@@ -24,6 +24,7 @@ HOSTNAMES=(
   oauth.oit.duke.edu
   prod.fulcrum.duke.edu
   redcap.duke.edu
+  sdoh-ui.sdoh.dev.platform.dukecrucible.net
   sftp.dev.snowball.dukecrucible.net
   sftp.prod.snowball.dukecrucible.net
   smtp.duhs.duke.edu
