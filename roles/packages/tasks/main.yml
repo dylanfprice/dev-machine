@@ -107,6 +107,6 @@
   become: yes
   become_user: '{{ ansible_env.USER }}'
   get_url:
-    url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.7.3/Obsidian-0.7.3.AppImage
+    url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.10.7/Obsidian-0.10.7.AppImage
     dest: '{{ ansible_env.HOME }}/.local/bin/obsidian'
-    mode: 0554
+    mode: 0755
