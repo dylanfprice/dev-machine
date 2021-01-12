@@ -76,9 +76,15 @@
 
 - name: install kubectl
   get_url:
-    url: https://storage.googleapis.com/kubernetes-release/release/v1.19.4/bin/linux/amd64/kubectl
+    url: https://storage.googleapis.com/kubernetes-release/release/v1.20.1/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
-    mode: 0555
+    mode: 0755
+
+- name: install kubeseal
+  get_url:
+    url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.13.1/kubeseal-linux-amd64
+    dest: /usr/local/bin/kubeseal
+    mode: 0755
 
 - name: install k9s
   unarchive:
@@ -88,7 +94,7 @@
     exclude:
       - LICENSE
       - README.md
-    mode: 0555
+    mode: 0755
     creates: /usr/local/bin/k9s
 
 - name: install jmespath
