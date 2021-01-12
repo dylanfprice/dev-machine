@@ -12,6 +12,7 @@ HOSTNAMES=(
   10.96.56.216
   apis-dev.ori.duke.edu
   apis.ori.duke.edu
+  app-ingress.dev.platform.dukecrucible.net
   awsportal.duhs.duke.edu
   crucible-platform-dev-ba6b9d28.hcp.eastus.azmk8s.io
   dev.fulcrum.duke.edu
@@ -29,7 +30,6 @@ HOSTNAMES=(
   smtp.duhs.duke.edu
   snowball-dev.cluster-cropzucl3dtp.us-east-1.docdb.amazonaws.com
   test.fulcrum.duke.edu
-  ui.sdoh.dev.platform.dukecrucible.net
   vld-1kp.dhe.duke.edu
   vld-apisdev01.dhe.duke.edu
   vlp-apisprod01.dhe.duke.edu
