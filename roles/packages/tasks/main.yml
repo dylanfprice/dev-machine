@@ -65,6 +65,7 @@
     - mkdocs
     - poetry
     - tox
+    - tzupdate
 
 - name: install Terraform
   unarchive:
