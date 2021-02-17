@@ -99,6 +99,7 @@ input type:touchpad {
     bindsym $alt+$down  exec "swaymsg focus down"
     bindsym $alt+$up    exec "swaymsg focus up"
     bindsym $alt+$right exec "swaymsg focus right"
+    mouse_warping container
 
     # Move the focused window with the same, but add $ctrl
     bindsym $alt+$ctrl+$left move left
@@ -149,6 +150,7 @@ input type:touchpad {
     bindsym $alt+e layout toggle split
 
     bindsym $alt+f fullscreen
+    popup_during_fullscreen leave_fullscreen
 
     # Swap focus between the tiling area and the floating area
     bindsym $alt+space focus mode_toggle
@@ -220,4 +222,3 @@ exec obsidian
 for_window [class="^obsidian$"] {
     move scratchpad
 }
-
