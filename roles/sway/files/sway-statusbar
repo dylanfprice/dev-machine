@@ -96,6 +96,6 @@ trap print_statusbar SIGHUP
 
 while print_statusbar
 do
-    sleep 30 &
+    sleep 1 &
     wait $!
 done
