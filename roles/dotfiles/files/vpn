@@ -32,6 +32,7 @@ HOSTNAMES=(
   test.fulcrum.duke.edu
   vld-1kp.dhe.duke.edu
   vld-apisdev01.dhe.duke.edu
+  vlt-apistest01.dhe.duke.edu
   vlp-apisprod01.dhe.duke.edu
 )
 SCRIPT="/home/dylan/.local/bin/vpn-slice ${HOSTNAMES[@]}"
