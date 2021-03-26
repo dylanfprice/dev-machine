@@ -13,6 +13,7 @@ HOSTNAMES=(
   apis-dev.ori.duke.edu
   apis.ori.duke.edu
   app-ingress.dev.platform.dukecrucible.net
+  app-ingress.prod.platform.dukecrucible.net
   awsportal.duhs.duke.edu
   crucible-platform-dev-ba6b9d28.hcp.eastus.azmk8s.io
   crucible-platform-prod-7cb2b199.hcp.eastus.azmk8s.io
