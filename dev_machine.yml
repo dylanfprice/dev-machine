@@ -12,6 +12,7 @@
     - {role: clojure, become: yes}
     - {role: docker, become: yes}
     - {role: nodejs, become: yes}
+    - {role: k8s, become: yes}
     - jupyter
     # Gnome roles
     - solarized_terminal
