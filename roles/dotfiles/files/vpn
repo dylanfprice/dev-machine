@@ -15,6 +15,7 @@ HOSTNAMES=(
   app-ingress.dev.platform.dukecrucible.net
   awsportal.duhs.duke.edu
   crucible-platform-dev-ba6b9d28.hcp.eastus.azmk8s.io
+  crucible-platform-prod-7cb2b199.hcp.eastus.azmk8s.io
   dev.fulcrum.duke.edu
   dev.snowball.dukecrucible.net
   devguide.dhe.duke.edu
