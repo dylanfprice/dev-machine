@@ -20,6 +20,7 @@
       # /For Duke VPN
       - pandoc
       - parallel
+      - pass
       - pavucontrol
       - python3
       - python3-dev
