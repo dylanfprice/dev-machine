@@ -36,6 +36,10 @@
       - tree
       - universal-ctags
 
+- name: install keybase
+  apt:
+    deb: https://prerelease.keybase.io/keybase_amd64.deb
+
 - name: install tridactyl native messenger
   become: yes
   become_user: '{{ ansible_env.USER }}'
