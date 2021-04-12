@@ -31,10 +31,6 @@ if [ -x ~/.fzf ]; then
     source ~/.fzf/shell/key-bindings.bash
 fi
 
-# After logging in the agent should not timeout. After all, this is how the
-# browser behaves.
-export LPASS_AGENT_TIMEOUT=0
-
 # Run firefox on wayland
 export MOZ_ENABLE_WAYLAND=1
 
