@@ -14,6 +14,7 @@ HOSTNAMES=(
   apis.ori.duke.edu
   app-ingress.dev.platform.dukecrucible.net
   app-ingress.prod.platform.dukecrucible.net
+  app-ingress.sandbox.platform.dukecrucible.net
   awsportal.duhs.duke.edu
   crucible-platform-dev-ba6b9d28.hcp.eastus.azmk8s.io
   crucible-platform-prod-7cb2b199.hcp.eastus.azmk8s.io
@@ -33,6 +34,7 @@ HOSTNAMES=(
   snowball-dev.cluster-cropzucl3dtp.us-east-1.docdb.amazonaws.com
   status.platform.dukecrucible.net
   test.fulcrum.duke.edu
+  twistlock-seccon.ocp.dhe.duke.edu
   vld-1kp.dhe.duke.edu
   vld-apisdev01.dhe.duke.edu
   vlt-apistest01.dhe.duke.edu
