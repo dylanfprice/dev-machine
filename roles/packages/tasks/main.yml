@@ -36,11 +36,6 @@
       - tree
       - universal-ctags
 
-- name: install iwd config file
-  copy: src=iwd-main.conf
-        dest=/etc/iwd/main.conf
-        mode='0644'
-
 - name: add me to sudo group
   ansible.builtin.user:
     name: '{{ ansible_env.USER }}'
