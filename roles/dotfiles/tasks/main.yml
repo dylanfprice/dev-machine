@@ -27,7 +27,6 @@
     - {src: 'profile.boot', dest: '.boot/profile.boot'}
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
-    - {src: 'start-gnome-session', dest: '.local/bin/start-gnome-session', mode: '0744'}
     - {src: 'tridactylrc', dest: '.config/tridactyl/tridactylrc'}
     # For Duke VPN
     - {src: 'vpn', dest: '.local/bin/vpn', mode: '0744'}
