@@ -6,6 +6,7 @@
     - {role: redshift, become: yes}
     - fzf
     - vim
+    - pass
     - {role: sway, become: yes}
     - {role: xkb, become: yes}
     - {role: clojure, become: yes}

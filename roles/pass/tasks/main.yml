@@ -1,0 +1,12 @@
+- name: install packages
+  become: yes
+  apt:
+    state: latest
+    name:
+      - pass
+      - webext-browserpass
+
+- name: clone pass repo
+  git: repo=git@github.com:dylanfprice/password-store.git
+       dest={{ ansible_env.HOME }}/.password-store
+       accept_hostkey=yes
