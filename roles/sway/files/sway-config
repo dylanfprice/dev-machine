@@ -223,4 +223,3 @@ exec obsidian
 for_window [class="^obsidian$"] {
     move scratchpad
 }
-exec gnome-keyring-daemon --start
