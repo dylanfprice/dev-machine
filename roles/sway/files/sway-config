@@ -77,6 +77,7 @@ input type:touchpad {
     }
     for_window [app_id="^tridactyl-editor$"] {
         floating enable
+        resize set width 800 height 800
     }
 
     # Drag floating windows by holding down $ctrl and left mouse button.
