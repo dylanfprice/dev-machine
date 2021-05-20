@@ -73,7 +73,7 @@ input type:touchpad {
     # Window styling
     for_window [app_id="^launcher$"] {
         floating enable
-        resize set height 200
+        resize set width 800 height 200
     }
     for_window [app_id="^tridactyl-editor$"] {
         floating enable
