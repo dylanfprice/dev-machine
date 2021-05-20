@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
 ### Output configuration
@@ -73,10 +73,11 @@ input type:touchpad {
     # Window styling
     for_window [app_id="^launcher$"] {
         floating enable
-        resize set height 200
+        resize set width 800 height 200
     }
     for_window [app_id="^tridactyl-editor$"] {
         floating enable
+        resize set width 800 height 800
     }
 
     # Drag floating windows by holding down $ctrl and left mouse button.
@@ -192,7 +193,7 @@ bindsym $alt+$ctrl+r mode "resize"
 
 
 ### Multimedia
-bindsym Print exec slurp | grim -g - ~/Pictures/screenshot-$(date "+%Y-%m-%d-%H-%M-%S").png
+bindsym Print exec slurp | grim -g - ~/pictures/screenshot-$(date "+%Y-%m-%d-%H-%M-%S").png
 bindsym XF86AudioRaiseVolume exec \
     "pactl set-sink-volume @DEFAULT_SINK@ +1%; pkill -SIGHUP sway-statusbar"
 bindsym XF86AudioLowerVolume exec \

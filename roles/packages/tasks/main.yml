@@ -1,25 +1,26 @@
 - name: install packages
   apt:
-    force_apt_get: yes
     state: latest
     update_cache: yes
     name:
-      - alacritty
       - awscli
+      - bc
       - curl
       - default-jre
-      - firefox
+      - firefox-esr
+      - fonts-symbola
       - git
+      - gnome-keyring
       - gnumeric
+      - iwd
+      - kitty
       - libnotify-bin
-      - libpq-dev
+      - ntfs-3g
       # For Duke VPN
       - openvpn
       - openconnect
       # /For Duke VPN
-      - pandoc
       - parallel
-      - pass
       - pavucontrol
       - python3
       - python3-dev
@@ -28,15 +29,21 @@
       - rclone
       - rlwrap
       - silversearcher-ag
+      - sudo
       - texlive-fonts-recommended
       - texlive-latex-extra
       - texlive-latex-recommended
-      - tmux
       - tree
       - universal-ctags
-      - webext-browserpass
+
+- name: install iwd config file
+  copy: src=iwd-main.conf
+        dest=/etc/iwd/main.conf
+        mode='0644'
 
 - name: install keybase
+  # I had to manually install by removing the libappindicator1 dependency.
+  # https://github.com/keybase/client/issues/24413
   apt:
     deb: https://prerelease.keybase.io/keybase_amd64.deb
 
@@ -48,6 +55,11 @@
     creates: '{{ ansible_env.HOME }}/.mozilla/native-messaging-hosts/tridactyl.json'
     warn: false
 
+- name: install vpn-slice
+  pip:
+    state: latest
+    name: https://github.com/dlenski/vpn-slice/archive/master.zip
+
 - name: install pip packages
   become: yes
   become_user: '{{ ansible_env.USER }}'
@@ -57,8 +69,6 @@
     extra_args: --user
     name:
     - pipx
-      # For ghost-text
-    - websockets
 
 - name: install pipx packages
   become: yes
@@ -67,9 +77,7 @@
   args:
     creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/{{ item }}'
   with_items:
-    - mkdocs
     - poetry
-    - tox
     - tzupdate
 
 - name: install Terraform
@@ -90,6 +98,6 @@
   become: yes
   become_user: '{{ ansible_env.USER }}'
   get_url:
-    url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.10.7/Obsidian-0.10.7.AppImage
+    url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.12.3/Obsidian-0.12.3.AppImage
     dest: '{{ ansible_env.HOME }}/.local/bin/obsidian'
     mode: 0755

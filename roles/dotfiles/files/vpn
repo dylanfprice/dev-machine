@@ -40,7 +40,7 @@ HOSTNAMES=(
   vlt-apistest01.dhe.duke.edu
   vlp-apisprod01.dhe.duke.edu
 )
-SCRIPT="/home/dylan/.local/bin/vpn-slice ${HOSTNAMES[@]}"
+SCRIPT="vpn-slice ${HOSTNAMES[@]}"
 { pass show consulting/duke.edu | head -n 1; echo push; } | \
 sudo openconnect vpn.duhs.duke.edu \
     --user=dfp12 \

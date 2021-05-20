@@ -4,9 +4,9 @@
     id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 
 - name: add apt repository
-  # TODO: update to {{ ansible_distribution_release }} when dropbox has focal
   apt_repository:
-    repo: 'deb https://linux.dropbox.com/ubuntu disco main'
+    repo: 'deb https://linux.dropbox.com/debian sid main'
+    filename: linux_dropbox_com_debian
 
 - name: install
   apt: 
@@ -23,7 +23,5 @@
     scope: user
     enabled: yes
     state: started
-  environment:
-    XDG_RUNTIME_DIR: '/run/user/{{ lookup("env", "UID") }}'
   become: yes
   become_user: '{{ ansible_env.USER }}'

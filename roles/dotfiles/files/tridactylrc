@@ -1,6 +1,6 @@
 " vim: set filetype=vim:
 
-set editorcmd alacritty --class=tridactyl-editor -e vim
+set editorcmd kitty --class=tridactyl-editor vim
 
 bind <C-l> tabnext
 bind <C-h> tabprev

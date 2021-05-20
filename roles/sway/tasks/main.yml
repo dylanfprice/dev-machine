@@ -5,12 +5,13 @@
       - brightnessctl
       - grim
       - mako-notifier
-      - pulseaudio
+      - pulseaudio-utils
       - slurp
       - sway
       - swaylock
       - swayidle
       - wl-clipboard
+      - xdg-desktop-portal-wlr
 
 - name: add me to video and input groups
   user:

@@ -2,11 +2,11 @@
   roles:
     - dotfiles
     - {role: packages, become: yes}
-    - {role: azure, become: yes}
     - {role: dropbox, become: yes}
     - {role: redshift, become: yes}
     - fzf
     - vim
+    - pass
     - {role: sway, become: yes}
     - {role: xkb, become: yes}
     - {role: clojure, become: yes}
@@ -14,3 +14,4 @@
     - {role: nodejs, become: yes}
     - {role: k8s, become: yes}
     - jupyter
+    - {role: azure, become: yes}
