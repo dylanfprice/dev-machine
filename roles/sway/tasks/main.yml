@@ -11,6 +11,7 @@
       - swaylock
       - swayidle
       - wl-clipboard
+      - xdg-desktop-portal-wlr
 
 - name: add me to video and input groups
   user:
