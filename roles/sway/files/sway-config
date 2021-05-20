@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
 ### Output configuration
@@ -222,3 +222,4 @@ exec obsidian
 for_window [class="^obsidian$"] {
     move scratchpad
 }
+exec gnome-keyring-daemon --start

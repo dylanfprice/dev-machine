@@ -4,7 +4,7 @@
 
 - name: add apt repo
   apt_repository:
-    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ {{ ansible_distribution_release }} main'
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ buster main'
 
 - name: install
   apt:

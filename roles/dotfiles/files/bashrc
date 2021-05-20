@@ -33,7 +33,3 @@ fi
 
 # Run firefox on wayland
 export MOZ_ENABLE_WAYLAND=1
-
-# Start gnome-keyring-daemon
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK

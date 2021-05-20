@@ -3,7 +3,7 @@
   with_items:
     - .ssh/
     - .local/bin/
-    - .config/alacritty
+    - .config/kitty
     - .config/tridactyl
     - .jupyter/
     - .lein/
@@ -15,7 +15,6 @@
         owner={{ ansible_env.USER }}
         mode={{ item.mode | default('0644') }}
   with_items:
-    - {src: 'alacritty.yml', dest: '.config/alacritty/alacritty.yml'}
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'chromium-zoom', dest: '.local/bin/chromium-zoom', mode: '0744'}
     - {src: 'gdocs-edit', dest: '.local/bin/gdocs-edit', mode: '0744'}
@@ -23,6 +22,7 @@
     - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'inputrc', dest: '.inputrc'}
     - {src: 'jupyter_console_config.py', dest: '.jupyter/jupyter_console_config.py'}
+    - {src: 'kitty.conf', dest: '.config/kitty/kitty.conf'}
     - {src: 'profile', dest: '.profile'}
     - {src: 'profile.boot', dest: '.boot/profile.boot'}
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
