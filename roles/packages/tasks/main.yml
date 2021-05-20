@@ -41,6 +41,12 @@
         dest=/etc/iwd/main.conf
         mode='0644'
 
+- name: add me to sudo group
+  ansible.builtin.user:
+    name: '{{ ansible_env.USER }}'
+    groups: sudo
+    append: yes
+
 - name: install keybase
   # I had to manually install by removing the libappindicator1 dependency.
   # https://github.com/keybase/client/issues/24413
