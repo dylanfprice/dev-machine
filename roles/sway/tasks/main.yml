@@ -5,6 +5,7 @@
       - brightnessctl
       - grim
       - mako-notifier
+      - pulseaudio-utils
       - slurp
       - sway
       - swaylock
