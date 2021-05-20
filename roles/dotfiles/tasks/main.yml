@@ -16,7 +16,7 @@
         mode={{ item.mode | default('0644') }}
   with_items:
     - {src: 'bashrc', dest: '.bashrc'}
-    - {src: 'chromium-zoom', dest: '.local/bin/chromium-zoom', mode: '0744'}
+    - {src: 'chrome-zoom', dest: '.local/bin/chrome-zoom', mode: '0744'}
     - {src: 'gdocs-edit', dest: '.local/bin/gdocs-edit', mode: '0744'}
     - {src: 'gitconfig', dest: '.gitconfig'}
     - {src: 'gitignore', dest: '.gitignore'}
