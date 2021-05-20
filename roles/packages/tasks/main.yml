@@ -55,6 +55,11 @@
     creates: '{{ ansible_env.HOME }}/.mozilla/native-messaging-hosts/tridactyl.json'
     warn: false
 
+- name: install vpn-slice
+  pip:
+    state: latest
+    name: https://github.com/dlenski/vpn-slice/archive/master.zip
+
 - name: install pip packages
   become: yes
   become_user: '{{ ansible_env.USER }}'
