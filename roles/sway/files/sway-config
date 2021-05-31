@@ -223,3 +223,5 @@ exec obsidian
 for_window [class="^obsidian$"] {
     move scratchpad
 }
+# https://github.com/emersion/xdg-desktop-portal-wlr#running
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
