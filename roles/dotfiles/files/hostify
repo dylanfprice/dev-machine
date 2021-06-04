@@ -1,0 +1,45 @@
+#!/bin/bash
+
+if [[ $# < 2 ]]; then {
+    p="$(basename $0)"
+    echo "usage:  $p [vpn_name] [domain1] ..."
+    echo
+    echo "This script does the following:"
+    echo "  1) Looks up the named domain(s) on the DNS servers for a VPN connection created"
+    echo "     with the help of vpn-slice"
+    echo "  2) Adds the ones that are found to /etc/hosts"
+    echo "  3) Routes traffic to those hosts via the named VPN connection"
+    echo
+    echo "In other words, it does what vpn-slice WOULD HAVE DONE if you'd listed these"
+    echo "specific hostnames in its command line as invoked AT CONNECTION TIME."
+    echo
+    echo "THESE CHANGES ARE TEMPORARY and won't persist past the lifetime of the VPN connection"
+    exit 1;
+} >&2
+fi
+
+vpn="$1"
+shift 1
+
+#####
+
+BLOB=$(grep -oP "\bdns\d+\.$vpn\b.+\#.+" /etc/hosts|cut -d\# -f2|tail -n1)
+declare -a DNS=( $(grep -oP "\bdns\d+\.$vpn" /etc/hosts|sort|uniq) )
+if [[ ! "$DNS[*]" ]]; then
+    echo "ERROR: can't find dnsX.${vpn} in /etc/hosts -- is ${vpn} VPN up?" >&2
+    exit 1;
+fi
+
+for hostname in "$@"; do
+    ip=$(dig +short ${DNS[@]/#/@} "$hostname" | tail -n1)
+    if [[ ! "$?" || -z "$ip" ]]; then
+        echo "ERROR: couldn't find $hostname on $vpn DNS servers" >&2
+    else
+        echo "Found $hostname at IP address $ip on $vpn DNS servers" >&2
+     sudo ip route add "$ip" dev "${vpn}" &&
+            echo "$ip $hostname # $BLOB" | sudo tee -a /etc/hosts >/dev/null
+        if [[ ! "$?" ]]; then
+            echo "ERROR: couldn't configure $hostname properly" >&2
+        fi
+    fi
+done

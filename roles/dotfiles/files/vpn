@@ -1,11 +1,14 @@
+#!/bin/bash
+
 # basic duke vpn
-# sudo openconnect portal.duke.edu -b --user=dfp12 --authgroup=-Default-
+# openconnect portal.duke.edu --user=dfp12 --authgroup=-Default-
 
 # duke health vpn
-# sudo openconnect vpn.duhs.duke.edu -b --user=dfp12
+# { pass show consulting/duke.edu | head -n 1; echo push; } | \
+# openconnect vpn.duhs.duke.edu --user=dfp12
 
 # for elevated access
-# sudo openconnect dmvpn.duhs.duke.edu -b --user=dfp12
+# openconnect dmvpn.duhs.duke.edu --user=dfp12
 
 # force split tunnel
 HOSTNAMES=(
@@ -40,9 +43,30 @@ HOSTNAMES=(
   vlt-apistest01.dhe.duke.edu
   vlp-apisprod01.dhe.duke.edu
 )
-SCRIPT="vpn-slice ${HOSTNAMES[@]}"
+SCRIPT="vpn-slice vla-nc1-nac-app-12.dhe.duke.edu"
+
+function stop_vpn() {
+    BLOB=$(grep -oP "\bdns\d+\.$vpn\b.+\#.+" /etc/hosts|cut -d\# -f2|tail -n1)
+    trap " " SIGTERM SIGINT
+    sudo systemctl stop bndaemon.service
+    sudo sed --in-place "/$BLOB/d" /etc/hosts
+    exit
+}
+
+trap 'stop_vpn' SIGINT SIGTERM
+
+sudo systemctl start bndaemon.service
 { pass show consulting/duke.edu | head -n 1; echo push; } | \
 sudo openconnect vpn.duhs.duke.edu \
+    --background \
     --user=dfp12 \
     --passwd-on-stdin \
     --script="$SCRIPT"
+
+sleep 10
+hostify tun0 "${HOSTNAMES[@]}"
+
+while true
+do
+    sleep 60
+done
