@@ -46,7 +46,7 @@ HOSTNAMES=(
 SCRIPT="vpn-slice vla-nc1-nac-app-12.dhe.duke.edu"
 
 function stop_vpn() {
-    BLOB=$(grep -oP "\bdns\d+\.$vpn\b.+\#.+" /etc/hosts|cut -d\# -f2|tail -n1)
+    BLOB=$(grep -oP "#\s+vpn-slice-.*" /etc/hosts | cut -d\# -f2| tail  -n1)
     trap " " SIGTERM SIGINT
     sudo systemctl stop bndaemon.service
     sudo sed --in-place "/$BLOB/d" /etc/hosts
