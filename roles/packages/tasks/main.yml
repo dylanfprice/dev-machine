@@ -7,6 +7,7 @@
       - bc
       - curl
       - default-jre
+      - eog
       - firefox-esr
       - fonts-symbola
       - git
