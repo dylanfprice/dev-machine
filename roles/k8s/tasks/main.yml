@@ -1,12 +1,12 @@
 - name: install kubectl
   get_url:
-    url: https://storage.googleapis.com/kubernetes-release/release/v1.20.1/bin/linux/amd64/kubectl
+    url: https://storage.googleapis.com/kubernetes-release/release/v1.21.2/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
     mode: 0755
 
 - name: install kubeseal
   get_url:
-    url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.13.1/kubeseal-linux-amd64
+    url: https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.16.0/kubeseal-linux-amd64
     dest: /usr/local/bin/kubeseal
     mode: 0755
 
