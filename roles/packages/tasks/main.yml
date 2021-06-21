@@ -31,6 +31,7 @@
       - rlwrap
       - silversearcher-ag
       - sudo
+      - texlive-fonts-extra
       - texlive-fonts-recommended
       - texlive-latex-extra
       - texlive-latex-recommended
