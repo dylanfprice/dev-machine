@@ -40,3 +40,15 @@
       - --strip-components
       - '1'
     creates: /usr/local/bin/helm
+
+
+- name: install vegeta
+  unarchive:
+    src: https://github.com/tsenart/vegeta/releases/download/v12.8.4/vegeta_12.8.4_linux_amd64.tar.gz
+    remote_src: yes
+    dest: /usr/local/bin
+    exclude:
+      - CHANGELOG
+      - LICENSE
+      - README.md
+    creates: /usr/local/bin/vegeta
