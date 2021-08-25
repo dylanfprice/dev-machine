@@ -22,7 +22,6 @@ HOSTNAMES=(
   crucible-platform-dev-ba6b9d28.hcp.eastus.azmk8s.io
   crucible-platform-prod-7cb2b199.hcp.eastus.azmk8s.io
   crucible-platform-sandbox-6e0bf399.hcp.eastus.azmk8s.io
-  dev.fulcrum.duke.edu
   dev.snowball.dukecrucible.net
   devguide.dhe.duke.edu
   exdnc-scan1.dhe.duke.edu
@@ -30,14 +29,12 @@ HOSTNAMES=(
   gitlab.dhe.duke.edu
   groups.oit.duke.edu
   oauth.oit.duke.edu
-  prod.fulcrum.duke.edu
   redcap.duke.edu
   sftp.dev.snowball.dukecrucible.net
   sftp.prod.snowball.dukecrucible.net
   smtp.duhs.duke.edu
   snowball-dev.cluster-cropzucl3dtp.us-east-1.docdb.amazonaws.com
   status.platform.dukecrucible.net
-  test.fulcrum.duke.edu
   twistlock-seccon.ocp.dhe.duke.edu
   vld-1kp.dhe.duke.edu
   vld-apisdev01.dhe.duke.edu
