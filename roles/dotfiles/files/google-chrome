@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec /usr/bin/google-chrome \
+  --enable-features=WebRTCPipeWireCapturer \
+  --enable-features=UseOzonePlatform \
+  --ozone-platform=wayland
