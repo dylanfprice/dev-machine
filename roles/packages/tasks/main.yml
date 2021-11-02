@@ -17,6 +17,7 @@
       - kitty
       - libnotify-bin
       - ntfs-3g
+      - mpv
       # For Duke VPN
       - openvpn
       - openconnect
