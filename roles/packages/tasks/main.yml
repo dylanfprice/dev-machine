@@ -81,6 +81,7 @@
   args:
     creates: '{{ ansible_env.HOME }}/.local/pipx/venvs/{{ item }}'
   with_items:
+    - httpx[cli]
     - poetry
     - tzupdate
 
