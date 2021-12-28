@@ -12,7 +12,6 @@
 
 # force split tunnel
 HOSTNAMES=(
-  10.96.56.216
   apis-dev.ori.duke.edu
   apis.ori.duke.edu
   app-ingress.dev.platform.dukecrucible.net
@@ -56,12 +55,11 @@ trap 'stop_vpn' SIGINT SIGTERM
 sudo systemctl start bndaemon.service
 { pass show consulting/duke.edu | head -n 1; echo push; } | \
 sudo openconnect vpn.duhs.duke.edu \
-    --background \
     --user=dfp12 \
     --passwd-on-stdin \
-    --script="$SCRIPT"
+    --script="$SCRIPT" &
 
-sleep 10
+sleep 30
 hostify tun0 "${HOSTNAMES[@]}"
 
 while true
