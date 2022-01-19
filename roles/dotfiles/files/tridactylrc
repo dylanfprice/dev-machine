@@ -50,6 +50,13 @@ bindurl   localhost:8888/lab --mode=ignore <C-;> fillcmdline tab
 bindurl   localhost:8888/lab --mode=ignore <C-'> fillcmdline tabopen
 bindurl   localhost:8888/lab --mode=ignore <C-f> hint -t; mode ignore
 
+" Outlook settings
+seturl           outlook.office.com/mail allowautofocus true
+autocmd DocStart outlook.office.com/mail mode ignore
+bindurl   mail.google.com/mail --mode=ignore <C-;> fillcmdline tab
+bindurl   mail.google.com/mail --mode=ignore <C-'> fillcmdline tabopen
+bindurl   mail.google.com/mail --mode=ignore <C-f> composite hint -t; mode ignore
+
 seturl insperity.com noiframe true
 seturl service-now.com noiframe true
 seturl becu.org noiframe true
