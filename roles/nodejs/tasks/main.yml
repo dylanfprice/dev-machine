@@ -1,7 +1,7 @@
 - name: import the nodesource gpg key into apt
   apt_key:
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-    state: present
+    keyring: /etc/apt/trusted.gpg.d/nodejs.gpg
 
 - name: add nodesource deb repository
   apt_repository:

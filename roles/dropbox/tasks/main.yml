@@ -2,6 +2,7 @@
   apt_key:
     keyserver: pgp.mit.edu
     id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+    keyring: /etc/apt/trusted.gpg.d/dropbox.gpg
 
 - name: add apt repository
   apt_repository:
