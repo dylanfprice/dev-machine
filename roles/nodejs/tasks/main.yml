@@ -21,3 +21,12 @@
     update_cache: yes
     name:
       - nodejs
+
+- name: install npm packages
+  community.general.npm:
+    global: yes
+    state: latest
+    name: '{{ item }}'
+  with_items:
+    - fixjson
+    - jsonlint
