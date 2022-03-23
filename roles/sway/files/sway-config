@@ -107,6 +107,9 @@ input type:touchpad {
     bindsym $alt+$ctrl+$down move down
     bindsym $alt+$ctrl+$up move up
     bindsym $alt+$ctrl+$right move right
+
+    # Virtual Mouse
+    bindsym $alt+m exec waypoint
 #
 # Workspaces:
 #
