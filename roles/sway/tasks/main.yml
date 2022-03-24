@@ -4,6 +4,7 @@
     name:
       - brightnessctl
       - grim
+      - grimshot
       - mako-notifier
       - pulseaudio-utils
       - slurp

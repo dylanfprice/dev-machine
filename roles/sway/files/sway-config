@@ -196,7 +196,8 @@ bindsym $alt+$ctrl+r mode "resize"
 
 
 ### Multimedia
-bindsym Print exec slurp | grim -g - ~/pictures/screenshot-$(date "+%Y-%m-%d-%H-%M-%S").png
+bindsym Print exec grimshot save area ~/pictures/screenshot-$(date "+%Y-%m-%d-%H-%M-%S").png
+bindsym $alt+Print exec grimshot save active ~/pictures/screenshot-$(date "+%Y-%m-%d-%H-%M-%S").png
 bindsym XF86AudioRaiseVolume exec \
     "pactl set-sink-volume @DEFAULT_SINK@ +1%; pkill -SIGHUP sway-statusbar"
 bindsym XF86AudioLowerVolume exec \
