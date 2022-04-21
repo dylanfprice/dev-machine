@@ -10,8 +10,9 @@ alias ll="/bin/ls --color=auto -l"
 alias la="/bin/ls --color=auto --almost-all"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias vim=nvim
-alias docker-node='docker run --rm -it --volume $PWD:/app --volume $HOME/.npmrc:/root/.npmrc --publish 3000:3000 --workdir /app node'
-alias docker-node14='docker run --rm -it --volume $PWD:/app --volume $HOME/.npmrc:/root/.npmrc --publish 3000:3000 --workdir /app node:14'
+DOCKER_NODE_ARGS="--rm -it --volume $PWD:/app --volume $HOME/.npmrc:/root/.npmrc --volume $HOME/workspace/cognitohealth/ui-libs:/ui-libs --publish 3000:3000 --workdir /app"
+alias docker-node="docker run $DOCKER_NODE_ARGS node"
+alias docker-node14="docker run $DOCKER_NODE_ARGS node:14"
 
 # Set editors
 export VISUAL=vim
