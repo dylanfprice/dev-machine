@@ -12,7 +12,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias vim=nvim
 DOCKER_NODE_ARGS="--rm -it --volume $PWD:/app --volume $HOME/.npmrc:/root/.npmrc --volume $HOME/workspace/cognitohealth/ui-libs:/ui-libs --publish-all --workdir /app"
 alias docker-node="docker run $DOCKER_NODE_ARGS node"
-alias docker-node14="docker run $DOCKER_NODE_ARGS node:14"
+alias docker-node14="docker run $DOCKER_NODE_ARGS -p 3000:3000 node:14"
 
 # Set editors
 export VISUAL=vim
