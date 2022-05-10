@@ -13,6 +13,7 @@ set searchengine duckduckgo
 set searchurls.devdocs https://devdocs.io/#q=
 set searchurls.drive https://drive.google.com/drive/search?q=
 set searchurls.pypi https://pypi.org/search/?q=
+set searchurls.cognito https://github.com/cognitohealth/cognito-universe/issues?q=
 
 " GMail settings
 seturl           mail.google.com/mail allowautofocus true
