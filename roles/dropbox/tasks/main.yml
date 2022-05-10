@@ -1,19 +1,6 @@
-- name: import gpg key
-  apt_key:
-    keyserver: pgp.mit.edu
-    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-    keyring: /etc/apt/trusted.gpg.d/dropbox.gpg
-
-- name: add apt repository
-  apt_repository:
-    repo: 'deb https://linux.dropbox.com/debian sid main'
-    filename: linux_dropbox_com_debian
-
 - name: install
   apt: 
-    update_cache: yes
-    state: latest
-    name: dropbox
+    deb: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb
 
 - name: install systemd unit file
   template: src=dropbox.service dest=/etc/systemd/user/dropbox.service
