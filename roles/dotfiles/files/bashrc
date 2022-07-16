@@ -37,9 +37,6 @@ fi
 # Run firefox on wayland
 export MOZ_ENABLE_WAYLAND=1
 
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-
 # android/react-native
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
