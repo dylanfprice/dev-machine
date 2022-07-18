@@ -34,6 +34,9 @@ if [ -x ~/.fzf ]; then
     source ~/.fzf/shell/key-bindings.bash
 fi
 
+# gnome-keyring-daemon does not seem to be setting SSH_AUTH_SOCK in new shells
+export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
 # Run firefox on wayland
 export MOZ_ENABLE_WAYLAND=1
 
