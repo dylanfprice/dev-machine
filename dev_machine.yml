@@ -15,6 +15,5 @@
     - {role: nodejs, become: yes}
     - {role: k8s, become: yes}
     - jupyter
-    - {role: azure, become: yes}
     - {role: heroku, become: yes}
     - {role: android, become: yes}
