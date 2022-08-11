@@ -13,6 +13,5 @@
     - {role: clojure, become: yes}
     - {role: docker, become: yes}
     - {role: nodejs, become: yes}
-    - {role: k8s, become: yes}
     - jupyter
     - {role: android, become: yes}
