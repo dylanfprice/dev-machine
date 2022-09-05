@@ -2,10 +2,14 @@
 
 set editorcmd kitty --class=tridactyl-editor vim
 
-bind <C-l> tabnext
-bind <C-h> tabprev
-bind <C-;> fillcmdline tab
-bind <C-'> fillcmdline tabopen
+bind --mode=browser <C-l> tabnext
+bind --mode=browser <C-h> tabprev
+bind --mode=browser <C-;> fillcmdline tab
+bind --mode=browser <C-'> fillcmdline tabopen
+bind --mode=insert <C-l> tabnext
+bind --mode=insert <C-h> tabprev
+bind --mode=insert <C-;> fillcmdline tab
+bind --mode=insert <C-'> fillcmdline tabopen
 
 " Search stuff
 set searchengine duckduckgo
@@ -16,49 +20,37 @@ set searchurls.devdocs https://devdocs.io/#q=
 set searchurls.drive https://drive.google.com/drive/search?q=
 set searchurls.pypi https://pypi.org/search/?q=
 
-" GMail settings
-seturl           mail.google.com/mail allowautofocus true
-autocmd DocStart mail.google.com/mail mode ignore
-bindurl   mail.google.com/mail --mode=ignore <C-;> fillcmdline tab
-bindurl   mail.google.com/mail --mode=ignore <C-'> fillcmdline tabopen
-bindurl   mail.google.com/mail --mode=ignore <C-f> composite hint -t; mode ignore
+" Only hint search results
+bindurl "^https://duckduckgo.com" f hint -Jc [data-testid="result-title-a"]
+bindurl "^https://duckduckgo.com" F hint -Jbc [data-testid="result-title-a"]
 
-" Drive settings
-seturl           drive.google.com allowautofocus true
-autocmd DocStart drive.google.com mode ignore
-bindurl   drive.google.com --mode=ignore <C-;> fillcmdline tab
-bindurl   drive.google.com --mode=ignore <C-'> fillcmdline tabopen
-bindurl   drive.google.com --mode=ignore <C-f> hint -t; mode ignore
+set ignoremaps {"<S-Insert>":"mode normal","<AC-Escape>":"mode normal","<AC-`>":"mode normal","<S-Escape>":"mode normal","<C-o>":"nmode normal 1 mode ignore","<C-;>":"fillcmdline tab","<C-'>":"fillcmdline tabopen","<C-i>":"editor"}
 
-" Docs settings
-seturl           docs.google.com allowautofocus true
-autocmd DocStart docs.google.com mode ignore
-bindurl   docs.google.com --mode=ignore <C-;> fillcmdline tab
-bindurl   docs.google.com --mode=ignore <C-'> fillcmdline tabopen
-bindurl   docs.google.com --mode=ignore <C-f> hint -t; mode ignore
+blacklistadd mail.google.com/mail
+blacklistadd drive.google.com
+blacklistadd docs.google.com
+blacklistadd trello.com
 
-" Trello settings
-seturl           trello.com allowautofocus true
-autocmd DocStart trello.com mode ignore
-bindurl   trello.com --mode=ignore <C-;> fillcmdline tab
-bindurl   trello.com --mode=ignore <C-'> fillcmdline tabopen
-bindurl   trello.com --mode=ignore <C-f> hint -t; mode ignore
-bindurl   trello.com --mode=ignore <C-i> editor
-
-" Jupyter Lab settings
-seturl           localhost:8888/lab allowautofocus true
-autocmd DocStart localhost:8888/lab mode ignore
-bindurl   localhost:8888/lab --mode=ignore <C-;> fillcmdline tab
-bindurl   localhost:8888/lab --mode=ignore <C-'> fillcmdline tabopen
-bindurl   localhost:8888/lab --mode=ignore <C-f> hint -t; mode ignore
-
-" Outlook settings
-seturl           outlook.office.com/mail allowautofocus true
-autocmd DocStart outlook.office.com/mail mode ignore
-bindurl   mail.google.com/mail --mode=ignore <C-;> fillcmdline tab
-bindurl   mail.google.com/mail --mode=ignore <C-'> fillcmdline tabopen
-bindurl   mail.google.com/mail --mode=ignore <C-f> composite hint -t; mode ignore
-
-seturl insperity.com noiframe true
-seturl service-now.com noiframe true
 seturl becu.org noiframe true
+
+" Automatically go to Amazon smile
+autocmd DocStart ^http(s?)://www.amazon.com js tri.excmds.urlmodify("-t", "www", "smile")
+
+" Allow tridactyl on all domains.
+command fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
+fixamo_quiet
+
+" Equivalent to `set csp clobber` before it was removed. This weakens your
+" defences against cross-site-scripting attacks and other types of
+" code-injection by reducing the strictness of Content Security Policy on all
+" sites in a couple of ways.
+" 
+" We remove the sandbox directive
+" https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/sandbox
+" which allows our iframe (and anyone else's) to run on any website.
+"
+" We weaken the style-src directive
+" https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src
+" to allow us to theme our elements. This exposes you to 'cross site styling'
+" attacks
+jsb browser.webRequest.onHeadersReceived.addListener(tri.request.clobberCSP,{urls:["<all_urls>"],types:["main_frame"]},["blocking","responseHeaders"])
