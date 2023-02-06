@@ -28,7 +28,3 @@
     - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
     - {src: 'tridactylrc', dest: '.config/tridactyl/tridactylrc'}
-    # For Duke VPN
-    - {src: 'hostify', dest: '.local/bin/hostify', mode: '0744'}
-    - {src: 'vpn', dest: '.local/bin/vpn', mode: '0744'}
-    # /For Duke VPN
