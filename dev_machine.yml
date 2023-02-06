@@ -5,7 +5,6 @@
     - {role: etcfiles, become: yes}
     - {role: dropbox, become: yes}
     - {role: redshift, become: yes}
-    - fzf
     - vim
     - pass
     - {role: sway, become: yes}

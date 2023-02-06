@@ -10,6 +10,7 @@
       - eog
       - firefox-esr
       - fonts-symbola
+      - fzf
       - git
       - gnome-keyring
       - gnumeric
