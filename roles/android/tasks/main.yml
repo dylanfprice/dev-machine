@@ -4,7 +4,6 @@
     update_cache: yes
     name:
       - default-jdk
-      - watchman
 
 - name: install android-studio
   ansible.builtin.unarchive:

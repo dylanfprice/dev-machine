@@ -39,6 +39,7 @@
       - texlive-latex-recommended
       - tree
       - universal-ctags
+      - watchman
 
 - name: add me to sudo group
   ansible.builtin.user:
