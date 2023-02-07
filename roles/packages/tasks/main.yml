@@ -30,8 +30,8 @@
       - python3-pip
       - python3-venv
       - rclone
+      - ripgrep
       - rlwrap
-      - silversearcher-ag
       - sudo
       - texlive-fonts-extra
       - texlive-fonts-recommended
