@@ -3,7 +3,6 @@
     - dotfiles
     - {role: packages, become: yes}
     - {role: etcfiles, become: yes}
-    - {role: dropbox, become: yes}
     - {role: redshift, become: yes}
     - vim
     - pass
