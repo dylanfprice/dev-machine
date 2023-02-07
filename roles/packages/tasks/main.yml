@@ -58,7 +58,6 @@
   shell: curl -fsSl https://raw.githubusercontent.com/tridactyl/tridactyl/master/native/install.sh | bash
   args:
     creates: '{{ ansible_env.HOME }}/.mozilla/native-messaging-hosts/tridactyl.json'
-    warn: false
 
 - name: install pip packages
   become: yes
