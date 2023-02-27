@@ -34,8 +34,7 @@ if [ -x /usr/bin/fzf ]; then
 fi
 
 # gnome-keyring-daemon is not started with ssh for some reason
-gnome-keyring-daemon --start --components=ssh
-export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+export $(gnome-keyring-daemon --components=ssh)
 
 # Run firefox on wayland
 export MOZ_ENABLE_WAYLAND=1
