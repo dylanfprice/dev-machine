@@ -33,9 +33,6 @@ blacklistadd trello.com
 
 seturl becu.org noiframe true
 
-" Automatically go to Amazon smile
-autocmd DocStart ^http(s?)://www.amazon.com js tri.excmds.urlmodify("-t", "www", "smile")
-
 " Allow tridactyl on all domains.
 command fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
 fixamo_quiet
