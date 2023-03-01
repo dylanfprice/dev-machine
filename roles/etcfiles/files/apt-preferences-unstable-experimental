@@ -2,6 +2,18 @@ Package: *
 Pin: release a=unstable
 Pin-Priority: 1
 
+Package: libext2fs2
+Pin: release a=unstable
+Pin-Priority: 600
+
+Package: e2fsprogs-l10n
+Pin: release a=unstable
+Pin-Priority: 600
+
+Package: e2fsprogs
+Pin: release a=unstable
+Pin-Priority: 600
+
 Package: *
 Pin: release a=experimental
 Pin-Priority: 1
