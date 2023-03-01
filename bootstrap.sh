@@ -17,10 +17,8 @@ read
 echo 'installing ansible'
 sudo apt install ansible
 
-echo '\nmake sure you have an ssh key, and pushed it to github and gitlab' 
+echo '\nmake sure you have an ssh key, and pushed it to github' 
 read
 
 echo 'log in to firefox account and sync add-ons'
 read
-
-echo '*after* running the playbook, run `dropbox update`'
