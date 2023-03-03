@@ -16,10 +16,18 @@ function print_statusbar() {
     #############
 
     # Battery or charger
+    if [ -f /sys/class/power_supply/BAT0/energy_now ]
+    then
+        battery_energy_now=$(cat /sys/class/power_supply/BAT0/energy_now)
+        battery_energy_full=$(cat /sys/class/power_supply/BAT0/energy_full)
+    else
+        battery_energy_now=$(cat /sys/class/power_supply/BAT0/charge_now)
+        battery_energy_full=$(cat /sys/class/power_supply/BAT0/charge_full)
+    fi
     battery_charge=$(echo "\
         100 *\
-        $(cat /sys/class/power_supply/BAT0/charge_now) /\
-        $(cat /sys/class/power_supply/BAT0/charge_full)\
+        $battery_energy_now /\
+        $battery_energy_full\
     " | bc)
     battery_status=$(cat /sys/class/power_supply/BAT0/status)
 
