@@ -2,6 +2,10 @@
 
 set editorcmd kitty --class=tridactyl-editor vim
 
+bind <C-l> tabnext
+bind <C-h> tabprev
+bind <C-;> fillcmdline tab
+bind <C-'> fillcmdline tabopen
 bind --mode=browser <C-l> tabnext
 bind --mode=browser <C-h> tabprev
 bind --mode=browser <C-;> fillcmdline tab
