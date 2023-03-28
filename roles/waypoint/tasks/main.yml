@@ -1,0 +1,25 @@
+- name: install packages
+  become: yes
+  apt:
+    state: latest
+    update_cache: yes
+    name:
+      - meson
+      - pkg-config
+      - libwayland-dev
+      - wayland-protocols
+      - libxkbcommon-dev
+
+- name: clone repo
+  git: repo=https://github.com/tadeokondrak/waypoint.git
+       dest={{ ansible_env.HOME }}/workspace/personal/waypoint
+       accept_hostkey=yes
+
+- name: build and install
+  ansible.builtin.shell: |
+    meson setup build
+    meson install -C build
+    cp build/waypoint "{{ ansible_env.HOME }}/.local/bin/waypoint"
+  args:
+    chdir: "{{ ansible_env.HOME }}/workspace/personal/waypoint"
+    creates: "{{ ansible_env.HOME }}/.local/bin/waypoint"

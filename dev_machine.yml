@@ -14,3 +14,4 @@
     - jupyter
     - {role: android, become: yes}
     - {role: google-chrome, become: yes}
+    - waypoint
