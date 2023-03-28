@@ -14,7 +14,6 @@
       - git
       - gnome-keyring
       - gnumeric
-      - google-chrome-stable
       - iwd
       - kitty
       - libnotify-bin

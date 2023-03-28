@@ -1,0 +1,14 @@
+- name: copy files
+  copy: src=google-chrome.list
+        dest=/etc/apt/sources.list.d/google-chrome.list
+        mode='0644'
+
+- name: install google-chrome
+  apt:
+    state: latest
+    update_cache: yes
+    name:
+      - fonts-liberation
+      - libu2f-udev
+      - google-chrome-stable
+
