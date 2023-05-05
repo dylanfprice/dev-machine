@@ -1,0 +1,10 @@
+- name: copy keybase.sources
+  copy: src=keybase.sources
+        dest=/etc/apt/sources.list.d/keybase.sources
+        mode='0644'
+
+- name: install keybase
+  apt:
+    state: latest
+    update_cache: yes
+    name: keybase
