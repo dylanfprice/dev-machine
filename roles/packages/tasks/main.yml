@@ -4,6 +4,7 @@
     update_cache: yes
     name:
       - awscli
+      - bluez
       - bc
       - curl
       - default-jre
