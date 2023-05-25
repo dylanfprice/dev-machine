@@ -4,22 +4,24 @@
     state: latest
     update_cache: yes
     name:
+      - libcairo2-dev
+      - libwayland-dev
+      - libxkbcommon-dev
       - meson
       - pkg-config
-      - libwayland-dev
       - wayland-protocols
-      - libxkbcommon-dev
 
 - name: clone repo
   git: repo=https://github.com/tadeokondrak/waypoint.git
        dest={{ ansible_env.HOME }}/workspace/personal/waypoint
+       version=devel
        accept_hostkey=yes
 
 - name: build and install
+  become: yes
   ansible.builtin.shell: |
     meson setup build
     meson install -C build
-    cp build/waypoint "{{ ansible_env.HOME }}/.local/bin/waypoint"
   args:
     chdir: "{{ ansible_env.HOME }}/workspace/personal/waypoint"
-    creates: "{{ ansible_env.HOME }}/.local/bin/waypoint"
+    creates: /usr/local/bin/waypoint
