@@ -1,6 +1,6 @@
 - name: copy files
-  copy: src=google-chrome.list
-        dest=/etc/apt/sources.list.d/google-chrome.list
+  copy: src=google-chrome.sources
+        dest=/etc/apt/sources.list.d/google-chrome.sources
         mode='0644'
 
 - name: install google-chrome
