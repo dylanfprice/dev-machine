@@ -44,6 +44,12 @@
     groups: sudo
     append: yes
 
+- name: configure systemd to autostart iwd
+  systemd:
+    name: iwd.service
+    enabled: yes
+    state: started
+
 - name: install tridactyl native messenger
   become: yes
   become_user: '{{ ansible_env.USER }}'
