@@ -8,3 +8,6 @@
     state: latest
     update_cache: yes
     name: keybase
+
+- name: remove keybase.list file
+  file: path=/etc/apt/sources.list.d/keybase.list state=absent

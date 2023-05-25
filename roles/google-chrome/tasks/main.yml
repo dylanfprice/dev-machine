@@ -12,3 +12,8 @@
       - libu2f-udev
       - google-chrome-stable
 
+- name: remove google-chrome.list file
+  file: path={{ item }} state=absent
+  with_items:
+    - /etc/apt/sources.list.d/google-chrome.list
+    - /etc/apt/trusted.gpg.d/google-chrome.gpg
