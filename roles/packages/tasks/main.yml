@@ -18,6 +18,7 @@
       - iwd
       - kitty
       - libnotify-bin
+      - libspa-0.2-bluetooth
       - ntfs-3g
       - mpv
       - parallel
