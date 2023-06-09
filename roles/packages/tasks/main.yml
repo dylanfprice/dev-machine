@@ -9,7 +9,7 @@
       - curl
       - default-jre
       - eog
-      - firefox-esr
+      - firefox
       - fonts-symbola
       - fzf
       - git
