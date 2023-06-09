@@ -1,8 +1,8 @@
 - hosts: all
   roles:
     - dotfiles
-    - {role: packages, become: yes}
     - {role: etcfiles, become: yes}
+    - {role: packages, become: yes}
     - {role: redshift, become: yes}
     - vim
     - pass
