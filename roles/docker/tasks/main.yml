@@ -1,3 +1,9 @@
+- name: copy docker config file
+  copy: src=config.json
+        dest={{ ansible_env.HOME }}/.docker/config.json
+        owner={{ ansible_env.USER }}
+        mode=0644
+
 - name: import the docker gpg key into apt
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
@@ -7,13 +13,12 @@
   apt_repository:
     repo: 'deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable'
 
-- name: install docker and docker-compose
+- name: install docker
   apt: 
     state: latest
     update_cache: yes
     name: 
       - docker-ce
-      - docker-compose
 
 - name: add docker group
   group: name=docker
@@ -25,10 +30,7 @@
     append: yes
 
 - name: install docker-credential-secretservice
-  unarchive:
-    src: https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-secretservice-v0.6.3-amd64.tar.gz
-    remote_src: yes
-    dest: /usr/local/bin
+  get_url:
+    url: https://github.com/docker/docker-credential-helpers/releases/download/v0.7.0/docker-credential-secretservice-v0.7.0.linux-amd64
+    dest: /usr/local/bin/docker-credential-secretservice
     mode: 0555
-    creates: /usr/local/bin/docker-credential-secretservice
-
