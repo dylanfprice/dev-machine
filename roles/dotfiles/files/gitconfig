@@ -1,19 +1,19 @@
 [user]
     name = Dylan Price
     signingkey = D65FB3BA03BA3486
-[commit]
-    gpgsign = true
+[core]
+    editor = vim
 [alias]
     co = checkout
     br = branch
     ci = commit
     st = status
-[merge]
-    tool = meld
-[core]
-    editor = vim
     excludesfile = ~/.gitignore
+[commit]
+    gpgsign = true
 [push]
     default = simple
 [pull]
-	  ff = only
+    ff = only
+[fetch]
+    prune = true
