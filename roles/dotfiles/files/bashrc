@@ -40,8 +40,6 @@ export $(gnome-keyring-daemon --start --components=ssh 2> /dev/null)
 export MOZ_ENABLE_WAYLAND=1
 
 # android/react-native
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME=/opt/android-studio
 export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools

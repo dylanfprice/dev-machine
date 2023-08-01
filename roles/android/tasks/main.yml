@@ -1,9 +1,9 @@
-- name: install default-jdk
+- name: install openjdk-11-jdk
   apt:
     state: latest
     update_cache: yes
     name:
-      - default-jdk
+      - openjdk-11-jdk
 
 - name: install android-studio
   ansible.builtin.unarchive:
