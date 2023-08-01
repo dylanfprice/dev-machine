@@ -7,11 +7,36 @@
 
 - name: install android-studio
   ansible.builtin.unarchive:
-    src: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz
+    src: https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2022.3.1.18/android-studio-2022.3.1.18-linux.tar.gz
     remote_src: yes
     dest: /opt/
-    mode: 0777
+    mode: '0777'
     creates: /opt/android-studio
+
+- name: create cmdline-tools folder
+  ansible.builtin.file:
+    dest: /opt/android-studio/cmdline-tools/9477386
+    mode: '0777'
+    state: directory
+
+- name: install android-studio command line tools
+  ansible.builtin.unarchive:
+    src: https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
+    remote_src: yes
+    dest: /opt/android-studio/cmdline-tools/9477386
+    mode: '0777'
+    creates: /opt/android-studio/cmdline-tools/9477386/cmdline-tools
+
+- name: stat cmdline-tools
+  stat: path=/opt/android-studio/cmdline-tools/9477386/cmdline-tools
+  register: cmdline_tools_stat
+
+- name: Move cmdline-tools to latest
+  command: 
+    mv 
+    /opt/android-studio/cmdline-tools/9477386/cmdline-tools 
+    /opt/android-studio/cmdline-tools/latest
+  when: cmdline_tools_stat.stat.exists
 
 - name: create android-studio script
   copy: src=android-studio
