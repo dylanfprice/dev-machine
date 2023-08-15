@@ -5,6 +5,8 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Aliases
+alias cat="/usr/bin/batcat"
+alias bat="/usr/bin/batcat"
 alias ls="/bin/ls --color=auto"
 alias ll="/bin/ls --color=auto -l"
 alias la="/bin/ls --color=auto --almost-all"
@@ -27,6 +29,11 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # fzf
+export BAT_THEME="Solarized (light)"
+export FZF_DEFAULT_OPTS="
+  --color fg:-1,bg:-1,hl:#268bd2,fg+:#073642,bg+:#eee8d5,hl+:#268bd2
+  --color info:#b58900,prompt:#b58900,pointer:#002b36,marker:#002b36,spinner:#b58900
+" # (https://github.com/junegunn/fzf/wiki/Color-schemes#alternate-solarized-lightdark-theme)
 export FZF_DEFAULT_COMMAND="rg --files"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 if [ -x /usr/bin/fzf ]; then
