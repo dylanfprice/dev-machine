@@ -1,9 +1,9 @@
-- name: install openjdk-11-jdk
+- name: install xwayland
   apt:
     state: latest
     update_cache: yes
     name:
-      - openjdk-11-jdk
+      - xwayland
 
 - name: install android-studio
   ansible.builtin.unarchive:
