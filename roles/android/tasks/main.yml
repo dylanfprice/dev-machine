@@ -31,12 +31,16 @@
   stat: path=/opt/android-studio/cmdline-tools/9477386/cmdline-tools
   register: cmdline_tools_stat
 
+- name: stat cmdline-tools latest
+  stat: path=/opt/android-studio/cmdline-tools/latest/cmdline-tools
+  register: cmdline_tools_latest_stat
+
 - name: Move cmdline-tools to latest
   command: 
     mv 
     /opt/android-studio/cmdline-tools/9477386/cmdline-tools 
     /opt/android-studio/cmdline-tools/latest
-  when: cmdline_tools_stat.stat.exists
+  when: cmdline_tools_stat.stat.exists and not cmdline_tools_latest_stat.stat.exists
 
 - name: create android-studio script
   copy: src=android-studio
