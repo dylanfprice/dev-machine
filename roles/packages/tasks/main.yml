@@ -41,11 +41,13 @@
       - universal-ctags
       - watchman
 
-- name: add me to sudo group
+- name: add me to adm and sudo groups
   ansible.builtin.user:
     name: '{{ ansible_env.USER }}'
-    groups: sudo
     append: yes
+    groups: 
+      - adm
+      - sudo
 
 - name: configure systemd to autostart iwd
   systemd:
