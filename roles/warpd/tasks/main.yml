@@ -1,0 +1,23 @@
+- name: install packages
+  become: yes
+  apt:
+    state: latest
+    update_cache: yes
+    name:
+      - libcairo2-dev
+      - libwayland-dev
+      - libxkbcommon-dev
+
+- name: clone repo
+  git: repo=https://github.com/rvaiya/warpd.git
+       dest={{ ansible_env.HOME }}/workspace/personal/warpd
+       accept_hostkey=yes
+
+- name: build and install
+  become: yes
+  ansible.builtin.shell: |
+    make -e DISABLE_X=1
+    sudo make install
+  args:
+    chdir: "{{ ansible_env.HOME }}/workspace/personal/warpd"
+    creates: /usr/local/bin/warpd

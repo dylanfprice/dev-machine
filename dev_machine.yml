@@ -14,5 +14,5 @@
     - jupyter
     - {role: android, become: yes}
     - {role: google-chrome, become: yes}
-    - waypoint
+    - warpd
     - {role: keybase, become: yes}
