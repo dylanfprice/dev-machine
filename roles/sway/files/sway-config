@@ -46,7 +46,7 @@ bindsym $super+l \
 ### Input configuration
 input type:keyboard {
     xkb_layout us
-    xkb_options "ctrl:swap_lalt_lctl, ctrl:swap_ralt_rctl, caps:escape"
+    xkb_options "ctrl:swap_lalt_lctl, ctrl:swap_ralt_rctl, caps:swapescape"
 }
 
 input type:touchpad {
