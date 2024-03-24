@@ -109,7 +109,9 @@ input type:touchpad {
     bindsym $alt+$ctrl+$right move right
 
     # Virtual Mouse
-    bindsym $alt+m exec waypoint
+    bindsym $alt+x exec warpd --hint
+    bindsym $alt+c exec warpd --normal
+
 #
 # Workspaces:
 #
