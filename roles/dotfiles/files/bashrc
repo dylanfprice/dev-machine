@@ -50,3 +50,7 @@ export MOZ_ENABLE_WAYLAND=1
 export ANDROID_HOME=/opt/android-studio
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Ruby
+export GEM_HOME=$HOME/.local/gems/
+export PATH=$PATH:$HOME/.local/gems/bin/

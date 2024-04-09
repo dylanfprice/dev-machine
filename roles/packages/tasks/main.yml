@@ -73,6 +73,16 @@
     - poetry
     - tzupdate
 
+- name: install ruby gems
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  command: gem install {{ item }}
+  args:
+    creates: '{{ ansible_env.HOME }}/.local/gems/bin/{{ item }}'
+  with_items:
+    - bundler
+    - jekyll
+
 - name: install Terraform
   unarchive:
     src: https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
