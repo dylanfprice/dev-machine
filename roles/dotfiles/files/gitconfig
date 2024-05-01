@@ -3,12 +3,12 @@
     signingkey = D65FB3BA03BA3486
 [core]
     editor = vim
+    excludesfile = ~/.gitignore
 [alias]
     co = checkout
     br = branch
     ci = commit
     st = status
-    excludesfile = ~/.gitignore
 [commit]
     gpgsign = true
 [push]
