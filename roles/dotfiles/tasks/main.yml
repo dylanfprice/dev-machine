@@ -15,6 +15,7 @@
         owner={{ ansible_env.USER }}
         mode={{ item.mode | default('0644') }}
   with_items:
+    - {src: 'aider-conf', dest: '.aider.conf.yml'}
     - {src: 'bashrc', dest: '.bashrc'}
     - {src: 'gdocs-edit', dest: '.local/bin/gdocs-edit', mode: '0744'}
     - {src: 'google-chrome', dest: '.local/bin/google-chrome', mode: '0744'}
