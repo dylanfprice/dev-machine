@@ -5,7 +5,7 @@
     name:
       - awscli
       - bat
-      - bluez
+      - bluetooth
       - bc
       - curl
       - default-jre
