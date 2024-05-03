@@ -99,10 +99,10 @@ input type:touchpad {
 # Moving around:
 #
     # Move your focus around
-    bindsym $alt+$left  exec "swaymsg focus left"
-    bindsym $alt+$down  exec "swaymsg focus down"
-    bindsym $alt+$up    exec "swaymsg focus up"
-    bindsym $alt+$right exec "swaymsg focus right"
+    bindsym $alt+$left  focus left
+    bindsym $alt+$down  focus down
+    bindsym $alt+$up    focus up
+    bindsym $alt+$right focus right
     mouse_warping container
 
     # Move the focused window with the same, but add $ctrl
