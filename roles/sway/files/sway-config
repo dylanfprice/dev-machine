@@ -91,7 +91,10 @@ input type:touchpad {
     bindsym $alt+$ctrl+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $alt+$ctrl+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $alt+$ctrl+e exec swaynag -t warning \
+        -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
+        -b 'Yes, exit sway' \
+        'swaymsg exit'
 #
 # Moving around:
 #
