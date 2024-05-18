@@ -1,4 +1,5 @@
 model: groq/llama3-70b-8192
+env-file: /home/dylan/.aider.env
 code-theme: solarized-light
 user-input-color: "#586e75"
 tool-output-color: "#586e75"
