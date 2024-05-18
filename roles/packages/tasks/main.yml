@@ -32,6 +32,8 @@
       - rclone
       - ripgrep
       - rlwrap
+      - ruby
+      - ruby-dev
       - sudo
       - texlive-fonts-extra
       - texlive-fonts-recommended
@@ -77,8 +79,9 @@
 - name: install ruby gems
   become: yes
   become_user: '{{ ansible_env.USER }}'
-  command: gem install {{ item }}
+  ansible.builtin.shell: source ~/.bashrc && gem install {{ item }}
   args:
+    executable: /bin/bash
     creates: '{{ ansible_env.HOME }}/.local/gems/bin/{{ item }}'
   with_items:
     - bundler
