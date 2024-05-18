@@ -53,4 +53,4 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Ruby
 export GEM_HOME=$HOME/.local/gems/
-export PATH=$PATH:$HOME/.local/gems/bin/
+export PATH=$PATH:$HOME/.local/gems/bin
