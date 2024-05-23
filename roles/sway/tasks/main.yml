@@ -25,9 +25,10 @@
 - name: ensures directories exist
   file: path={{ ansible_env.HOME }}/{{ item }} state=directory
   with_items:
-    - .local/bin/
     - .config/sway
+    - .config/swayidle
     - .config/swaylock
+    - .local/bin/
 
 - name: copy files
   copy: src={{ item.src }}
@@ -36,6 +37,7 @@
         mode={{ item.mode | default('0644') }}
   with_items:
     - {src: 'sway-config', dest: '.config/sway/config'}
+    - {src: 'swayidle-config', dest: '.config/swayidle/config'}
     - {src: 'sway-launcher', dest: '.local/bin/sway-launcher', mode: '0744'}
     - {src: 'swaylock-config', dest: '.config/swaylock/config'}
     - {src: 'sway-statusbar', dest: '.local/bin/sway-statusbar', mode: '0744'}
