@@ -89,7 +89,7 @@
 
 - name: install Terraform
   unarchive:
-    src: https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
+    src: https://releases.hashicorp.com/terraform/1.8.5/terraform_1.8.5_linux_amd64.zip
     remote_src: yes
     dest: /usr/local/bin
     mode: 0555
