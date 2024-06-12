@@ -5,4 +5,4 @@
   with_items:
     - {src: iwd-main.conf, dest: /etc/iwd/main.conf}
     - {src: sources.list, dest: /etc/apt/sources.list}
-    - {src: apt-preferences-unstable-experimental, dest: /etc/apt/preferences.d/99-unstable-experimental}
+    - {src: apt-preferences-unstable-experimental, dest: /etc/apt/preferences.d/unstable-experimental}
