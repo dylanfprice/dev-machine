@@ -9,6 +9,11 @@
     state: present
     mode: 644
 
+- name: copy apt-preferences
+  copy: src=apt-preferences
+        dest=/etc/apt/preferences.d/nodejs
+        mode='0644'
+
 - name: install nodejs and npm
   apt:
     state: latest
