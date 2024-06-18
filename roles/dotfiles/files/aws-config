@@ -2,12 +2,12 @@
 cli_auto_prompt = on-partial
 
 [profile ltf]
-sso_session = learning-to-fail-the-exam
+sso_session = failing-the-exam
 sso_account_id = 730335654119
 sso_role_name = AdministratorAccess
 region = us-west-2
 
-[sso-session learning-to-fail-the-exam]
+[sso-session failing-the-exam]
 sso_start_url = https://d-9267a4902a.awsapps.com/start/
 sso_region = us-west-2
 sso_registration_scopes = sso:account:access
