@@ -12,6 +12,7 @@
       - eog
       - firefox
       - fonts-symbola
+      - fd-find
       - fzf
       - git
       - gnome-keyring
