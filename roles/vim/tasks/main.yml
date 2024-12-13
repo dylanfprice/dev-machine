@@ -5,7 +5,12 @@
     dest: /usr/bin/nvim
     mode: 0755
 
-# symlink /usr/bin/vim to /usr/bin/nvim ai!
+- name: create vim symlink
+  become: yes
+  file:
+    src: /usr/bin/nvim
+    dest: /usr/bin/vim
+    state: link
 
 - name: ensures directories exist
   file: path={{ ansible_env.HOME }}/.config/nvim state=directory
