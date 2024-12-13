@@ -19,6 +19,7 @@
       - gnumeric
       - iwd
       - kitty
+      - libfuse2t64 # for AppImage
       - libnotify-bin
       - libspa-0.2-bluetooth
       - ntfs-3g
@@ -41,7 +42,6 @@
       - texlive-latex-extra
       - texlive-latex-recommended
       - tree
-      - universal-ctags
       - watchman
 
 - name: add me to adm and sudo groups
