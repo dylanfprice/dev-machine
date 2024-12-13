@@ -1,8 +1,9 @@
 - name: install vim
   become: yes
-  apt:
-    state: latest
-    name: neovim
+  get_url:
+    url: https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    dest: /usr/bin/nvim
+    mode: 0755
 
 - name: ensures directories exist
   file: path={{ ansible_env.HOME }}/.config/nvim state=directory
