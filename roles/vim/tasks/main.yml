@@ -1,3 +1,11 @@
+- name: install packages
+  apt:
+    state: latest
+    name:
+      # For parinfer-rust
+      - libclang-dev
+      - rustc
+
 - name: install vim
   become: yes
   get_url:
