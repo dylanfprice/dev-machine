@@ -1,4 +1,5 @@
 - name: install packages
+  become: yes
   apt:
     state: latest
     name:
