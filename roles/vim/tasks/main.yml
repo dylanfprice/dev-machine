@@ -5,21 +5,8 @@
     name:
       # For parinfer-rust
       - libclang-dev
+      - neovim
       - rustc
-
-- name: install vim
-  become: yes
-  get_url:
-    url: https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-    dest: /usr/bin/nvim
-    mode: 0755
-
-- name: create vim symlink
-  become: yes
-  file:
-    src: /usr/bin/nvim
-    dest: /usr/bin/vim
-    state: link
 
 - name: ensures directories exist
   file: path={{ ansible_env.HOME }}/.config/nvim state=directory
