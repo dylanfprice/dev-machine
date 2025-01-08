@@ -28,5 +28,4 @@
     name: '{{ item }}'
   with_items:
     - fixjson
-    - jsonlint
     - yarn
