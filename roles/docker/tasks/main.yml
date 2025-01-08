@@ -4,14 +4,16 @@
         owner={{ ansible_env.USER }}
         mode=0644
 
-- name: import the docker gpg key into apt
-  apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    keyring: /usr/share/keyrings/docker.gpg
-
 - name: add docker deb repository
-  apt_repository:
-    repo: 'deb [arch=amd64 signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable'
+  ansible.builtin.deb822_repository:
+    name: docker
+    types: [deb]
+    uris: "https://download.docker.com/linux/debian"
+    suites: ["{{ ansible_distribution_release }}"]
+    components: [stable]
+    signed_by: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+    enabled: true
 
 - name: install docker
   apt: 
