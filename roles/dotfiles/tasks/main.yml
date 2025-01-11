@@ -2,11 +2,9 @@
   file: path={{ ansible_env.HOME }}/{{ item }} state=directory
   with_items:
     - .aws/
-    - .boot/
     - .config/kitty
     - .config/tridactyl
     - .jupyter/
-    - .lein/
     - .local/bin/
     - .ssh/
 
@@ -28,7 +26,5 @@
     - {src: 'kitty.conf', dest: '.config/kitty/kitty.conf'}
     - {src: 'mimeapps.list', dest: '.config/mimeapps.list'}
     - {src: 'profile', dest: '.profile'}
-    - {src: 'profile.boot', dest: '.boot/profile.boot'}
-    - {src: 'profiles.clj', dest: '.lein/profiles.clj'}
     - {src: 'ssh-config', dest: '.ssh/config'}
     - {src: 'tridactylrc', dest: '.config/tridactyl/tridactylrc'}

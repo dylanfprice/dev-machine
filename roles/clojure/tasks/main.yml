@@ -3,16 +3,6 @@
   args:
     creates: /usr/local/bin/clojure
 
-- name: install leiningen
-  command: bash -c "cd /usr/local/bin && curl -fsSLo lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && chmod 755 lein"
-  args:
-    creates: /usr/local/bin/lein
-
-- name: install boot
-  command: bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && chmod 755 boot"
-  args:
-    creates: /usr/local/bin/boot
-
 - name: install clj-kondo
   unarchive:
     src: https://github.com/borkdude/clj-kondo/releases/download/v2024.11.14/clj-kondo-2024.11.14-linux-amd64.zip
