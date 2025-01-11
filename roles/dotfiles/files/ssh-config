@@ -1,2 +1,3 @@
+# vim: ft=sshconfig
 Host hookyarncarabiner.com
   User hookyar2

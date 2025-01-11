@@ -1,3 +1,4 @@
+; vim: ft=confini
 [default]
 cli_auto_prompt = on-partial
 

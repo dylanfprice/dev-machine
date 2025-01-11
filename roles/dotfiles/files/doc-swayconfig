@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+# vim: ft=python
+from subprocess import run
+import sys
+
+keyword = sys.argv[1]
+if keyword == 'output':
+    run(['man', 'sway-output'])
+elif keyword == 'input':
+    run(['man', 'sway-input'])
+else:
+    run([
+        'man', '-P', f'less -p {keyword}', '5', 'sway'
+    ])

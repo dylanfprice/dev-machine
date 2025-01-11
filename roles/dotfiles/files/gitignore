@@ -1,3 +1,4 @@
+# vim: ft=gitignore
 .aider*
 .vim
 *.swo
