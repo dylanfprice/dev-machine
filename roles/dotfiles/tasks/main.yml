@@ -27,7 +27,9 @@
     - {src: 'gitignore', dest: '.gitignore'}
     - {src: 'inputrc', dest: '.inputrc'}
     - {src: 'jupyter_console_config.py', dest: '.jupyter/jupyter_console_config.py'}
-    - {src: 'kitty.conf', dest: '.config/kitty/kitty.conf'}
+    - {src: 'kitty/kitty.conf', dest: '.config/kitty/kitty.conf'}
+    - {src: 'kitty/solarized-dark.conf', dest: '.config/kitty/solarized-dark.conf'}
+    - {src: 'kitty/solarized-light.conf', dest: '.config/kitty/solarized-light.conf'}
     - {src: 'mimeapps.list', dest: '.config/mimeapps.list'}
     - {src: 'profile', dest: '.profile'}
     - {src: 'ssh-config', dest: '.ssh/config'}

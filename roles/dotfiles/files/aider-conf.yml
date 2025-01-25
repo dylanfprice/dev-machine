@@ -1,7 +1,7 @@
 model: groq/llama3-70b-8192
 env-file: /home/dylan/.aider.env
 chat-mode: ask
-code-theme: solarized-light
+code-theme: solarized-dark
 user-input-color: "#586e75"
 tool-output-color: "#586e75"
 tool-error-color: "#dc322f"
