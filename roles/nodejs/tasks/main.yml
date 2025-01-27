@@ -29,3 +29,9 @@
   with_items:
     - fixjson
     - yarn
+
+- name: install tailwindcss
+  get_url:
+    url: https://github.com/tailwindlabs/tailwindcss/releases/download/v4.0.0/tailwindcss-linux-x64
+    dest: /usr/local/bin/tailwindcss
+    mode: 0555
