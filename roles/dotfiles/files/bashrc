@@ -24,9 +24,8 @@ export EDITOR=vim
 set -o vi
 
 # fzf
-export BAT_THEME="Solarized (light)"
-# https://github.com/junegunn/fzf/wiki/Color-schemes#alternate-solarized-lightdark-theme
 _gen_fzf_default_opts() {
+  # https://github.com/junegunn/fzf/wiki/Color-schemes#alternate-solarized-lightdark-theme
   # Uncomment for truecolor, if your terminal supports it.
   local base03="#002b36"
   local base02="#073642"
@@ -59,6 +58,7 @@ _gen_fzf_default_opts() {
   "
 }
 _gen_fzf_default_opts
+export BAT_THEME="Solarized (light)"
 export FZF_DEFAULT_COMMAND="rg --files"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 if [ -x /usr/bin/fzf ]; then
