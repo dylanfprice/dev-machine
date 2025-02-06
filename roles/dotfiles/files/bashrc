@@ -84,3 +84,6 @@ export PATH=$PATH:$HOME/.local/gems/bin
 if [ -x /usr/local/bin/terraform ]; then
   complete -C /usr/local/bin/terraform terraform
 fi
+
+# Java
+export _JAVA_AWT_WM_NONREPARENTING=1
