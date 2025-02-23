@@ -17,6 +17,7 @@
       - git
       - gnome-keyring
       - gnumeric
+      - gpgme-json # for mailvelope
       - iwd
       - kitty
       - libfuse2t64 # for AppImage
