@@ -4,5 +4,5 @@
         mode='0644'
   with_items:
     - {src: iwd-main.conf, dest: /etc/iwd/main.conf}
-    - {src: sources.list, dest: /etc/apt/sources.list}
+    - {src: debian.sources, dest: /etc/apt/sources.list.d/debian.sources}
     - {src: apt-preferences-unstable-experimental, dest: /etc/apt/preferences.d/unstable-experimental}

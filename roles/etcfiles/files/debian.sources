@@ -1,0 +1,27 @@
+# Modernized from /etc/apt/sources.list
+Types: deb
+URIs: http://deb.debian.org/debian/
+Suites: testing
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Modernized from /etc/apt/sources.list
+Types: deb
+URIs: http://deb.debian.org/debian/
+Suites: unstable
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Modernized from /etc/apt/sources.list
+Types: deb
+URIs: http://deb.debian.org/debian/
+Suites: experimental
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Modernized from /etc/apt/sources.list
+Types: deb
+URIs: http://security.debian.org/debian-security/
+Suites: testing-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
