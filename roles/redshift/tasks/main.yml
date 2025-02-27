@@ -1,17 +1,24 @@
 - name: install packages
+  become: yes
   apt:
     state: latest
     update_cache: yes
     name: redshift
 
-- name: install systemd unit file
-  copy: src=redshift.service dest=/etc/systemd/user/redshift.service
+- name: create config directories
+  file: path={{ ansible_env.HOME }}/{{ item }}
+        state=directory
+  with_items:
+    - .config/systemd/user/
 
-- name: configure systemd to autostart redshift
-  systemd:
+- name: install systemd unit file
+  copy: src=redshift.service 
+        dest={{ ansible_env.HOME }}/.config/systemd/user/redshift.service
+
+- name: configure systemd
+  systemd_service:
+    daemon_reload: yes
     name: redshift.service
     scope: user
     enabled: yes
     state: started
-  become: yes
-  become_user: '{{ ansible_env.USER }}'

@@ -26,7 +26,6 @@
   with_items:
     - .config/darkman/
     - .config/xdg-desktop-portal/
-    - .config/systemd/user/xdg-desktop-portal.service.d/
 
 - name: copy config files
   copy: src={{ item.src }}
@@ -38,11 +37,10 @@
        dest: '.config/darkman/config.yaml'}
     - {src: 'portals.conf', 
        dest: '.config/xdg-desktop-portal/portals.conf'}
-    - {src: 'override.conf', 
-       dest: '.config/systemd/user/xdg-desktop-portal.service.d/override.conf'}
 
-- name: configure systemd darkman
+- name: configure systemd
   systemd_service:
+    daemon_reload: yes
     name: darkman.service
     scope: user
     enabled: yes
