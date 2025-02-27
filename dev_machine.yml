@@ -3,7 +3,6 @@
     - dotfiles
     - {role: etcfiles, become: yes}
     - {role: packages, become: yes}
-    - {role: redshift, become: yes}
     - vim
     - pass
     - {role: sway, become: yes}
@@ -16,3 +15,5 @@
     - {role: google-chrome, become: yes}
     - warpd
     - {role: keybase, become: yes}
+    - {role: geoclue, become: yes}
+    - {role: redshift, become: yes}
