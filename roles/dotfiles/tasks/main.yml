@@ -30,6 +30,9 @@
     - {src: 'kitty/kitty.conf', dest: '.config/kitty/kitty.conf'}
     - {src: 'kitty/solarized-dark.conf', dest: '.config/kitty/solarized-dark.conf'}
     - {src: 'kitty/solarized-light.conf', dest: '.config/kitty/solarized-light.conf'}
+    - {src: 'kitty/light-theme.auto.conf', dest: '.config/kitty/light-theme.auto.conf'}
+    - {src: 'kitty/dark-theme.auto.conf', dest: '.config/kitty/dark-theme.auto.conf'}
+    - {src: 'kitty/no-preference-theme.auto.conf', dest: '.config/kitty/no-preference-theme.auto.conf'}
     - {src: 'mimeapps.list', dest: '.config/mimeapps.list'}
     - {src: 'profile', dest: '.profile'}
     - {src: 'ssh-config', dest: '.ssh/config'}
