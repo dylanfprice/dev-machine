@@ -1,0 +1,6 @@
+[Unit]
+Description=Geoclue Agent
+
+[Service]
+ExecStart=/usr/libexec/geoclue-2.0/demos/agent
+Restart=on-failure

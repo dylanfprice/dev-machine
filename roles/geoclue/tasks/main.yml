@@ -1,0 +1,26 @@
+- name: install packages
+  apt:
+    state: latest
+    update_cache: yes
+    name:
+      - geoclue-2.0
+      - geoclue-2-demo
+
+- name: install systemd unit file
+  copy: src=geoclue-agent.service 
+        dest=/etc/systemd/user/geoclue-agent.service
+
+- name: configure systemd geoclue
+  systemd:
+    name: geoclue.service
+    enabled: yes
+    state: started
+
+- name: configure systemd geoclue-agent
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  systemd:
+    name: geoclue-agent.service
+    scope: user
+    enabled: yes
+    state: started

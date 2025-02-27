@@ -2,7 +2,7 @@
 Description=Redshift
 
 [Service]
-ExecStart=/usr/bin/redshift -l 48.8:-122.5
+ExecStart=/usr/bin/redshift
 Restart=on-failure
 
 [Install]

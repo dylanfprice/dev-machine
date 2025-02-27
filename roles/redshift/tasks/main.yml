@@ -5,7 +5,7 @@
     name: redshift
 
 - name: install systemd unit file
-  template: src=redshift.service dest=/etc/systemd/user/redshift.service
+  copy: src=redshift.service dest=/etc/systemd/user/redshift.service
 
 - name: configure systemd to autostart redshift
   systemd:
