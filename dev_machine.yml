@@ -15,5 +15,5 @@
     - {role: google-chrome, become: yes}
     - warpd
     - {role: keybase, become: yes}
-    - {role: geoclue, become: yes}
-    - {role: redshift, become: yes}
+    - geoclue
+    - darkman

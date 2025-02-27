@@ -224,5 +224,6 @@ bar {
 }
 
 exec mako --default-timeout 10000
+exec redshift
 # https://github.com/emersion/xdg-desktop-portal-wlr#running
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

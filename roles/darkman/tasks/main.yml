@@ -1,0 +1,47 @@
+- name: install packages
+  become: yes
+  apt:
+    state: latest
+    update_cache: yes
+    name:
+      - golang
+      - scdoc 
+
+- name: clone repo
+  git: repo=https://gitlab.com/WhyNotHugo/darkman.git
+       dest={{ ansible_env.HOME }}/workspace/personal/darkman
+       accept_hostkey=yes
+  
+- name: build and install
+  become: yes
+  ansible.builtin.shell: |
+    sudo make install
+  args:
+    chdir: "{{ ansible_env.HOME }}/workspace/personal/darkman"
+    creates: /usr/bin/darkman
+
+- name: create config directories
+  file: path={{ ansible_env.HOME }}/{{ item }}
+        state=directory
+  with_items:
+    - .config/darkman/
+    - .config/xdg-desktop-portal/
+
+- name: copy config files
+  copy: src={{ item.src }}
+        dest={{ ansible_env.HOME }}/{{ item.dest }}
+        owner={{ ansible_env.USER }}
+        mode={{ item.mode | default('0644') }}
+  with_items:
+    - {src: 'config.yaml', 
+       dest: '.config/darkman/config.yaml'}
+    - {src: 'portals.conf', 
+       dest: '.config/xdg-desktop-portal/portals.conf'}
+
+- name: configure systemd
+  systemd_service:
+    daemon_reload: yes
+    name: darkman.service
+    scope: user
+    enabled: yes
+    state: started

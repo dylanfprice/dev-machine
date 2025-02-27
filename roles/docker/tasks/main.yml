@@ -9,7 +9,7 @@
     name: docker
     types: [deb]
     uris: "https://download.docker.com/linux/debian"
-    suites: ["{{ ansible_distribution_release }}"]
+    suites: [bookworm]
     components: [stable]
     signed_by: https://download.docker.com/linux/ubuntu/gpg
     state: present

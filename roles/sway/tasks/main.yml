@@ -7,6 +7,7 @@
       - grimshot
       - mako-notifier
       - pulseaudio-utils
+      - redshift
       - slurp
       - sway
       - swaylock
