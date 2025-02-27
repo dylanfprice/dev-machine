@@ -15,7 +15,7 @@
 - name: build and install
   become: yes
   ansible.builtin.shell: |
-    sudo make install
+    sudo GOFLAGS=-buildvcs=false make install
   args:
     chdir: "{{ ansible_env.HOME }}/workspace/personal/darkman"
     creates: /usr/bin/darkman
