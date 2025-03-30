@@ -8,9 +8,9 @@
     - {role: sway, become: yes}
     - {role: xkb, become: yes}
     - {role: clojure, become: yes}
+    - {role: python, become: yes}
     - {role: docker, become: yes}
     - {role: nodejs, become: yes}
-    - jupyter
     - {role: android, become: yes}
     - {role: google-chrome, become: yes}
     - warpd

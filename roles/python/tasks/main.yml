@@ -1,0 +1,31 @@
+- name: downlad uv
+  unarchive:
+    src: https://github.com/astral-sh/uv/releases/download/0.6.10/uv-x86_64-unknown-linux-gnu.tar.gz
+    remote_src: yes
+    dest: /opt
+    mode: '0555'
+    creates: /opt/uv-x86_64-unknown-linux-gnu/uv
+
+- name: link uv
+  file:
+    src: /opt/uv-x86_64-unknown-linux-gnu/uv
+    dest: /usr/local/bin/uv
+    state: link
+
+- name: install python 3.12
+  command: uv python install 3.12
+  args:
+    creates: '{{ ansible_env.HOME }}/.local/share/uv/python/cpython-3.12*'
+
+- name: install python cli tools
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
+  command: uv tool install {{ item }}
+  args:
+    creates: '{{ ansible_env.HOME }}/.local/share/uv/tools/{{ item }}'
+  with_items:
+    - aider-chat
+    - hatch
+    - poetry
+    - tzupdate
+
