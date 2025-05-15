@@ -1,4 +1,5 @@
 # Default config for sway
+# vi: ft=swayconfig
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
