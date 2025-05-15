@@ -24,6 +24,8 @@
       - video
 
 - name: ensures directories exist
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
   file: path={{ ansible_env.HOME }}/{{ item }} state=directory
   with_items:
     - .config/sway
@@ -32,11 +34,14 @@
     - .local/bin/
 
 - name: copy files
+  become: yes
+  become_user: '{{ ansible_env.USER }}'
   copy: src={{ item.src }}
         dest={{ ansible_env.HOME }}/{{ item.dest }}
         owner={{ ansible_env.USER }}
         mode={{ item.mode | default('0644') }}
   with_items:
+    - {src: 'heart-wallpaper-3840x2160.jpg', dest: '.config/sway/heart-wallpaper-3840x2160.jpg'}
     - {src: 'sway-config', dest: '.config/sway/config'}
     - {src: 'swayidle-config', dest: '.config/swayidle/config'}
     - {src: 'sway-launcher', dest: '.local/bin/sway-launcher', mode: '0744'}

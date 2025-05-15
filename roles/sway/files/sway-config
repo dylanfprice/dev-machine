@@ -17,7 +17,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term kitty
-set $background /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+set $background $HOME/.config/sway/heart-wallpaper-3840x2160.jpg
 
 ### Output configuration
 #
@@ -208,6 +208,10 @@ bindsym XF86AudioMute exec \
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
+client.focused          #4c7899   #3a78a8   #ffffff #2e9ef4 #285577
+client.focused_inactive #333333   #657b83   #ffffff #484e50 #5f676a
+client.unfocused        #333333   #22222250 #ffffff #292d2e #222222
+
 # Status Bar:
 # For detailed information type "man sway-bar"
 bar {
@@ -217,8 +221,9 @@ bar {
 
     colors {
         statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        background #32323200
+        focused_workspace  #4c7899   #3a78a8   #ffffff
+        inactive_workspace #32323200 #32323200 #ffffff
     }
     font "Terminus (TTF)"
 }
