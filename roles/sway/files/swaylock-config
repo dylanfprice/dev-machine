@@ -1,3 +1,3 @@
 daemonize
 ignore-empty-password
-image=/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+image=$HOME/.config/sway/heart-wallpaper-3840x2160.jpg
