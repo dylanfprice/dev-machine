@@ -13,6 +13,7 @@
     - {role: nodejs, become: yes}
     - {role: android, become: yes}
     - {role: google-chrome, become: yes}
+    - {role: steam, become: yes}
     - warpd
     - {role: keybase, become: yes}
     - geoclue

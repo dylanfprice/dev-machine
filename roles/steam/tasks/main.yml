@@ -1,0 +1,17 @@
+- name: copy files
+  copy: src=steam.sources
+        dest=/etc/apt/sources.list.d/steam.sources
+        mode='0644'
+
+- name: install steam-launcher
+  apt:
+    state: latest
+    update_cache: yes
+    name:
+      - steam-launcher
+
+- name: remove extra files
+  file: path={{ item }} state=absent
+  with_items:
+    - /etc/apt/sources.list.d/steam-stable.list
+    - /etc/apt/sources.list.d/steam-beta.list
