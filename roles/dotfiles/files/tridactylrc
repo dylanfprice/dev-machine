@@ -18,7 +18,6 @@ bind --mode=insert <C-'> fillcmdline tabopen
 " Search stuff
 set searchengine duckduckgo
 
-set searchurls.cognito https://github.com/cognitohealth/cognito-universe/issues?q=
 set searchurls.ddg https://duckduckgo.com/?q=
 set searchurls.devdocs https://devdocs.io/#q=
 set searchurls.drive https://drive.google.com/drive/search?q=
