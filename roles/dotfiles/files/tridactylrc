@@ -61,3 +61,6 @@ jsb browser.webRequest.onBeforeSendHeaders.addListener(
 	{urls: ["*://*.slack.com/*"]},
 	["blocking", "requestHeaders"],
 )
+
+" Remove youtube recommendations
+autocmd DocLoad youtube.com js setTimeout(() => document.getElementById('secondary').remove(), 5000)
